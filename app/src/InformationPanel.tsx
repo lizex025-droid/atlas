@@ -1,12 +1,12 @@
 import { useLayoutEffect,useRef,useState } from 'react';
-import { BookOpen, Boxes, Layers, MapPin, Network, ExternalLink, Target, ChevronLeft, FileCheck2 } from 'lucide-react';
+import { BookOpen, Boxes, Layers, MapPin, Network, ExternalLink, Target, ChevronLeft, FileCheck2, X } from 'lucide-react';
 import { byId } from './anatomy';
 import { PronunciationControl } from './PronunciationControl';
 import { contentStatus,evaluateSections,sectionFacts } from './coverage';
 import { getKnowledge, sources } from './knowledge';
 import type { AnatomyRecord, Fact, Feature } from './knowledge';
 import { groups,knownId } from './registry';
-type Props={selected:string|null;groupId:string|null;selectedCount:number;onSelect:(id:string,focus?:boolean)=>void;onAction:(action:string)=>void;multi:boolean;onSearch:()=>void;collapsed?:boolean};
+type Props={selected:string|null;groupId:string|null;selectedCount:number;onSelect:(id:string,focus?:boolean)=>void;onAction:(action:string)=>void;multi:boolean;onSearch:()=>void;collapsed?:boolean;onClose?:()=>void};
 const icons={Description:BookOpen,Parts:Boxes,Surfaces:Layers,Landmarks:MapPin,Relations:Network,Clinical:FileCheck2,Sources:ExternalLink,'Cross-Sections':Layers,Origin:MapPin,Insertion:Target,Actions:Target,Innervation:Network,'Blood Supply':Network,Course:Network,Branches:Network,Motor:Target,Sensory:Target,'Supply/Drainage':Network,Attachments:MapPin,Function:Target};
 type Tab=keyof typeof icons;
 function Evidence({fact}:{fact:Fact}){return <p className="fact">{fact.text}<span className="fact-citations">{fact.sources.map(id=><a key={id} href={sources.find(s=>s.id===id)?.url} title={sources.find(s=>s.id===id)?.title} target="_blank" rel="noreferrer">{sources.findIndex(s=>s.id===id)+1}</a>)}</span></p>;}
@@ -19,7 +19,8 @@ export function InformationPanel(props:Props){
  const group=groupId?groups.get(groupId):null;const record=selected?getKnowledge(selected):null;
  const shared:Tab[]=['Relations','Clinical','Sources'];
  const tabs:Tab[]=record?.kind==='bone'?['Description','Parts','Surfaces','Landmarks','Cross-Sections',...shared]:record?.kind==='muscle'?['Description','Origin','Insertion','Actions','Innervation','Blood Supply','Parts',...shared]:record?.kind==='nerve'?['Description','Course','Branches','Motor','Sensory','Innervation',...shared]:record?.kind==='vessel'?['Description','Course','Branches','Supply/Drainage',...shared]:['fascia','ligament','cartilage','joint'].includes(record?.kind??'')?['Description','Attachments','Function',...shared]:record?.kind==='landmark'?['Description',...shared]:['Description','Parts','Blood Supply','Innervation',...shared];
- return <aside className="information-panel" aria-label="Anatomical information" aria-hidden={props.collapsed} inert={props.collapsed}>
+ return <aside id="anatomical-information" className="information-panel" aria-label="Anatomical information" aria-hidden={props.collapsed} inert={props.collapsed}>
+ <div className="mobile-info-heading"><span>ANATOMICAL INFORMATION</span><button aria-label="Close information panel" onClick={props.onClose}><X size={18}/></button></div>
  <div className="structure-head"><div className="structure-identity">
  {record?<><div className="structure-kicker">{record.kind} / {record.region}</div><h1>{record.officialName}</h1>{record.latinName?<p className="latin">{record.latinName}</p>:<p className="latin unavailable-inline">Latin terminology not yet verified</p>}<PronunciationControl record={record}/><p className="canonical-id">{record.id}</p><button className="parent-control" disabled={!record.parentId||!knownId(record.parentId)} onClick={()=>record.parentId&&onSelect(record.parentId,false)}><ChevronLeft size={13}/> Parent structure</button><span className="verification-status">{record.verificationStatus==='source-checked'?'Source checked · clinical review pending':'Terminology / geometry only'}</span></>:group?<><div className="structure-kicker">Anatomical group</div><h1>{group.name}</h1><p className="latin">{group.members.length} mapped structures</p><p className="canonical-id">{group.id}</p></>:<><div className="structure-kicker">THE ANATOMICAL ATLAS</div><h1>Explore the<br/>human body.</h1><p className="latin">Structure. Context. Understanding.</p><button className="parent-control" onClick={props.onSearch}>Search the atlas <Target size={13}/></button></>}
  </div><div className="structure-actions">{[['isolate','Isolate'],['hide','Hide'],['fade','Fade'],['hide-others','Hide others'],['fade-others','Fade others'],['multi','Multi selection'],['reset','Reset visibility']].map(([action,label])=><button key={action} aria-pressed={action==='multi'?props.multi:undefined} disabled={!props.selectedCount&&action!=='reset'&&action!=='multi'} onClick={()=>onAction(action)}>{label}</button>)}</div></div>
