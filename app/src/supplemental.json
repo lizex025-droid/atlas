@@ -1,0 +1,62 @@
+[
+  {
+    "id": "TA2:2549:L",
+    "name": "Left palmar aponeurosis",
+    "system": "Connective Tissue",
+    "region": "Hand",
+    "color": "#d1cec5",
+    "position": [
+      0.9019988179206848,
+      -0.19704855978488922,
+      0.19960610568523407
+    ],
+    "size": [
+      0.35040175914764404,
+      0.4982069432735443,
+      0.22361454367637634
+    ],
+    "chunk": "z-palmar",
+    "parents": [
+      {
+        "id": "group:upper-fascia",
+        "name": "Upper-limb fasciae"
+      },
+      {
+        "id": "group:fascia",
+        "name": "Fasciae"
+      }
+    ],
+    "description": "Source mesh: Z-Anatomy / Palmar aponeurosis. Similarity-registered to this atlas; anatomical alignment review pending.",
+    "shapes": []
+  },
+  {
+    "id": "TA2:2549:R",
+    "name": "Right palmar aponeurosis",
+    "system": "Connective Tissue",
+    "region": "Hand",
+    "color": "#d1cec5",
+    "position": [
+      -0.8980243802070618,
+      -0.19846653938293457,
+      0.2006039172410965
+    ],
+    "size": [
+      0.3505502939224243,
+      0.49820083379745483,
+      0.22360798716545105
+    ],
+    "chunk": "z-palmar",
+    "parents": [
+      {
+        "id": "group:upper-fascia",
+        "name": "Upper-limb fasciae"
+      },
+      {
+        "id": "group:fascia",
+        "name": "Fasciae"
+      }
+    ],
+    "description": "Source mesh: Z-Anatomy / Palmar aponeurosis. Similarity-registered to this atlas; anatomical alignment review pending.",
+    "shapes": []
+  }
+]

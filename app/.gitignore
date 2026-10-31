@@ -1,0 +1,13 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+*.local
+.wrangler/
+.env
+.env.*
+!.env.example
+.dev.vars*
+*.tsbuildinfo
+test-results*/
+public/deployment.json

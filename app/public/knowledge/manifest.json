@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "files": [
+    {
+      "path": "/knowledge/coverage.json",
+      "bytes": 1136104,
+      "sha256": "eab13274bc4c31279815d5ddcb65ee32ccf88fde3958410e1bccd48440fd970c"
+    },
+    {
+      "path": "/knowledge/database.json",
+      "bytes": 10643239,
+      "sha256": "48703a56bb230f37f3dbc83ae81e1e45f558e0ba4c25c5c95101426144d71034"
+    },
+    {
+      "path": "/knowledge/import-example.json",
+      "bytes": 37720,
+      "sha256": "3b3a5cae6c27ad10efae224af11cf3fcc18cd1b6dd49dc51769ae855d77b93e6"
+    }
+  ],
+  "source": "Original AnatomyAtlas typed registry and consulted-source batch",
+  "allSelectableMeshesHaveRecords": true,
+  "complete": false,
+  "medicalReview": "pending"
+}

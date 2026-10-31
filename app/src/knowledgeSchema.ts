@@ -1,0 +1,21 @@
+export type SourceReference={id:string;title:string;url:string;license:string;use:string;locator?:string;accessedAt:string;access?:'full-text'|'search-index'|'terminology';historical?:boolean;permission?:'public-domain'|'factual-reference-only'|'licensed-reuse'};
+export type EvidenceLink={sourceId:string;locator:string;status:'source-checked'|'needs-review'};
+export type Fact={text:string;sources:string[];evidence?:EvidenceLink[]};
+export type Feature=Fact&{id:string;name:string;latinName?:string;meshIds:string[];standardId?:string};
+export type AnatomyKind='bone'|'fascia'|'muscle'|'nerve'|'vessel'|'organ'|'other'|'landmark'|'cartilage'|'ligament'|'joint';
+export type Pronunciation={englishText:string;latinText:string|null;ipaEnglish?:string;syllables?:string;stress?:string;sourceIds:string[];verificationStatus:'dictionary-checked'|'tts-approximation';audioAvailable:false;method:'browser-speech-synthesis'};
+export type MedicalSection={id:string;title:string;facts:Fact[];status:'source-checked'|'needs-review'|'not-started'|'not-applicable';reviewNote?:string};
+export type AnatomyRecord={id:string;officialName:string;latinName:string|null;synonyms:string[];anatomicalSystem:string;region:string;parentId:string|null;childrenIds:string[];hierarchyPath:{id:string;name:string}[];description:Fact[];classification:Fact[];location:Fact[];quickFacts:Fact[];structureAndFunction:Fact[];parts:Feature[];surfaces:Feature[];landmarks:Feature[];attachments:Fact[];articulations:Fact[];anatomicalRelations:(Fact&{targetId?:string;label?:string})[];clinicalNotes:Fact[];images:{url:string;sourceId:string;alt:string}[];modelIds:string[];meshIds:string[];sourceReferences:string[];verificationStatus:'source-checked'|'metadata-only';lastReviewedAt:string|null;kind:AnatomyKind;version?:number;laterality?:'left'|'right'|'midline'|'unspecified';standardIds?:string[];pronunciation?:Pronunciation;detailedSections?:MedicalSection[];clinicalReview?:{status:'pending'|'approved';reviewer?:string;reviewedAt?:string};contentLicense?:string;populationBatch?:string;extensions?:{origin?:Fact[];insertion?:Fact[];innervation?:Fact[];bloodSupply?:Fact[];actions?:Fact[];course?:Fact[];branches?:Fact[];motor?:Fact[];sensory?:Fact[];drainage?:Fact[];function?:Fact[]};};
+export const categorySections:Record<AnatomyKind,string[]>={
+ bone:['description','classification','location','orientation','parts','surfaces','borders','landmarks','relations','attachments','articulations','bloodSupply','venousDrainage','innervation','lymphaticDrainage','embryology','ossification','variations','surfaceAnatomy','function','clinical'],
+ muscle:['description','classification','location','parts','origin','insertion','innervation','bloodSupply','venousDrainage','actions','compartment','synergists','antagonists','relations','development','variations','examination','clinical'],
+ nerve:['description','classification','location','origin','roots','course','branches','motor','sensory','autonomic','relations','bloodSupply','development','variations','examination','reflexes','clinical'],
+ vessel:['description','classification','location','origin','course','branches','tributaries','supply','drainage','anastomoses','relations','development','variations','clinical'],
+ organ:['description','classification','location','orientation','parts','surfaces','relations','bloodSupply','venousDrainage','innervation','lymphaticDrainage','function','embryology','variations','clinical'],
+ fascia:['description','classification','location','attachments','layers','relations','function','bloodSupply','development','variations','clinical'],
+ ligament:['description','classification','location','attachments','relations','function','bloodSupply','development','variations','examination','clinical'],
+ cartilage:['description','classification','location','parts','attachments','relations','function','bloodSupply','development','variations','clinical'],
+ joint:['description','classification','location','parts','surfaces','attachments','relations','movements','stability','bloodSupply','innervation','development','variations','examination','clinical'],
+ landmark:['description','location','relations','function','clinical'],
+ other:['description','classification','location','parts','relations','function','development','variations','clinical'],
+};

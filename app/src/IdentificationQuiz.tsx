@@ -1,0 +1,13 @@
+import { useEffect, useState } from 'react';
+import { ArrowRight, Check, X } from 'lucide-react';
+import { byId } from './anatomy';
+export const quizQuestions=[
+ {id:'FMA10059',options:['Eleventh thoracic vertebra','Right femur','Left hip bone','Right scapula']},
+ {id:'FMA24474',options:['Right humerus','Right femur','Right scapula','Eleventh thoracic vertebra']},
+ {id:'FMA16587',options:['Left scapula','Left patella','Left hip bone','Left humerus']},
+];
+export function IdentificationQuiz({onQuestion,onExit}:{onQuestion:(id:string)=>void;onExit:()=>void}){
+ const [round,setRound]=useState(0);const [answer,setAnswer]=useState<string|null>(null);const [score,setScore]=useState(0);const [done,setDone]=useState(false);const question=quizQuestions[round];const correct=byId.get(question.id)!.name;
+ useEffect(()=>onQuestion(question.id),[question.id,onQuestion]);
+ return <aside className="information-panel quiz-panel" aria-label="Identification practice"><span className="structure-kicker">IDENTIFICATION PRACTICE</span><h1>{done?'Session complete':'Name this structure'}</h1><p className="muted">{done?'Your answers are for personal study. No clinical assessment is implied.':'Rotate and zoom the surface, then choose its anatomical name. Labels and structure details are hidden during the question.'}</p><div className="quiz-progress">{done?'FINAL SCORE':`QUESTION ${round+1} OF ${quizQuestions.length}`}<strong>{score} / {done?quizQuestions.length:round+(answer?1:0)}</strong></div>{!done?<><div className="quiz-options">{question.options.map(option=><button key={option} disabled={answer!==null} data-answer={answer?(option===correct?'correct':option===answer?'incorrect':undefined):undefined} onClick={()=>{setAnswer(option);if(option===correct)setScore(n=>n+1);}}>{option}{answer&&option===correct?<Check size={17}/>:answer===option?<X size={17}/>:null}</button>)}</div>{answer?<div role="status" className="quiz-feedback"><b>{answer===correct?'Correct.':'Review this structure.'}</b><p>The source catalogue identifies this mesh as {correct} ({question.id}).</p><button onClick={()=>{if(round+1===quizQuestions.length)setDone(true);else{setRound(n=>n+1);setAnswer(null);}}}>{round+1===quizQuestions.length?'See results':'Next structure'}<ArrowRight size={16}/></button></div>:null}</>:<button className="drawer-button" onClick={()=>{setRound(0);setAnswer(null);setScore(0);setDone(false);}}>Practise again</button>}<button className="drawer-button quiz-exit" onClick={onExit}>Return to exploration</button><small>Names and geometry: BodyParts3D. Original practice questions; not a comprehensive quiz bank.</small></aside>;
+}

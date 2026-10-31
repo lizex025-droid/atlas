@@ -1,0 +1,159 @@
+{
+  "schemaVersion": 1,
+  "boneId": "FMA9968",
+  "meshId": "FMA9968",
+  "chunkUrl": "/models/bodyparts3d/skeletal-trunk-0.glb",
+  "chunkSha256": "aa48a5fbbc19c8a155bda0487aa525091e360ac17eb63ced76e8cc4998850528",
+  "vertexCount": 1478,
+  "triangleCount": 2574,
+  "coordinateSpace": "mesh-local",
+  "license": "CC-BY-SA-2.1-JP",
+  "attribution": "BodyParts3D / The Database Center for Life Science, Japan. Original AnatomyAtlas gross-feature surface bindings derived from the licensed mesh; see /models/ATTRIBUTION.txt.",
+  "review": {
+    "status": "geometry-reviewed",
+    "method": "Manual gross-feature identification in eight orthogonal/oblique source-mesh views, surface ray projection and annotated multi-view review. No automatic anatomical inference.",
+    "reviewedAt": "2026-10-31",
+    "medicalReview": "pending",
+    "limitation": "Polygon-reduced gross bony surface; not cartilage, histology or a segmented feature mask."
+  },
+  "anchors": {
+    "body": {
+      "triangle": [
+        519,
+        473,
+        475
+      ],
+      "weights": [
+        0.6917889459690593,
+        0.08716965960753517,
+        0.2210413944234055
+      ],
+      "position": [
+        0,
+        1.443,
+        -0.11521092365984908
+      ],
+      "normal": [
+        -0.07594528454683083,
+        0.0648977333775392,
+        0.9949977879159122
+      ],
+      "reviewNote": "Anterior vertebral body surface"
+    },
+    "superior-endplate": {
+      "triangle": [
+        238,
+        798,
+        244
+      ],
+      "weights": [
+        0.00063585160994728,
+        0.5601450337340858,
+        0.4392191146559669
+      ],
+      "position": [
+        0,
+        1.4624876892869518,
+        -0.16
+      ],
+      "normal": [
+        0.008647751296712535,
+        0.99969447778731,
+        -0.023155290520048333
+      ],
+      "reviewNote": "Central superior bony endplate"
+    },
+    "inferior-endplate": {
+      "triangle": [
+        521,
+        482,
+        526
+      ],
+      "weights": [
+        0.6122023542045167,
+        0.2780707983271265,
+        0.10972684746835669
+      ],
+      "position": [
+        0,
+        1.3976652064471988,
+        -0.16
+      ],
+      "normal": [
+        -0.06278343048993061,
+        -0.9812565761333453,
+        0.18219158227256385
+      ],
+      "reviewNote": "Central inferior bony endplate"
+    },
+    "spinous": {
+      "triangle": [
+        666,
+        669,
+        670
+      ],
+      "weights": [
+        0.4632477307808532,
+        0.48736048536949633,
+        0.04939178384965048
+      ],
+      "position": [
+        0,
+        1.307,
+        -0.3179994773492527
+      ],
+      "normal": [
+        -0.0834695025765306,
+        -0.567951423112356,
+        -0.818818675363646
+      ],
+      "reviewNote": "Posteroinferior spinous-process tip"
+    },
+    "transverse-left": {
+      "triangle": [
+        1266,
+        1282,
+        1270
+      ],
+      "weights": [
+        0.004445823650661929,
+        0.8852732509383296,
+        0.11028092541100845
+      ],
+      "position": [
+        0.12019871689065675,
+        1.438,
+        -0.283
+      ],
+      "normal": [
+        0.7288093862103584,
+        0.15606857860779097,
+        0.6666929408228532
+      ],
+      "reviewNote": "Lateral end of left transverse process"
+    },
+    "transverse-right": {
+      "triangle": [
+        17,
+        26,
+        3
+      ],
+      "weights": [
+        0.11915003285045411,
+        0.6787117194820069,
+        0.20213824766753896
+      ],
+      "position": [
+        -0.11781642358515715,
+        1.438,
+        -0.283
+      ],
+      "normal": [
+        -0.8422401688250805,
+        0.3052348368172984,
+        0.44436830716267034
+      ],
+      "reviewNote": "Lateral end of right transverse process"
+    }
+  }
+}

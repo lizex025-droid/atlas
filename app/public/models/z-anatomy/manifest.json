@@ -1,0 +1,86 @@
+{
+  "dataset": "Z-Anatomy selected palmar fascia supplement",
+  "sourceUrl": "https://github.com/Z-Anatomy/Models-of-human-anatomy",
+  "archiveSha256": "e029688545627bd0214b269e1063143abb580aad72b2c2445d6d8a9a0d9da736",
+  "blendSha256": "9f08a17ea0115fed80b2a73ecdf0a1bc2ab2f6956f37c593ce23d513ea35afcd",
+  "license": "CC-BY-SA-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "licenseSha256": "196b66b56551a862e59872f7cdb70e6d9a6ad84e9105962fca8ec28c14e97520",
+  "models": [
+    {
+      "id": "TA2:2549:L",
+      "sourceObject": "Palmar aponeurosis.l",
+      "sourceObjectGeometrySha256": "332ad74ddc0c397862b643edae502e577e301ac47b45efec0a6f2a9d14f0eea4",
+      "license": "CC-BY-SA-4.0",
+      "licenseEvidence": "Repository License.txt and Readme.md; selected object is palmar fascia, not the separately credited noncommercial kidney or inner-ear assets.",
+      "creator": "Z-Anatomy / Gauthier Kervyn; BodyParts3D / DBCLS credited upstream",
+      "vertices": 749,
+      "triangles": 1284,
+      "changes": "Only selected object raw surfaces; smooth normals; rigid similarity registration using four atlas mesh centers; indexed GLB, no textures, material code, definitions or template code reused."
+    },
+    {
+      "id": "TA2:2549:R",
+      "sourceObject": "Palmar aponeurosis.r",
+      "sourceObjectGeometrySha256": "ca0e714992eee484e7390a627d49438ddf0fa444858e07895057a1ce4a810712",
+      "license": "CC-BY-SA-4.0",
+      "licenseEvidence": "Repository License.txt and Readme.md; selected object is palmar fascia, not the separately credited noncommercial kidney or inner-ear assets.",
+      "creator": "Z-Anatomy / Gauthier Kervyn; BodyParts3D / DBCLS credited upstream",
+      "vertices": 749,
+      "triangles": 1284,
+      "changes": "Only selected object raw surfaces; smooth normals; rigid similarity registration using four atlas mesh centers; indexed GLB, no textures, material code, definitions or template code reused."
+    }
+  ],
+  "chunks": [
+    {
+      "id": "z-palmar",
+      "url": "/models/z-anatomy/palmar.glb",
+      "system": "Connective Tissue",
+      "region": "Hand",
+      "bytes": 68448,
+      "sha256": "27991e91fa7a4943b8462abb5c2d03636f19bd68504e55ce9582ae89c8895495",
+      "structures": [
+        "TA2:2549:L",
+        "TA2:2549:R"
+      ]
+    }
+  ],
+  "registration": {
+    "anchorMeshIds": [
+      "FMA24475",
+      "FMA24474",
+      "FMA52734",
+      "FMA10059"
+    ],
+    "scale": 3.2062677887280717,
+    "rotation": [
+      [
+        0.999999551916108,
+        0.000776810756826054,
+        -0.000541047716376324
+      ],
+      [
+        -0.0005327313623830702,
+        -0.010666352369566093,
+        -0.9999429709360548
+      ],
+      [
+        -0.0007825374616273288,
+        0.9999428111108033,
+        -0.010665933758692764
+      ]
+    ],
+    "translation": [
+      0.0037598397353663733,
+      -2.695794238110778,
+      0.023942862760932153
+    ],
+    "residualWorldUnits": [
+      0.007700349138818124,
+      0.007604227537160661,
+      0.002983666913791213,
+      0.007849908956218395
+    ],
+    "status": "Approximate similarity registration; independent anatomical alignment review pending"
+  },
+  "lastReviewedAt": "2026-10-31"
+}

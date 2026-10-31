@@ -1,0 +1,11 @@
+BodyParts3D, (c) The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan
+https://creativecommons.org/licenses/by-sa/2.1/jp/
+https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html
+Converted meshes and contributions are distributed under CC BY-SA 2.1 Japan. Changes: indexed GLB conversion, rigid coordinate transform, uniform scale and generated smooth normals. Upstream release is 99% polygon-reduced. No endorsement or clinical validation claimed.
+
+--- SELECTED SUPPLEMENT ---
+Z-Anatomy - The libre 3D atlas of anatomy - CC BY-SA 4.0
+Gauthier Kervyn (design, 3D, anatomy); BodyParts3D - The Database Center for Life Science - CC BY-SA 2.1 Japan credited upstream.
+https://github.com/Z-Anatomy/Models-of-human-anatomy
+https://creativecommons.org/licenses/by-sa/4.0/
+Only Palmar aponeurosis.l/.r surfaces converted. No kidney, inner-ear, definitions, templates, materials or scripts redistributed. Changes: rigid similarity registration, normals, indexed GLB. Alignment and clinical review pending. Converted meshes and contributions remain CC BY-SA 4.0.

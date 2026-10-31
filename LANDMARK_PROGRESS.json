@@ -1,0 +1,2416 @@
+{
+  "schemaVersion": 1,
+  "checkedAt": "2026-10-31T12:56:09.420Z",
+  "complete": false,
+  "modelDigest": "aa48a5fbbc19c8a155bda0487aa525091e360ac17eb63ced76e8cc4998850528",
+  "reportSha256": "a9cd37b2b5c9210c509ec887555f611f6a3d1a4481788d6c64b7e7763be0e933",
+  "next": [
+    "Independent anatomical review of six gross T7 anchors",
+    "Map T7 pedicles and laminae only after reliable surface review",
+    "Seek licensed higher-resolution T7 facet/notch geometry",
+    "Review humeral feature anchors without mirroring across sides"
+  ],
+  "coverage": [
+    {
+      "id": "adult-bone:001",
+      "name": "Frontal bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52734"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:002",
+      "name": "Occipital bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52735"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:003",
+      "name": "Sphenoid bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52736"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:004",
+      "name": "Ethmoid",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52740"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:005",
+      "name": "Vomer",
+      "division": "Axial",
+      "meshIds": [
+        "FMA9710"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:006",
+      "name": "Mandible",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52748"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:007",
+      "name": "Hyoid bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52749"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:008",
+      "name": "Sacrum",
+      "division": "Axial",
+      "meshIds": [
+        "FMA16202"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:009",
+      "name": "Coccyx",
+      "division": "Axial",
+      "meshIds": [],
+      "mapping": "not-installed",
+      "region": "Not installed",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:010",
+      "name": "Sternum",
+      "division": "Axial",
+      "meshIds": [
+        "FMA7486",
+        "FMA7487",
+        "FMA7488"
+      ],
+      "mapping": "component-group",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:011",
+      "name": "Left parietal bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52789"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:012",
+      "name": "Right parietal bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52788"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:013",
+      "name": "Left temporal bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52739"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:014",
+      "name": "Right temporal bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52738"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:015",
+      "name": "Left nasal bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA53648"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:016",
+      "name": "Right nasal bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA53647"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:017",
+      "name": "Left maxilla",
+      "division": "Axial",
+      "meshIds": [
+        "FMA53650"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:018",
+      "name": "Right maxilla",
+      "division": "Axial",
+      "meshIds": [
+        "FMA53649"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:019",
+      "name": "Left lacrimal bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA53646"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:020",
+      "name": "Right lacrimal bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA53645"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:021",
+      "name": "Left zygomatic bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52893"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:022",
+      "name": "Right zygomatic bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA52892"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:023",
+      "name": "Left palatine bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA53656"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:024",
+      "name": "Right palatine bone",
+      "division": "Axial",
+      "meshIds": [
+        "FMA53655"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:025",
+      "name": "Left inferior nasal concha",
+      "division": "Axial",
+      "meshIds": [
+        "FMA54738"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:026",
+      "name": "Right inferior nasal concha",
+      "division": "Axial",
+      "meshIds": [
+        "FMA54737"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:027",
+      "name": "Left malleus",
+      "division": "Axial",
+      "meshIds": [],
+      "mapping": "not-installed",
+      "region": "Not installed",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:028",
+      "name": "Right malleus",
+      "division": "Axial",
+      "meshIds": [],
+      "mapping": "not-installed",
+      "region": "Not installed",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:029",
+      "name": "Left incus",
+      "division": "Axial",
+      "meshIds": [],
+      "mapping": "not-installed",
+      "region": "Not installed",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:030",
+      "name": "Right incus",
+      "division": "Axial",
+      "meshIds": [],
+      "mapping": "not-installed",
+      "region": "Not installed",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:031",
+      "name": "Left stapes",
+      "division": "Axial",
+      "meshIds": [],
+      "mapping": "not-installed",
+      "region": "Not installed",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:032",
+      "name": "Right stapes",
+      "division": "Axial",
+      "meshIds": [],
+      "mapping": "not-installed",
+      "region": "Not installed",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:033",
+      "name": "First cervical vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA12519"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:034",
+      "name": "Second cervical vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA12520"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:035",
+      "name": "Third cervical vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA12521"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:036",
+      "name": "Fourth cervical vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA12522"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:037",
+      "name": "Fifth cervical vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA12523"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:038",
+      "name": "Sixth cervical vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA12524"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:039",
+      "name": "Seventh cervical vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA12525"
+      ],
+      "mapping": "exact-name",
+      "region": "Head & neck",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:040",
+      "name": "First thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA9165"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:041",
+      "name": "Second thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA9187"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:042",
+      "name": "Third thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA9209"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:043",
+      "name": "Fourth thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA9248"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:044",
+      "name": "Fifth thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA9922"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:045",
+      "name": "Sixth thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA9945"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:046",
+      "name": "Seventh thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA9968"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 6
+    },
+    {
+      "id": "adult-bone:047",
+      "name": "Eighth thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA9991"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:048",
+      "name": "Ninth thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA10014"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:049",
+      "name": "Tenth thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA10037"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:050",
+      "name": "Eleventh thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA10059"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:051",
+      "name": "Twelfth thoracic vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA10081"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:052",
+      "name": "First lumbar vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA13072"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:053",
+      "name": "Second lumbar vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA13073"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:054",
+      "name": "Third lumbar vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA13074"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:055",
+      "name": "Fourth lumbar vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA13075"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:056",
+      "name": "Fifth lumbar vertebra",
+      "division": "Axial",
+      "meshIds": [
+        "FMA13076"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:057",
+      "name": "Left first rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA7987"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:058",
+      "name": "Right first rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA7857"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:059",
+      "name": "Left second rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8012"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:060",
+      "name": "Right second rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA7882"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:061",
+      "name": "Left third rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8039"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:062",
+      "name": "Right third rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA7909"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:063",
+      "name": "Left fourth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8148"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:064",
+      "name": "Right fourth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA7957"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:065",
+      "name": "Left fifth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8093"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:066",
+      "name": "Right fifth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8066"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:067",
+      "name": "Left sixth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8202"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:068",
+      "name": "Right sixth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8175"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:069",
+      "name": "Left seventh rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8256"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:070",
+      "name": "Right seventh rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8229"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:071",
+      "name": "Left eighth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8310"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:072",
+      "name": "Right eighth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8283"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:073",
+      "name": "Left ninth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8391"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:074",
+      "name": "Right ninth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8364"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:075",
+      "name": "Left tenth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8472"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:076",
+      "name": "Right tenth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8445"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:077",
+      "name": "Left eleventh rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8532"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:078",
+      "name": "Right eleventh rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8531"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:079",
+      "name": "Left twelfth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8534"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:080",
+      "name": "Right twelfth rib",
+      "division": "Axial",
+      "meshIds": [
+        "FMA8533"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:081",
+      "name": "Left clavicle",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA13323"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:082",
+      "name": "Right clavicle",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA13322"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:083",
+      "name": "Left scapula",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA13396"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:084",
+      "name": "Right scapula",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA13395"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:085",
+      "name": "Left humerus",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23131"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:086",
+      "name": "Right humerus",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23130"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:087",
+      "name": "Left radius",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23465"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:088",
+      "name": "Right radius",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23464"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:089",
+      "name": "Left ulna",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23468"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:090",
+      "name": "Right ulna",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23467"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:091",
+      "name": "Left scaphoid",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24436"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:092",
+      "name": "Right scaphoid",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24435"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:093",
+      "name": "Left lunate",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24438"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:094",
+      "name": "Right lunate",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24437"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:095",
+      "name": "Left triquetral",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24440"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:096",
+      "name": "Right triquetral",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24439"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:097",
+      "name": "Left pisiform",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24442"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:098",
+      "name": "Right pisiform",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24441"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:099",
+      "name": "Left trapezium",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24444"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:100",
+      "name": "Right trapezium",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24443"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:101",
+      "name": "Left trapezoid",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24445"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:102",
+      "name": "Right trapezoid",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23725"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:103",
+      "name": "Left capitate",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24447"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:104",
+      "name": "Right capitate",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24446"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:105",
+      "name": "Left hamate",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24449"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:106",
+      "name": "Right hamate",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24448"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:107",
+      "name": "Left hip bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA16587"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:108",
+      "name": "Right hip bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA16586"
+      ],
+      "mapping": "exact-name",
+      "region": "Trunk",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:109",
+      "name": "Left femur",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24475"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:110",
+      "name": "Right femur",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24474"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:111",
+      "name": "Left patella",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24487"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:112",
+      "name": "Right patella",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24486"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:113",
+      "name": "Left tibia",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24478"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:114",
+      "name": "Right tibia",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24477"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:115",
+      "name": "Left fibula",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24481"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:116",
+      "name": "Right fibula",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24480"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:117",
+      "name": "Left talus",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24483"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:118",
+      "name": "Right talus",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24482"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:119",
+      "name": "Left calcaneus",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24498"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:120",
+      "name": "Right calcaneus",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24497"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:121",
+      "name": "Left cuboid bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24529"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:122",
+      "name": "Right cuboid bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24528"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:123",
+      "name": "Left medial cuneiform bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24522"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:124",
+      "name": "Right medial cuneiform bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24521"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:125",
+      "name": "Left intermediate cuneiform bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24524"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:126",
+      "name": "Right intermediate cuneiform bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24523"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:127",
+      "name": "Left lateral cuneiform bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24526"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:128",
+      "name": "Right lateral cuneiform bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24525"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:129",
+      "name": "Navicular bone of left foot",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24501"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:130",
+      "name": "Left first metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24465"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:131",
+      "name": "Left first metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24508"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:132",
+      "name": "Left second metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24467"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:133",
+      "name": "Left second metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24510"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:134",
+      "name": "Left third metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24469"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:135",
+      "name": "Left third metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24512"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:136",
+      "name": "Left fourth metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24471"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:137",
+      "name": "Left fourth metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24514"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:138",
+      "name": "Left fifth metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24473"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:139",
+      "name": "Left fifth metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24516"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:140",
+      "name": "Proximal phalanx of left thumb",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA65470"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:141",
+      "name": "Distal phalanx of left thumb",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23951"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:142",
+      "name": "Proximal phalanx of left index finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA71915"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:143",
+      "name": "Middle phalanx of left index finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23938"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:144",
+      "name": "Distal phalanx of left index finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23953"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:145",
+      "name": "Proximal phalanx of left middle finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA71908"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:146",
+      "name": "Middle phalanx of left middle finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23940"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:147",
+      "name": "Distal phalanx of left middle finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23955"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:148",
+      "name": "Proximal phalanx of left ring finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA71916"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:149",
+      "name": "Middle phalanx of left ring finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23942"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:150",
+      "name": "Distal phalanx of left ring finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23957"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:151",
+      "name": "Proximal phalanx of left little finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA66791"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:152",
+      "name": "Middle phalanx of left little finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23944"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:153",
+      "name": "Distal phalanx of left little finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA23959"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:154",
+      "name": "Proximal phalanx of left big toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA43254"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:155",
+      "name": "Distal phalanx of left big toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32651"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:156",
+      "name": "Proximal phalanx of left second toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32635"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:157",
+      "name": "Middle phalanx of left second toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32643"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:158",
+      "name": "Distal phalanx of left second toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32653"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:159",
+      "name": "Proximal phalanx of left third toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32637"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:160",
+      "name": "Middle phalanx of left third toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32645"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:161",
+      "name": "Distal phalanx of left third toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32655"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:162",
+      "name": "Proximal phalanx of left fourth toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32639"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:163",
+      "name": "Middle phalanx of left fourth toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32647"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:164",
+      "name": "Distal phalanx of left fourth toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32657"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:165",
+      "name": "Proximal phalanx of left little toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32641"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:166",
+      "name": "Middle phalanx of left little toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA230988"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:167",
+      "name": "Distal phalanx of left little toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32659"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:168",
+      "name": "Navicular bone of right foot",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24500"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:169",
+      "name": "Right first metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24464"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:170",
+      "name": "Right first metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24507"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:171",
+      "name": "Right second metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24466"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:172",
+      "name": "Right second metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24509"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:173",
+      "name": "Right third metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24468"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:174",
+      "name": "Right third metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24511"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:175",
+      "name": "Right fourth metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24470"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:176",
+      "name": "Right fourth metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24513"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:177",
+      "name": "Right fifth metacarpal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24472"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:178",
+      "name": "Right fifth metatarsal bone",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24515"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:179",
+      "name": "Proximal phalanx of right thumb",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24450"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:180",
+      "name": "Distal phalanx of right thumb",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24459"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:181",
+      "name": "Proximal phalanx of right index finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24451"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:182",
+      "name": "Middle phalanx of right index finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24455"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:183",
+      "name": "Distal phalanx of right index finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24460"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:184",
+      "name": "Proximal phalanx of right middle finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24452"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:185",
+      "name": "Middle phalanx of right middle finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24456"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:186",
+      "name": "Distal phalanx of right middle finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24461"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:187",
+      "name": "Proximal phalanx of right ring finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24453"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:188",
+      "name": "Middle phalanx of right ring finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24457"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:189",
+      "name": "Distal phalanx of right ring finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24462"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:190",
+      "name": "Proximal phalanx of right little finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24454"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:191",
+      "name": "Middle phalanx of right little finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24458"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:192",
+      "name": "Distal phalanx of right little finger",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA24463"
+      ],
+      "mapping": "exact-name",
+      "region": "Upper limbs",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:193",
+      "name": "Proximal phalanx of right big toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA43253"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:194",
+      "name": "Distal phalanx of right big toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32650"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:195",
+      "name": "Proximal phalanx of right second toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32634"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:196",
+      "name": "Middle phalanx of right second toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32642"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:197",
+      "name": "Distal phalanx of right second toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32652"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:198",
+      "name": "Proximal phalanx of right third toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32636"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:199",
+      "name": "Middle phalanx of right third toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32644"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:200",
+      "name": "Distal phalanx of right third toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32654"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:201",
+      "name": "Proximal phalanx of right fourth toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32638"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:202",
+      "name": "Middle phalanx of right fourth toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32646"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:203",
+      "name": "Distal phalanx of right fourth toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32656"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:204",
+      "name": "Proximal phalanx of right little toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32640"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:205",
+      "name": "Middle phalanx of right little toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA230986"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    },
+    {
+      "id": "adult-bone:206",
+      "name": "Distal phalanx of right little toe",
+      "division": "Appendicular",
+      "meshIds": [
+        "FMA32658"
+      ],
+      "mapping": "exact-name",
+      "region": "Lower limbs & pelvis",
+      "anchors": 0
+    }
+  ],
+  "features": [
+    {
+      "id": "landmark:FMA9968:body",
+      "status": "geometry-reviewed",
+      "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+    },
+    {
+      "id": "landmark:FMA9968:superior-endplate",
+      "status": "geometry-reviewed",
+      "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+    },
+    {
+      "id": "landmark:FMA9968:inferior-endplate",
+      "status": "geometry-reviewed",
+      "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+    },
+    {
+      "id": "landmark:FMA9968:spinous",
+      "status": "geometry-reviewed",
+      "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+    },
+    {
+      "id": "landmark:FMA9968:transverse-left",
+      "status": "geometry-reviewed",
+      "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+    },
+    {
+      "id": "landmark:FMA9968:transverse-right",
+      "status": "geometry-reviewed",
+      "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+    },
+    {
+      "id": "landmark:FMA9968:pedicle-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:pedicle-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:lamina-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:lamina-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:vertebral-foramen",
+      "status": "unverified",
+      "reason": "An anatomical space has no single surface attachment."
+    },
+    {
+      "id": "landmark:FMA9968:superior-articular-process-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:inferior-articular-process-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:superior-articular-facet-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:inferior-articular-facet-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:superior-costal-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:inferior-costal-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:transverse-costal-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:superior-notch-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:inferior-notch-left",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:superior-articular-process-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:inferior-articular-process-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:superior-articular-facet-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:inferior-articular-facet-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:superior-costal-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:inferior-costal-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:transverse-costal-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:superior-notch-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "landmark:FMA9968:inferior-notch-right",
+      "status": "unverified",
+      "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    }
+  ]
+}

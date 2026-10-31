@@ -1,0 +1,14 @@
+[
+  {
+    "id": "z-palmar",
+    "url": "/models/z-anatomy/palmar.glb",
+    "system": "Connective Tissue",
+    "region": "Hand",
+    "bytes": 68448,
+    "sha256": "27991e91fa7a4943b8462abb5c2d03636f19bd68504e55ce9582ae89c8895495",
+    "structures": [
+      "TA2:2549:L",
+      "TA2:2549:R"
+    ]
+  }
+]

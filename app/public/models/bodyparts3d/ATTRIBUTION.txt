@@ -1,0 +1,4 @@
+BodyParts3D, (c) The Database Center for Life Science licensed under CC Attribution-Share Alike 2.1 Japan
+https://creativecommons.org/licenses/by-sa/2.1/jp/
+https://dbarchive.biosciencedbc.jp/en/bodyparts3d/lic.html
+Converted meshes and contributions are distributed under CC BY-SA 2.1 Japan. Changes: indexed GLB conversion, rigid coordinate transform, uniform scale and generated smooth normals. Upstream release is 99% polygon-reduced. No endorsement or clinical validation claimed.

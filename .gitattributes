@@ -1,0 +1,6 @@
+* text=auto eol=lf
+# Retain exact source/output bytes and their recorded integrity digests.
+app/public/** -text
+*.glb binary
+*.webp binary
+*.png binary

@@ -1,0 +1,11 @@
+import { readFile,writeFile,mkdir,rename } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
+import { validateImport,parseKnowledgeCsv } from '../src/knowledgeImport';
+import type { ImportBundle } from '../src/knowledgeImport';
+const args=process.argv.slice(2),file=args[args.indexOf('--file')+1];if(!args.includes('--file')||!file)throw new Error('Usage: npm run knowledge:import -- --file permitted.json [--apply]. CSV additionally needs --sources sources.json. Default is validation only.');
+const bytes=await readFile(file);if(bytes.length>5*1024*1024)throw new Error('Import exceeds 5 MiB; split the batch');
+let data:ImportBundle;
+if(file.toLowerCase().endsWith('.csv')){const sourceFile=args[args.indexOf('--sources')+1];if(!args.includes('--sources')||!sourceFile)throw new Error('CSV needs a --sources sidecar containing schemaVersion, rightsDeclaration and sources');data={...JSON.parse(await readFile(sourceFile,'utf8')),records:parseKnowledgeCsv(bytes.toString('utf8'))};}else data=JSON.parse(bytes.toString('utf8'));
+const errors=validateImport(data);if(errors.length)throw new Error('Import rejected:\n'+errors.join('\n'));
+console.log(JSON.stringify({file,sha256:createHash('sha256').update(bytes).digest('hex'),records:data.records.length,sources:data.sources.length,validated:true,applied:args.includes('--apply')},null,2));
+if(args.includes('--apply')){const destination=new URL('../src/content/imported.json',import.meta.url);const previousText=await readFile(destination,'utf8');const previous=JSON.parse(previousText);const backup=new URL('../.knowledge-import-backups/',import.meta.url);await mkdir(backup,{recursive:true});await writeFile(new URL(Date.now()+'.json',backup),previousText,'utf8');const records=new Map(previous.records.map((r:{id:string})=>[r.id,r]));for(const record of data.records)records.set(record.id,{...record,clinicalReview:{status:'pending'}});const temporary=new URL('../src/content/imported.json.tmp',import.meta.url);await writeFile(temporary,JSON.stringify({schemaVersion:1,sources:[...previous.sources,...data.sources],records:[...records.values()]},null,2)+'\n','utf8');await rename(temporary,destination);console.log('Applied original/permitted content. Run knowledge:audit, tests and build before accepting the batch.');}

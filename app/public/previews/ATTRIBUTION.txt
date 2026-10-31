@@ -1,0 +1,5 @@
+AnatomyAtlas original preview renders of licensed anatomical meshes.
+BodyParts3D, The Database Center for Life Science, Japan, CC BY-SA 2.1 Japan.
+Z-Anatomy / Olivier Loranger and contributors, palmar surfaces only, CC BY-SA 4.0.
+See /models/ATTRIBUTION.txt and each model source manifest for complete credits, modifications, links and source hashes.
+No reference website screenshots or proprietary meshes are used.
