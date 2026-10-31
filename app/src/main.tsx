@@ -6,4 +6,5 @@ import './responsive.css';
 import './entry.css';
 import './knowledge.css';
 import './landmarks.css';
+import './mobile.css';
 ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);
