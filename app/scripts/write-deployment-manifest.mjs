@@ -3,7 +3,7 @@ import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
 const root=path.resolve('public');const assets=[];
-async function walk(directory){for(const item of await readdir(directory,{withFileTypes:true})){const file=path.join(directory,item.name);if(item.isSymbolicLink())throw new Error('Public assets may not contain symbolic links');if(item.isDirectory())await walk(file);else if(item.name!=='deployment.json'){const bytes=await readFile(file);assets.push({path:'/'+path.relative(root,file).split(path.sep).join('/'),bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});}}}
+async function walk(directory){for(const item of await readdir(directory,{withFileTypes:true})){const file=path.join(directory,item.name);if(item.isSymbolicLink())throw new Error('Public assets may not contain symbolic links');if(item.isDirectory())await walk(file);else if(!['deployment.json','_headers','_redirects','_routes.json','_worker.js'].includes(item.name)){const bytes=await readFile(file);assets.push({path:'/'+path.relative(root,file).split(path.sep).join('/'),bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});}}}
 await walk(root);assets.sort((a,b)=>a.path.localeCompare(b.path));let commit=process.env.CF_PAGES_COMMIT_SHA??null;
 if(!commit)try{commit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8',stdio:['ignore','pipe','ignore']}).trim();}catch{}
 if(commit&&!/^[a-f0-9]{40}$/.test(commit))throw new Error('Invalid build commit identity');
