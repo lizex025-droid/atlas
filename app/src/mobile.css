@@ -1,6 +1,6 @@
 /* Mobile-first interaction layer for the atlas. Desktop rules remain unchanged. */
 .mobile-info-heading,.mobile-info-trigger{display:none}
-@media (max-width:820px){
+@media (max-width:820px), (max-height:520px) and (pointer:coarse){
   :root{
     --mobile-safe:env(safe-area-inset-bottom,0px);
     --mobile-workspace-bottom:calc(144px + var(--mobile-safe));
@@ -198,7 +198,7 @@
   .entry-tiles{grid-template-rows:180px 142px 142px;min-height:482px}
   .entry-tile-title h2{font-size:15px}
 }
-@media (max-width:820px) and (max-height:570px){
+@media (max-height:570px) and (max-width:960px){
   .entry-tiles{grid-template-rows:155px 120px 120px;min-height:405px}
   .information-panel,.panel-collapsed .information-panel{height:min(48dvh,290px)}
   .structure-head,.structure-head:has(.pronunciation-control){max-height:120px}
