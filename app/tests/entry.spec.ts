@@ -85,6 +85,12 @@ test('phone catalog is scrollable without horizontal overflow and opens the mode
   await expect(page.locator('.anatomy-viewport')).toBeVisible();
 });
 
+test('legacy start fragment no longer opens the promotional landing',async({page})=>{
+  await page.goto('/#start');
+  await expect(page.locator('.atlas-heading h1')).toHaveText('Atlas of anatomy');
+  await expect(page.locator('.entry-tile')).toHaveCount(0);
+});
+
 test('iPad landscape catalog has readable touch targets and no sideways overflow',async({page})=>{
   await page.setViewportSize({width:1194,height:834});
   await page.goto('/');

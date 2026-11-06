@@ -29,10 +29,10 @@ function readViews(){try{return decodeScenes(localStorage.getItem(STORAGE_KEY));
 function readSettings():DisplaySettings {try{const s=JSON.parse(localStorage.getItem('anatomy-atlas.display.v1')??'{}');return {...defaultSettings,quality:['low','balanced','high'].includes(s.quality)?s.quality:(window.matchMedia('(max-width: 1100px) and (pointer: coarse), (max-height: 520px) and (pointer: coarse)').matches?'low':'balanced'),labels:typeof s.labels==='boolean'?s.labels:true,reducedMotion:typeof s.reducedMotion==='boolean'?s.reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches,highContrast:s.highContrast===true,largeText:s.largeText===true,rotationSpeed:typeof s.rotationSpeed==='number'?Math.min(2,Math.max(.3,s.rotationSpeed)):1};}catch{return defaultSettings;}}
 const systemIcons=[Bone,Layers,Activity,Heart,Network,Dna,Network,Wind,Activity,Shield,Activity,Eye];
 const rail=[['Hub',PanelsTopLeft],['Search',Search],['Tools',SlidersHorizontal],['Library',Library],['Store',Boxes],['Settings',Settings],['Save Scene',BookmarkPlus],['Help',CircleHelp]] as const;
-function entryRoute():EntryPage{return location.hash==='#coverage'?'coverage':location.hash==='#workspace'?'workspace':location.hash==='#start'?'home':'atlas';}
+function entryRoute():EntryPage{return location.hash==='#coverage'?'coverage':location.hash==='#workspace'?'workspace':location.hash==='#welcome'?'home':'atlas';}
 export default function App(){
  const [entryPage,setEntryPage]=useState<EntryPage>(entryRoute);const [hasEntered,setHasEntered]=useState(()=>entryRoute()==='workspace');const [quiz,setQuiz]=useState(false);
- const route=useCallback((next:EntryPage)=>{if(next==='workspace')setHasEntered(true);location.hash=next==='home'?'start':next;setEntryPage(next);},[]);
+ const route=useCallback((next:EntryPage)=>{if(next==='workspace')setHasEntered(true);location.hash=next==='home'?'welcome':next;setEntryPage(next);},[]);
  useEffect(()=>{const onHash=()=>{const next=entryRoute();setEntryPage(next);if(next==='workspace')setHasEntered(true);};window.addEventListener('hashchange',onHash);return()=>window.removeEventListener('hashchange',onHash);},[]);
 
  useEffect(()=>{const mobile=window.matchMedia('(max-width: 820px), (max-height: 520px) and (pointer: coarse)');const handleChange=()=>setPanelOpen(!mobile.matches);mobile.addEventListener('change',handleChange);return()=>mobile.removeEventListener('change',handleChange);},[]);
