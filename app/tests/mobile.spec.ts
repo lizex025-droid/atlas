@@ -25,6 +25,7 @@ test.describe('mobile anatomy layout', () => {
   test('atlas catalog is the first page and all primary destinations remain available', async ({ page }) => {
     await page.goto('/');
     await expect(page.locator('.atlas-heading h1')).toHaveText('Atlas of anatomy');
+    expect(await page.locator('.atlas-heading>p').evaluate(el=>parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(12);
     await expect(page.locator('.entry-tile')).toHaveCount(0);
     expect(await page.locator('.entry-rail').evaluate(el => getComputedStyle(el).flexDirection)).toBe('row');
     await expect(page.getByRole('button', { name: 'Identification practice' })).toBeVisible();
