@@ -1,22 +1,95 @@
-import { test,expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
-test.beforeEach(async({page})=>{await page.addInitScript(()=>localStorage.setItem('anatomy-atlas.display.v1',JSON.stringify({reducedMotion:true,quality:'low'})));});
-async function ready(page:Page){await expect.poll(()=>page.getByTestId('model-loading').evaluate(el=>Number(el.getAttribute('data-total'))>0&&el.getAttribute('data-total')===el.getAttribute('data-loaded')&&el.getAttribute('data-total')===el.getAttribute('data-expected')),{timeout:60000}).toBe(true);}
-test('entry atlas has licensed previews without locks; region cards open and preserve a live workspace',async({page})=>{
- await page.setViewportSize({width:1680,height:900});const glbs:string[]=[];const errors:string[]=[];page.on('request',r=>{if(r.url().endsWith('.glb'))glbs.push(r.url());});page.on('pageerror',e=>errors.push(e.message));await page.goto('/');
- await expect(page.locator('.entry-tile')).toHaveCount(4);await expect.poll(()=>page.locator('.entry-tile img').evaluateAll(imgs=>imgs.every(img=>(img as HTMLImageElement).naturalWidth>0))).toBe(true);expect(glbs).toHaveLength(0);await expect(page.locator('canvas')).toHaveCount(0);await expect(page.locator('[data-lucide="lock"], .lock')).toHaveCount(0);await page.screenshot({path:'test-results/qa-entry-home.png',fullPage:true});
- await page.locator('.tile-0').click();await expect(page).toHaveURL(/#atlas$/);await expect(page.locator('.atlas-section')).toHaveCount(13);await page.locator('#section-skeletal img').first().waitFor();await expect.poll(()=>page.locator('#section-skeletal img').evaluateAll(imgs=>imgs.every(img=>(img as HTMLImageElement).naturalWidth>0))).toBe(true);await page.screenshot({path:'test-results/qa-entry-atlas.png',fullPage:true});expect(glbs).toHaveLength(0);
- await page.getByRole('button',{name:'Bones · Skeletal system · Head and neck',exact:true}).click();await ready(page);await expect(page.locator('.structure-identity h1')).toHaveText('Head and neck');await expect(page.locator('.information-content')).toContainText('STRUCTURES IN THIS GROUP');await expect(page.getByRole('button',{name:'Layer Skeletal',exact:true})).toHaveAttribute('aria-pressed','true');
- const count=glbs.length;await page.getByRole('button',{name:'ATLAS COLLECTION',exact:true}).click();await page.getByRole('button',{name:'Continue study',exact:true}).click();await ready(page);expect(glbs).toHaveLength(count);expect(errors).toEqual([]);
+
+test.beforeEach(async({page})=>{
+  await page.addInitScript(()=>localStorage.setItem('anatomy-atlas.display.v1',JSON.stringify({reducedMotion:true,quality:'low'})));
 });
-test('entry search opens canonical anatomy with current information and browser navigation works',async({page})=>{
- await page.goto('/#atlas');await page.getByRole('textbox',{name:'Search atlas structures'}).fill('aponeurosis palmaris');await expect(page.getByRole('region',{name:'Anatomical search results'})).toContainText('Palmar aponeurosis');await page.locator('.atlas-search-results>button').first().click();await expect(page.locator('.structure-identity h1')).toContainText('Palmar aponeurosis');await page.getByRole('button',{name:'Isolate',exact:true}).click();await ready(page);await expect(page.getByRole('tabpanel')).not.toContainText('Vertebral body');await page.goBack();await expect(page.locator('.atlas-heading h1')).toHaveText('Atlas of anatomy');
+async function ready(page:Page){
+  await expect.poll(()=>page.getByTestId('model-loading').evaluate(el=>
+    Number(el.getAttribute('data-total'))>0&&
+    el.getAttribute('data-total')===el.getAttribute('data-loaded')&&
+    el.getAttribute('data-total')===el.getAttribute('data-expected')
+  ),{timeout:60000}).toBe(true);
+}
+
+test('the root URL opens the atlas catalog directly and preserves the 3D workspace',async({page})=>{
+  await page.setViewportSize({width:1680,height:900});
+  const glbs:string[]=[];const errors:string[]=[];
+  page.on('request',r=>{if(r.url().endsWith('.glb'))glbs.push(r.url());});
+  page.on('pageerror',e=>errors.push(e.message));
+  await page.goto('/');
+  await expect(page.locator('.atlas-heading h1')).toHaveText('Atlas of anatomy');
+  await expect(page.locator('.atlas-heading')).toContainText('Choose a system and region');
+  await expect(page.locator('#section-skeletal h2')).toContainText('Bones · Skeletal system');
+  await expect(page.locator('.entry-tile')).toHaveCount(0);
+  await expect(page.locator('.atlas-section')).toHaveCount(13);
+  await expect(page.locator('canvas')).toHaveCount(0);
+  await expect(page.locator('[data-lucide="lock"], .lock')).toHaveCount(0);
+  await expect.poll(()=>page.locator('#section-skeletal img').evaluateAll(imgs=>imgs.every(img=>(img as HTMLImageElement).naturalWidth>0))).toBe(true);
+  expect(glbs).toHaveLength(0);
+  await page.screenshot({path:'test-results/qa-entry-atlas.png',fullPage:true});
+  await page.getByRole('button',{name:'Bones · Skeletal system · Head and neck',exact:true}).click();
+  await ready(page);
+  await expect(page.locator('.structure-identity h1')).toHaveText('Head and neck');
+  await expect(page.locator('.information-content')).toContainText('STRUCTURES IN THIS GROUP');
+  await expect(page.getByRole('button',{name:'Layer Skeletal',exact:true})).toHaveAttribute('aria-pressed','true');
+  const count=glbs.length;
+  await page.getByRole('button',{name:'ATLAS COLLECTION',exact:true}).click();
+  await expect(page.locator('.atlas-heading h1')).toHaveText('Atlas of anatomy');
+  await page.getByRole('button',{name:'Continue study',exact:true}).click();
+  await ready(page);
+  expect(glbs).toHaveLength(count);
+  expect(errors).toEqual([]);
 });
-test('identification practice hides labels, checks answers, advances and returns to anatomical facts',async({page})=>{
- await page.setViewportSize({width:1680,height:900});await page.goto('/');await page.locator('.tile-1').click();await ready(page);await expect(page.getByRole('complementary',{name:'Identification practice'})).toBeVisible();await expect(page.locator('.model-label')).toHaveCount(0);await expect(page.locator('.structure-identity')).toHaveCount(0);await page.screenshot({path:'test-results/qa-identification-practice.png',fullPage:true});
- for(const name of ['Eleventh thoracic vertebra','Right femur','Left hip bone']){await page.locator('.quiz-options').getByRole('button',{name,exact:true}).click();await expect(page.locator('.quiz-feedback')).toContainText('Correct.');await page.getByRole('button',{name:/Next structure|See results/}).click();}
- await expect(page.getByRole('heading',{name:'Session complete'})).toBeVisible();await expect(page.locator('.quiz-progress')).toContainText('3 / 3');await page.getByRole('button',{name:'Return to exploration'}).click();await expect(page.locator('.structure-identity h1')).toHaveText('Left hip bone');
+
+test('catalog search opens knowledge and browser Back returns to the catalog',async({page})=>{
+  await page.goto('/');
+  await page.getByRole('textbox',{name:'Search atlas structures'}).fill('aponeurosis palmaris');
+  await expect(page.getByRole('region',{name:'Anatomical search results'})).toContainText('Palmar aponeurosis');
+  await page.locator('.atlas-search-results>button').first().click();
+  await expect(page.locator('.structure-identity h1')).toContainText('Palmar aponeurosis');
+  await page.getByRole('button',{name:'Isolate',exact:true}).click();
+  await ready(page);
+  await expect(page.getByRole('tabpanel')).not.toContainText('Vertebral body');
+  await page.goBack();
+  await expect(page.locator('.atlas-heading h1')).toHaveText('Atlas of anatomy');
 });
-test('entry layout remains scrollable and usable on a narrow screen',async({page})=>{
- await page.setViewportSize({width:390,height:844});await page.goto('/');await expect(page.locator('.tile-0')).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'test-results/qa-entry-mobile.png',fullPage:true});await page.locator('.tile-0').click();await expect(page.locator('.atlas-card').first()).toBeVisible();expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+
+test('identification practice is accessible without the removed landing step',async({page})=>{
+  await page.setViewportSize({width:1680,height:900});
+  await page.goto('/');
+  await page.getByRole('button',{name:'Identification practice',exact:true}).click();
+  await ready(page);
+  await expect(page.getByRole('complementary',{name:'Identification practice'})).toBeVisible();
+  await expect(page.locator('.model-label')).toHaveCount(0);
+  await expect(page.locator('.structure-identity')).toHaveCount(0);
+  for(const name of ['Eleventh thoracic vertebra','Right femur','Left hip bone']){
+    await page.locator('.quiz-options').getByRole('button',{name,exact:true}).click();
+    await expect(page.locator('.quiz-feedback')).toContainText('Correct.');
+    await page.getByRole('button',{name:/Next structure|See results/}).click();
+  }
+  await expect(page.getByRole('heading',{name:'Session complete'})).toBeVisible();
+  await expect(page.locator('.quiz-progress')).toContainText('3 / 3');
+  await page.getByRole('button',{name:'Return to exploration'}).click();
+  await expect(page.locator('.structure-identity h1')).toHaveText('Left hip bone');
+});
+
+test('phone catalog is scrollable without horizontal overflow and opens the model',async({page})=>{
+  await page.setViewportSize({width:390,height:844});
+  await page.goto('/');
+  await expect(page.locator('.atlas-heading h1')).toHaveText('Atlas of anatomy');
+  await expect(page.locator('.atlas-card').first()).toBeVisible();
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await page.screenshot({path:'test-results/qa-entry-mobile.png',fullPage:true});
+  await page.locator('#section-skeletal .atlas-card').first().click();
+  await expect(page.locator('.anatomy-viewport')).toBeVisible();
+});
+
+test('iPad landscape catalog has readable touch targets and no sideways overflow',async({page})=>{
+  await page.setViewportSize({width:1194,height:834});
+  await page.goto('/');
+  await expect(page.locator('.atlas-heading h1')).toHaveText('Atlas of anatomy');
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  await expect(page.locator('#section-skeletal .atlas-card')).toHaveCount(4);
+  await expect(page.getByRole('button',{name:'Open 3D workspace'})).toBeVisible();
 });

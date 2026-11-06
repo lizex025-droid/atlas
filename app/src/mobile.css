@@ -209,3 +209,40 @@
 @media (prefers-reduced-motion:reduce){
   .information-panel,.panel-collapsed .information-panel{transition:none}
 }
+
+/* Touch tablet refinements: retain the wide-screen navigation, increase hit targets and typography. */
+@media (min-width:821px) and (max-width:1366px) and (pointer:coarse){
+  .entry-rail{width:76px;padding:12px 5px;gap:8px}
+  .entry-rail button{min-height:72px;font-size:12px;gap:8px}
+  .entry-rail button svg{width:26px;height:26px}
+  .entry-header{height:64px;min-height:64px;padding:0 20px}
+  .entry-header nav button{font-size:14px;min-height:44px}
+  .entry-brand{font-size:12px;min-height:44px;padding:8px}
+  .entry-header-actions>button{min-height:44px;font-size:12px}
+  .entry-header .continue-study{font-size:12px}
+  .entry-home{padding:22px}
+  .atlas-catalog{padding:23px 3.5% 50px}
+  .atlas-heading{margin-bottom:29px}
+  .atlas-heading h1{font-size:34px}
+  .atlas-heading>span{font-size:10px}
+  .atlas-heading>p{font-size:14px}
+  .atlas-search{max-width:580px;min-height:48px}
+  .atlas-search input{font-size:16px}
+  .atlas-section h2{font-size:25px}
+  .atlas-section h2>button{min-height:58px}
+  .atlas-card{flex-basis:clamp(210px,27%,290px)}
+  .atlas-card-label{min-height:64px;padding:12px 10px}
+  .atlas-card-label b{font-size:17px}
+  .atlas-card-label small{font-size:11px}
+  .atlas-section-links a{font-size:12px;min-height:44px}
+  .atlas-search-results b{font-size:15px}
+  .atlas-search-results small{font-size:12px}
+  .atlas-search-results>button{min-height:60px}
+  .atlas-disclaimer{font-size:12px;line-height:1.7}
+}
+@media (max-width:820px){
+  .entry-rail button{flex:1 1 20%;font-size:9px}
+  .entry-brand{min-width:40px;min-height:40px}
+  .entry-header nav button{min-height:42px}
+  .entry-header-actions>button{flex-shrink:0}
+}
