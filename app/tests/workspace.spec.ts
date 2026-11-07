@@ -21,13 +21,13 @@ test('small screen, no-results and corrupt storage recovery',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.goto('/#workspace');await page.evaluate(()=>localStorage.setItem('anatomy-atlas.scenes.v2','bad json'));await page.reload();
  await page.getByRole('button',{name:'Search',exact:true}).click();await page.getByRole('textbox',{name:'Search anatomy'}).fill('nonexistent');await expect(page.getByText(/No structures found/)).toBeVisible();
  await page.getByRole('textbox',{name:'Search anatomy'}).fill('T11');await expect(page.locator('.search-result').filter({hasText:'Eleventh thoracic vertebra'})).toBeVisible();await page.getByRole('button',{name:'Close Search'}).click();
- await page.getByRole('button',{name:'Collapse information panel'}).click();await ready(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'test-results/dark-mobile.png',fullPage:true});
+ await page.getByRole('button',{name:'Information',exact:true}).click();await page.getByRole('button',{name:'Close information panel'}).click();await ready(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'test-results/dark-mobile.png',fullPage:true});
 });
 test('skeletal and muscular layers load progressively; failed chunks can retry',async({page})=>{
  const requests:string[]=[];let fail=true;page.on('request',r=>{if(r.url().endsWith('.glb'))requests.push(r.url());});
  await page.route('**/models/bodyparts3d/*.glb',route=>fail&&route.request().url().includes('skeletal-head-neck-0')?route.fulfill({status:503,body:'Temporary failure'}):route.continue());
  await page.goto('/#workspace');await expect(page.getByRole('alert')).toContainText('Model loading failed',{timeout:60000});fail=false;await page.getByRole('button',{name:'Retry models'}).click();await ready(page);expect(requests.every(u=>u.includes('/skeletal-'))).toBe(true);
- const count=requests.length;await page.getByRole('button',{name:'Layer Muscular',exact:true}).click();await ready(page);expect(requests.slice(count).some(u=>u.includes('/muscular-'))).toBe(true);await expect(page.getByRole('button',{name:'Layer Muscular',exact:true})).toHaveAttribute('aria-pressed','true');
+ const count=requests.length;await page.getByRole('button',{name:'Layer Muscular',exact:true}).click();await ready(page);expect(requests.slice(count).some(u=>/\/(?:z-|bp-study-)?muscular-/.test(u))).toBe(true);await expect(page.getByRole('button',{name:'Layer Muscular',exact:true})).toHaveAttribute('aria-pressed','true');
  await page.screenshot({path:'test-results/dark-muscular.png',fullPage:true});await page.getByRole('button',{name:'Layer Skeletal',exact:true}).click();await ready(page);await expect(page.getByRole('button',{name:'Layer Skeletal',exact:true})).toHaveAttribute('aria-pressed','false');
 });
 test('T11 selection, context tabs, source facts and group breadcrumbs stay coordinated',async({page})=>{
