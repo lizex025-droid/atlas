@@ -1,0 +1,32 @@
+name: ATLAS UI validation
+on:
+  push:
+    branches:
+      - main
+      - feat/atlas-visual-explorer-20261107
+  pull_request:
+    paths:
+      - 'app/src/**'
+      - 'app/package.json'
+      - 'app/package-lock.json'
+      - '.github/workflows/atlas-ui.yml'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: app/package-lock.json
+      - name: Install dependencies
+        run: npm ci
+      - name: Typecheck and production build
+        run: npm run build
+      - name: Unit checks
+        run: npm test
