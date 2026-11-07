@@ -1,0 +1,70 @@
+{
+  "sourceId": "rohen-7",
+  "pdfSha256": "67c64d89a4ac039b52836f29c5a33d7ca603c439c0cadd4ea31a749a4952f1dc",
+  "physicalPages": 548,
+  "printedOffset": 14,
+  "printedAnatomyPages": [
+    1,
+    502
+  ],
+  "printedIndexPages": [
+    503,
+    532
+  ],
+  "chapterStarts": [
+    [
+      1,
+      "General Anatomy"
+    ],
+    [
+      19,
+      "Head and Neck"
+    ],
+    [
+      187,
+      "Trunk"
+    ],
+    [
+      243,
+      "Thoracic Organs"
+    ],
+    [
+      291,
+      "Abdominal Organs"
+    ],
+    [
+      323,
+      "Retroperitoneal Organs"
+    ],
+    [
+      368,
+      "Upper Limb"
+    ],
+    [
+      432,
+      "Lower Limb"
+    ]
+  ],
+  "headAndNeckSubsectionStarts": [
+    [
+      19,
+      "Skull and Muscles of the Head"
+    ],
+    [
+      64,
+      "Cranial Nerves"
+    ],
+    [
+      84,
+      "Brain and Sensory Organs"
+    ],
+    [
+      143,
+      "Oral and Nasal Cavities"
+    ],
+    [
+      154,
+      "Neck and Organs of the Neck"
+    ]
+  ]
+}

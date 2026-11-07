@@ -1,1 +1,1440 @@
-{"schemaVersion":1,"sources":[],"records":[]}
+{
+  "schemaVersion": 1,
+  "sources": [
+    {
+      "id": "rohen-7",
+      "title": "Rohen, Yokochi and Lütjen-Drecoll. Color Atlas of Anatomy, 7th ed. (2011)",
+      "url": "https://iucat.iu.edu/catalog/8925617",
+      "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), right humerus",
+      "license": "Copyrighted textbook. Bibliographic citation and anatomical facts only.",
+      "use": "The supplied copy was examined privately. The link identifies the edition in an academic library catalog.",
+      "accessedAt": "2026-11-07",
+      "access": "full-text",
+      "permission": "factual-reference-only"
+    },
+    {
+      "id": "openstax-upper-limb",
+      "title": "OpenStax Anatomy and Physiology, 8.2 Bones of the Upper Limb",
+      "url": "https://openstax.org/books/anatomy-and-physiology/pages/8-2-bones-of-the-upper-limb",
+      "locator": "Humerus, especially Fig. 8.5 and the text on the distal fossae",
+      "license": "Original factual synthesis based on the OpenStax chapter.",
+      "use": "Anatomical facts only. Figure 8.5 is cited as evidence.",
+      "accessedAt": "2026-11-07",
+      "access": "full-text",
+      "permission": "factual-reference-only"
+    },
+    {
+      "id": "chaves-medial-epicondyle",
+      "title": "Chaves et al. Osseous morphology of the medial epicondyle (2021)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33420865/",
+      "locator": "Abstract, Purpose, Methods and Conclusion. doi:10.1007/s00276-020-02669-3",
+      "license": "Publisher copyright. Bibliographic citation and research findings only.",
+      "use": "Original factual synthesis from the consulted abstract.",
+      "accessedAt": "2026-11-07",
+      "access": "abstract",
+      "permission": "factual-reference-only"
+    }
+  ],
+  "records": [
+    {
+      "description": [
+        {
+          "text": "The right humerus is the long bone of the arm between the shoulder and elbow. Its expanded ends provide joint surfaces, while its shaft supplies extensive muscle and fascial attachments. The proximal end consists of a rounded head and adjacent tubercles; the distal end widens into the elbow condyle and epicondyles. These regions must be distinguished from the shaft when assessing orientation or an injury.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        },
+        {
+          "text": "The head faces medially, superiorly and somewhat posteriorly toward the glenoid. The lesser tubercle is anterior; the greater tubercle is lateral. The large olecranon fossa is posterior at the distal end. Taken together, these features establish anatomical orientation; apparent screen left or right alone does not establish bone laterality.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        },
+        {
+          "text": "The shaft changes from a more rounded proximal profile to a triangular distal profile. Three surfaces and three borders organize its muscle attachments. Distally, the articular trochlea is medial to the capitulum; the epicondyles are non-articular projections flanking this joint surface. Fossae above the articular region accommodate the forearm bones during elbow movement.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "classification": [
+        {
+          "text": "Long bone of the appendicular skeleton. A compact-walled shaft surrounds the medullary canal, while the expanded ends contain cancellous bone beneath a cortical covering.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "location": [
+        {
+          "text": "The right arm lies distal to the pectoral girdle and proximal to the forearm. The humeral head meets the scapula; the distal condyle meets the radius and ulna.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "quickFacts": [],
+      "structureAndFunction": [
+        {
+          "text": "The bone acts as a lever for shoulder and elbow movements and anchors muscles acting on the shoulder, elbow, forearm and wrist. Its shaft separates major anterior and posterior muscle attachments; its joint surfaces transfer forces between the upper limb and the shoulder girdle.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "parts": [
+        {
+          "text": "The rounded proximal articular region faces the glenoid cavity. Its margin is delimited by the anatomical neck, separating the smooth head from the tubercles.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:head",
+          "name": "Head",
+          "meshIds": [],
+          "standardId": "TA2:1181",
+          "latinName": "Caput humeri"
+        },
+        {
+          "text": "A groove bordering the head and providing attachment to the shoulder joint capsule. It is proximal to the surgical neck and should not be used as a synonym for it.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:anatomical-neck",
+          "name": "Anatomical neck",
+          "meshIds": [],
+          "standardId": "TA2:1182",
+          "latinName": "Collum anatomicum humeri"
+        },
+        {
+          "text": "The lateral proximal prominence bears superior, middle and inferior tendon impressions for supraspinatus, infraspinatus and teres minor respectively.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:greater-tubercle",
+          "name": "Greater tubercle",
+          "meshIds": [],
+          "standardId": "TA2:1184",
+          "latinName": "Tuberculum majus"
+        },
+        {
+          "text": "The anterior proximal prominence receives subscapularis. The intertubercular sulcus separates it from the greater tubercle.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:lesser-tubercle",
+          "name": "Lesser tubercle",
+          "meshIds": [],
+          "standardId": "TA2:1185",
+          "latinName": "Tuberculum minus"
+        },
+        {
+          "text": "The narrowing immediately distal to the tubercles connects the proximal expansion with the shaft. It is anatomically distinct from the rim around the head.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:surgical-neck",
+          "name": "Surgical neck",
+          "meshIds": [],
+          "standardId": "TA2:1183",
+          "latinName": "Collum chirurgicum humeri"
+        },
+        {
+          "text": "The shaft has three surfaces and three borders. Its proximal and distal shape differ, and the deltoid tuberosity and radial groove interrupt an otherwise continuous cortical surface.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:body",
+          "name": "Body",
+          "meshIds": [],
+          "standardId": "TA2:1189",
+          "latinName": "Corpus humeri"
+        },
+        {
+          "text": "The distal articular complex includes the capitulum laterally and trochlea medially. Adjacent fossae and epicondyles are important neighbouring features, rather than interchangeable names for these joint surfaces.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:condyle",
+          "name": "Condyle",
+          "meshIds": [],
+          "standardId": "TA2:1201",
+          "latinName": "Condylus humeri"
+        }
+      ],
+      "surfaces": [
+        {
+          "text": "The shaft surface between the anterior and lateral borders includes the deltoid tuberosity. Distal to this attachment it contributes to the origin of brachialis.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:anterolateral",
+          "name": "Anterolateral surface",
+          "meshIds": [],
+          "standardId": "TA2:1192",
+          "latinName": "Facies anterolateralis humeri"
+        },
+        {
+          "text": "The shaft surface between anterior and medial borders includes the continuation of the intertubercular region, a coracobrachialis insertion area and a distal brachialis origin area.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:anteromedial",
+          "name": "Anteromedial surface",
+          "meshIds": [],
+          "standardId": "TA2:1190",
+          "latinName": "Facies anteromedialis humeri"
+        },
+        {
+          "text": "The radial groove crosses this region. The lateral head of triceps originates superior to the groove and the medial head principally inferior to it.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:posterior",
+          "name": "Posterior surface",
+          "meshIds": [],
+          "standardId": "TA2:1196",
+          "latinName": "Facies posterior humeri"
+        },
+        {
+          "text": "The boundary between the two anterior shaft surfaces descends from the greater-tubercle crest toward the coronoid fossa; it is related to pectoralis major insertion proximally and brachialis attachment distally.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:anterior-border",
+          "name": "Anterior border",
+          "meshIds": [],
+          "standardId": "TA2:1191",
+          "latinName": "Margo anterior humeri"
+        },
+        {
+          "text": "The boundary between anteromedial and posterior regions extends toward the medial epicondyle. Distally it contributes to the medial supracondylar ridge and attachment of the medial intermuscular septum.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:medial-border",
+          "name": "Medial border",
+          "meshIds": [],
+          "standardId": "TA2:1198",
+          "latinName": "Margo medialis humeri"
+        },
+        {
+          "text": "This boundary between anterolateral and posterior surfaces descends toward the lateral epicondyle, becoming the lateral supracondylar ridge distally. The radial groove crosses its middle region.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:lateral-border",
+          "name": "Lateral border",
+          "meshIds": [],
+          "standardId": "TA2:1194",
+          "latinName": "Margo lateralis humeri"
+        }
+      ],
+      "landmarks": [
+        {
+          "text": "The rounded lateral distal articular prominence meets the fovea of the radial head. Its articular surface is mainly anterior and inferior.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:capitulum",
+          "name": "Capitulum",
+          "meshIds": [],
+          "standardId": "TA2:1202",
+          "latinName": "Capitulum humeri"
+        },
+        {
+          "text": "The pulley-shaped medial distal articular surface fits the trochlear notch of the ulna and extends onto the anterior, inferior and posterior aspects of the distal bone.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:trochlea",
+          "name": "Trochlea",
+          "meshIds": [],
+          "standardId": "TA2:1203",
+          "latinName": "Trochlea humeri"
+        },
+        {
+          "text": "The groove between the proximal tubercles accommodates the tendon of the long head of biceps. Its floor and two lips have distinct muscle attachments.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:intertubercular-sulcus",
+          "name": "Intertubercular sulcus",
+          "meshIds": [],
+          "standardId": "TA2:1186",
+          "latinName": "Sulcus intertubercularis"
+        },
+        {
+          "text": "The lateral lip of the intertubercular sulcus provides insertion for pectoralis major and continues toward the anterior shaft border.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:greater-crest",
+          "name": "Crest of greater tubercle",
+          "meshIds": [],
+          "standardId": "TA2:1187",
+          "latinName": "Crista tuberculi majoris"
+        },
+        {
+          "text": "The medial lip of the intertubercular sulcus receives teres major. Latissimus dorsi attaches in the floor of the groove rather than on this crest.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:lesser-crest",
+          "name": "Crest of lesser tubercle",
+          "meshIds": [],
+          "standardId": "TA2:1188",
+          "latinName": "Crista tuberculi minoris"
+        },
+        {
+          "text": "A roughened lateral mid-shaft insertion area for deltoid. It provides an orientation landmark and a useful reference when describing shaft attachments.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:deltoid-tuberosity",
+          "name": "Deltoid tuberosity",
+          "meshIds": [],
+          "standardId": "TA2:1193",
+          "latinName": "Tuberositas deltoidea"
+        },
+        {
+          "text": "An oblique posterior shaft groove related to the radial nerve and profunda brachii vessels. Triceps origins lie on either side of this region.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:radial-groove",
+          "name": "Radial groove",
+          "meshIds": [],
+          "standardId": "TA2:1197",
+          "latinName": "Sulcus nervi radialis"
+        },
+        {
+          "text": "The larger medial distal projection gives attachment to the common flexor origin and ulnar collateral ligament. The ulnar nerve passes behind it.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:medial-epicondyle",
+          "name": "Medial epicondyle",
+          "meshIds": [],
+          "standardId": "TA2:1207",
+          "latinName": "Epicondylus medialis humeri"
+        },
+        {
+          "text": "The lateral distal prominence gives attachment to the common extensor region and radial collateral ligament of the elbow.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:lateral-epicondyle",
+          "name": "Lateral epicondyle",
+          "meshIds": [],
+          "standardId": "TA2:1209",
+          "latinName": "Epicondylus lateralis humeri"
+        },
+        {
+          "text": "The anterior depression above the trochlea receives the coronoid process of the ulna as the elbow flexes.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:coronoid-fossa",
+          "name": "Coronoid fossa",
+          "meshIds": [],
+          "standardId": "TA2:1205",
+          "latinName": "Fossa coronoidea"
+        },
+        {
+          "text": "The small anterior depression above the capitulum accommodates the radial head during elbow flexion.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:radial-fossa",
+          "name": "Radial fossa",
+          "meshIds": [],
+          "standardId": "TA2:1206",
+          "latinName": "Fossa radialis"
+        },
+        {
+          "text": "The large posterior distal depression accommodates the olecranon during elbow extension. A thin septum separates it from the anterior coronoid fossa.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:olecranon-fossa",
+          "name": "Olecranon fossa",
+          "meshIds": [],
+          "standardId": "TA2:1204",
+          "latinName": "Fossa olecrani"
+        },
+        {
+          "text": "A distal continuation of the medial border associated with the medial intermuscular septum and neighbouring muscle origins.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:medial-supraridge",
+          "name": "Medial supracondylar ridge",
+          "meshIds": [],
+          "standardId": "TA2:1199",
+          "latinName": "Crista supracondylaris medialis"
+        },
+        {
+          "text": "The distal lateral ridge gives attachment to brachioradialis superiorly, extensor carpi radialis longus inferiorly and the lateral intermuscular septum.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:lateral-supraridge",
+          "name": "Lateral supracondylar ridge",
+          "meshIds": [],
+          "standardId": "TA2:1195",
+          "latinName": "Crista supracondylaris lateralis"
+        },
+        {
+          "text": "A shallow groove lies immediately behind the medial epicondyle of the distal humerus.",
+          "sources": [
+            "rohen-7",
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "rohen-7",
+              "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+              "status": "source-checked"
+            },
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:ulnar-groove",
+          "name": "Groove for ulnar nerve",
+          "latinName": "Sulcus nervi ulnaris",
+          "meshIds": [],
+          "standardId": "TA2:1208"
+        }
+      ],
+      "attachments": [
+        {
+          "text": "At the proximal end, supraspinatus, infraspinatus and teres minor insert on the greater tubercle; subscapularis inserts on the lesser tubercle. Pectoralis major, latissimus dorsi and teres major attach respectively to the lateral lip, floor and medial lip of the intertubercular groove.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        },
+        {
+          "text": "Deltoid inserts on the deltoid tuberosity; coracobrachialis inserts medially on the shaft. Brachialis arises from the distal anterior humerus. The humeral triceps heads originate posteriorly, separated in part by the radial groove. Biceps crosses the bone without a humeral insertion.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        },
+        {
+          "text": "The distal epicondylar regions provide common forearm muscle origins and elbow collateral-ligament attachments. The medial and lateral intermuscular septa attach along the corresponding distal shaft ridges, contributing to the boundaries of the arm compartments.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "articulations": [
+        {
+          "text": "The head articulates with the scapular glenoid at the glenohumeral joint. At the elbow, the capitulum articulates with the radial head and the trochlea with the ulnar trochlear notch.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "anatomicalRelations": [
+        {
+          "text": "The scapula is an articulating bone on the same side. Use the linked structure to inspect the matching source mesh.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "targetId": "FMA13395",
+          "label": "Right scapula",
+          "lateralityConstraint": "ipsilateral"
+        },
+        {
+          "text": "The radius is an articulating bone on the same side. Use the linked structure to inspect the matching source mesh.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "targetId": "FMA23464",
+          "label": "Right radius",
+          "lateralityConstraint": "ipsilateral"
+        },
+        {
+          "text": "The ulna is an articulating bone on the same side. Use the linked structure to inspect the matching source mesh.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ],
+          "targetId": "FMA23467",
+          "label": "Right ulna",
+          "lateralityConstraint": "ipsilateral"
+        },
+        {
+          "text": "The ulnar nerve passes along this side of the elbow behind the medial epicondyle.",
+          "sources": [
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose and Methods",
+              "status": "source-checked"
+            }
+          ],
+          "targetId": "feature:FMA23130:ulnar-groove",
+          "label": "Groove for ulnar nerve"
+        }
+      ],
+      "clinicalNotes": [
+        {
+          "text": "Surgical-neck trauma can affect the axillary nerve, producing deltoid weakness and sensory disturbance over the lateral shoulder. A humeral-shaft lesion can affect the radial nerve and weaken wrist and finger extension. These are anatomical correlations; deficits depend on lesion level.",
+          "sources": [
+            "arm-nerves"
+          ],
+          "evidence": [
+            {
+              "sourceId": "arm-nerves",
+              "locator": "Clinical Significance: axillary/radial nerves",
+              "status": "source-checked"
+            }
+          ]
+        },
+        {
+          "text": "Shaft injuries require attention to the radial nerve and nearby profunda brachii vessels. Examination includes distal circulation and motor/sensory function, with the injury pattern and associated lesions interpreted by a qualified clinician. This atlas does not diagnose a fracture or determine treatment.",
+          "sources": [
+            "shaft-fractures"
+          ],
+          "evidence": [
+            {
+              "sourceId": "shaft-fractures",
+              "locator": "Pathophysiology; History and Physical",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "images": [],
+      "childrenIds": [
+        "feature:FMA23130:head",
+        "feature:FMA23130:anatomical-neck",
+        "feature:FMA23130:greater-tubercle",
+        "feature:FMA23130:lesser-tubercle",
+        "feature:FMA23130:surgical-neck",
+        "feature:FMA23130:body",
+        "feature:FMA23130:condyle",
+        "feature:FMA23130:anterolateral",
+        "feature:FMA23130:anteromedial",
+        "feature:FMA23130:posterior",
+        "feature:FMA23130:anterior-border",
+        "feature:FMA23130:medial-border",
+        "feature:FMA23130:lateral-border",
+        "feature:FMA23130:capitulum",
+        "feature:FMA23130:trochlea",
+        "feature:FMA23130:intertubercular-sulcus",
+        "feature:FMA23130:greater-crest",
+        "feature:FMA23130:lesser-crest",
+        "feature:FMA23130:deltoid-tuberosity",
+        "feature:FMA23130:radial-groove",
+        "feature:FMA23130:medial-epicondyle",
+        "feature:FMA23130:lateral-epicondyle",
+        "feature:FMA23130:coronoid-fossa",
+        "feature:FMA23130:radial-fossa",
+        "feature:FMA23130:olecranon-fossa",
+        "feature:FMA23130:medial-supraridge",
+        "feature:FMA23130:lateral-supraridge",
+        "feature:FMA23130:ulnar-groove"
+      ],
+      "id": "FMA23130",
+      "officialName": "Right humerus",
+      "latinName": "Humerus",
+      "synonyms": [
+        "Humerus (right)"
+      ],
+      "anatomicalSystem": "Skeletal",
+      "region": "Arm",
+      "kind": "bone",
+      "parentId": "group:arm",
+      "hierarchyPath": [
+        {
+          "id": "system:Skeletal",
+          "name": "Skeletal system"
+        },
+        {
+          "id": "group:appendicular",
+          "name": "Appendicular skeleton"
+        },
+        {
+          "id": "group:upper-limb",
+          "name": "Upper limb"
+        },
+        {
+          "id": "group:arm",
+          "name": "Arm"
+        },
+        {
+          "id": "FMA23130",
+          "name": "Right humerus"
+        }
+      ],
+      "modelIds": [
+        "bodyparts3d-4.0"
+      ],
+      "meshIds": [
+        "FMA23130"
+      ],
+      "sourceReferences": [
+        "bp3d",
+        "fipat",
+        "gray-humerus",
+        "arm-nerves",
+        "shaft-fractures",
+        "humerus-modern",
+        "supracondylar",
+        "septal-aperture",
+        "gray-surface",
+        "cambridge-humerus",
+        "rohen-7",
+        "openstax-upper-limb",
+        "chaves-medial-epicondyle"
+      ],
+      "verificationStatus": "source-checked",
+      "lastReviewedAt": "2026-11-07",
+      "version": 2,
+      "laterality": "right",
+      "clinicalReview": {
+        "status": "pending"
+      },
+      "populationBatch": "rohen-upper-limb-001",
+      "contentLicense": "Original factual synthesis with cited sources. Geometry has separate provenance.",
+      "detailedSections": [
+        {
+          "id": "orientation",
+          "title": "Anatomical orientation",
+          "facts": [
+            {
+              "text": "Identify the medially directed head, anterior lesser tubercle and posterior olecranon fossa together. The left/right identity is stored in the canonical source mapping and is not inferred from camera perspective.",
+              "sources": [
+                "gray-humerus"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "gray-humerus",
+                  "locator": "Osteology 6a.3; morphology and ossification",
+                  "status": "source-checked"
+                }
+              ]
+            }
+          ],
+          "status": "source-checked"
+        },
+        {
+          "id": "bloodSupply",
+          "title": "Arterial supply",
+          "facts": [
+            {
+              "text": "The proximal humerus receives circumflex humeral arterial contributions from the axillary system. Nutrient and periosteal vessels derived from brachial and profunda brachii branches supply the shaft.",
+              "sources": [
+                "humerus-modern"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "humerus-modern",
+                  "locator": "Embryology; Blood Supply and Lymphatics",
+                  "status": "source-checked"
+                }
+              ]
+            },
+            {
+              "text": "The relative contributions to the humeral head are not captured by a single arterial label; injury and surgical exposure can disturb this regional vascular network.",
+              "sources": [
+                "humerus-modern"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "humerus-modern",
+                  "locator": "Embryology; Blood Supply and Lymphatics",
+                  "status": "source-checked"
+                }
+              ]
+            }
+          ],
+          "status": "source-checked"
+        },
+        {
+          "id": "embryology",
+          "title": "Development",
+          "facts": [
+            {
+              "text": "The humerus forms by endochondral ossification: a cartilage model is progressively replaced by bone. The shaft develops before its epiphyseal regions; growth plates separate developing ends from the diaphysis during growth.",
+              "sources": [
+                "humerus-modern"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "humerus-modern",
+                  "locator": "Embryology; Blood Supply and Lymphatics",
+                  "status": "source-checked"
+                }
+              ]
+            }
+          ],
+          "status": "source-checked"
+        },
+        {
+          "id": "ossification",
+          "title": "Ossification",
+          "facts": [
+            {
+              "text": "The classical eight-centre scheme comprises the shaft, head, greater tubercle, lesser tubercle, capitulum, trochlea and the two epicondyles. The olecranon belongs to the ulna and must not be counted as a humeral centre.",
+              "sources": [
+                "gray-humerus"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "gray-humerus",
+                  "locator": "Osteology 6a.3; morphology and ossification",
+                  "status": "source-checked"
+                }
+              ]
+            },
+            {
+              "text": "Gray (1918) describes fetal shaft ossification followed by separate postnatal proximal and distal centres and later fusion. Its exact appearance/fusion ages are historical observations, not validated age-estimation rules for current patients. Modern skeletal maturation varies and requires age-, sex- and population-appropriate evidence.",
+              "sources": [
+                "gray-humerus"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "gray-humerus",
+                  "locator": "Osteology 6a.3; morphology and ossification",
+                  "status": "source-checked"
+                }
+              ]
+            }
+          ],
+          "status": "needs-review",
+          "reviewNote": "A consulted modern indexed overview inconsistently includes the olecranon among humeral centres. This conflict is not silently copied. Contemporary quantitative timing needs review."
+        },
+        {
+          "id": "variations",
+          "title": "Anatomical variations",
+          "facts": [
+            {
+              "text": "A supracondylar process may project from the distal anteromedial humerus. A fibrous connection to the medial epicondyle can relate to median-nerve or brachial-artery compression. The cited dry-bone study is a sample observation, not a universal prevalence estimate.",
+              "sources": [
+                "supracondylar"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "supracondylar",
+                  "locator": "Introduction; clinical implications",
+                  "status": "source-checked"
+                }
+              ]
+            }
+          ],
+          "status": "source-checked"
+        },
+        {
+          "id": "variations-septum",
+          "title": "Septal aperture",
+          "facts": [
+            {
+              "text": "A supratrochlear aperture is a variable opening through the septum between coronoid and olecranon fossae. It should not be confused with a normal nutrient foramen or assumed to exist in this individual source mesh.",
+              "sources": [
+                "septal-aperture"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "septal-aperture",
+                  "locator": "Abstract; anatomical definition",
+                  "status": "source-checked"
+                }
+              ]
+            }
+          ],
+          "status": "source-checked"
+        },
+        {
+          "id": "surfaceAnatomy",
+          "title": "Surface anatomy",
+          "facts": [
+            {
+              "text": "The distal medial and lateral epicondyles provide palpable, non-articular reference points on either side of the elbow. The more proximal humerus lies beneath muscle and should be interpreted using its relationships to the shoulder and arm, not treated as uniformly subcutaneous.",
+              "sources": [
+                "gray-surface"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "gray-surface",
+                  "locator": "Bones; humeral epicondyles; proximal humerus; ulnar border",
+                  "status": "source-checked"
+                }
+              ]
+            }
+          ],
+          "status": "source-checked"
+        },
+        {
+          "id": "parts-plate-orientation",
+          "title": "Reading the humerus in three views",
+          "status": "source-checked",
+          "facts": [
+            {
+              "text": "Start at the shoulder end. The rounded head faces medially, and the tubercles flank the intertubercular sulcus on the front of the proximal bone.",
+              "sources": [
+                "rohen-7",
+                "openstax-upper-limb"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "rohen-7",
+                  "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), anterior and medial views, labels 1, 2, 5 and 13",
+                  "status": "source-checked"
+                },
+                {
+                  "sourceId": "openstax-upper-limb",
+                  "locator": "Humerus, proximal end and Figure 8.5",
+                  "status": "source-checked"
+                }
+              ]
+            },
+            {
+              "text": "At the elbow end, the anterior fossae lie above the capitulum and trochlea and receive the radius and ulna during flexion. Turn the bone over to find the olecranon fossa, which receives the olecranon during extension.",
+              "sources": [
+                "rohen-7",
+                "openstax-upper-limb"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "rohen-7",
+                  "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), anterior and posterior views, labels 10, 12, 17, 19 and 23",
+                  "status": "source-checked"
+                },
+                {
+                  "sourceId": "openstax-upper-limb",
+                  "locator": "Humerus, distal fossae and Figure 8.5",
+                  "status": "source-checked"
+                }
+              ]
+            },
+            {
+              "text": "The posterior view separates two nerve-related landmarks. The radial groove crosses the shaft, while the ulnar groove sits at the distal medial epicondyle.",
+              "sources": [
+                "rohen-7",
+                "chaves-medial-epicondyle"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "rohen-7",
+                  "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18, 21 and 22",
+                  "status": "source-checked"
+                },
+                {
+                  "sourceId": "chaves-medial-epicondyle",
+                  "locator": "Abstract, Purpose",
+                  "status": "source-checked"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "standardIds": [
+        "TA2:1180"
+      ],
+      "pronunciation": {
+        "englishText": "humerus",
+        "latinText": "Humerus",
+        "ipaEnglish": "/ˈhjuː.mə.rəs/",
+        "syllables": "hu · me · rus",
+        "stress": "First syllable (English)",
+        "sourceIds": [
+          "cambridge-humerus"
+        ],
+        "verificationStatus": "dictionary-checked",
+        "audioAvailable": false,
+        "method": "browser-speech-synthesis"
+      }
+    },
+    {
+      "description": [
+        {
+          "text": "The larger medial distal projection gives attachment to the common flexor origin and ulnar collateral ligament. The ulnar nerve passes behind it.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "classification": [],
+      "location": [
+        {
+          "text": "This feature belongs to the right humerus.",
+          "sources": [
+            "gray-humerus"
+          ],
+          "evidence": [
+            {
+              "sourceId": "gray-humerus",
+              "locator": "Osteology 6a.3; morphology and ossification",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "quickFacts": [],
+      "structureAndFunction": [],
+      "parts": [],
+      "surfaces": [],
+      "landmarks": [],
+      "attachments": [],
+      "articulations": [],
+      "anatomicalRelations": [
+        {
+          "text": "The groove immediately behind the epicondyle marks the local course of the ulnar nerve.",
+          "sources": [
+            "rohen-7",
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "rohen-7",
+              "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+              "status": "source-checked"
+            },
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose",
+              "status": "source-checked"
+            }
+          ],
+          "targetId": "feature:FMA23130:ulnar-groove",
+          "label": "Groove for ulnar nerve"
+        }
+      ],
+      "clinicalNotes": [
+        {
+          "text": "CT measurements show substantial individual variation in the medial epicondyle and adjacent groove. The groove forms part of the bony setting of the cubital tunnel.",
+          "sources": [
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose and Conclusion",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "images": [],
+      "childrenIds": [],
+      "id": "feature:FMA23130:medial-epicondyle",
+      "officialName": "Medial epicondyle of right humerus",
+      "latinName": "Epicondylus medialis humeri",
+      "synonyms": [],
+      "anatomicalSystem": "Skeletal",
+      "region": "Arm",
+      "kind": "landmark",
+      "parentId": "FMA23130",
+      "hierarchyPath": [
+        {
+          "id": "system:Skeletal",
+          "name": "Skeletal system"
+        },
+        {
+          "id": "group:appendicular",
+          "name": "Appendicular skeleton"
+        },
+        {
+          "id": "group:upper-limb",
+          "name": "Upper limb"
+        },
+        {
+          "id": "group:arm",
+          "name": "Arm"
+        },
+        {
+          "id": "FMA23130",
+          "name": "Right humerus"
+        },
+        {
+          "id": "feature:FMA23130:medial-epicondyle",
+          "name": "Medial epicondyle"
+        }
+      ],
+      "modelIds": [],
+      "meshIds": [],
+      "sourceReferences": [
+        "gray-humerus",
+        "fipat",
+        "rohen-7",
+        "chaves-medial-epicondyle"
+      ],
+      "verificationStatus": "source-checked",
+      "lastReviewedAt": "2026-11-07",
+      "version": 2,
+      "laterality": "right",
+      "clinicalReview": {
+        "status": "pending"
+      },
+      "populationBatch": "rohen-upper-limb-001",
+      "contentLicense": "Original factual synthesis with cited sources. Geometry has separate provenance.",
+      "standardIds": [
+        "TA2:1207"
+      ]
+    },
+    {
+      "description": [
+        {
+          "text": "A shallow groove lies immediately behind the medial epicondyle of the distal humerus.",
+          "sources": [
+            "rohen-7",
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "rohen-7",
+              "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+              "status": "source-checked"
+            },
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "classification": [
+        {
+          "text": "The groove is a landmark of the distal humerus.",
+          "sources": [
+            "fipat"
+          ],
+          "evidence": [
+            {
+              "sourceId": "fipat",
+              "locator": "TA2 Part II, entries 1207–1208",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "location": [
+        {
+          "text": "A shallow groove lies immediately behind the medial epicondyle of the distal humerus.",
+          "sources": [
+            "rohen-7",
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "rohen-7",
+              "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+              "status": "source-checked"
+            },
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "quickFacts": [],
+      "structureAndFunction": [
+        {
+          "text": "The ulnar nerve passes along this side of the elbow behind the medial epicondyle.",
+          "sources": [
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose and Methods",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "parts": [],
+      "surfaces": [],
+      "landmarks": [],
+      "attachments": [],
+      "articulations": [],
+      "anatomicalRelations": [
+        {
+          "text": "The epicondyle forms the anterior bony boundary at this level of the cubital tunnel.",
+          "sources": [
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose",
+              "status": "source-checked"
+            }
+          ],
+          "targetId": "feature:FMA23130:medial-epicondyle",
+          "label": "Medial epicondyle"
+        }
+      ],
+      "clinicalNotes": [
+        {
+          "text": "CT measurements show substantial individual variation in the medial epicondyle and adjacent groove. The groove forms part of the bony setting of the cubital tunnel.",
+          "sources": [
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose and Conclusion",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "images": [],
+      "childrenIds": [],
+      "id": "feature:FMA23130:ulnar-groove",
+      "officialName": "Groove for ulnar nerve of right humerus",
+      "latinName": "Sulcus nervi ulnaris",
+      "synonyms": [
+        "Right ulnar groove",
+        "Right retroepicondylar groove"
+      ],
+      "anatomicalSystem": "Skeletal",
+      "region": "Arm",
+      "kind": "landmark",
+      "parentId": "FMA23130",
+      "hierarchyPath": [
+        {
+          "id": "system:Skeletal",
+          "name": "Skeletal system"
+        },
+        {
+          "id": "group:appendicular",
+          "name": "Appendicular skeleton"
+        },
+        {
+          "id": "group:upper-limb",
+          "name": "Upper limb"
+        },
+        {
+          "id": "group:arm",
+          "name": "Arm"
+        },
+        {
+          "id": "FMA23130",
+          "name": "Right humerus"
+        },
+        {
+          "id": "feature:FMA23130:ulnar-groove",
+          "name": "Groove for ulnar nerve"
+        }
+      ],
+      "modelIds": [],
+      "meshIds": [],
+      "sourceReferences": [
+        "rohen-7",
+        "fipat",
+        "chaves-medial-epicondyle"
+      ],
+      "verificationStatus": "source-checked",
+      "lastReviewedAt": "2026-11-07",
+      "version": 1,
+      "laterality": "right",
+      "clinicalReview": {
+        "status": "pending"
+      },
+      "populationBatch": "rohen-upper-limb-001",
+      "contentLicense": "Original factual synthesis with cited sources. Geometry has separate provenance.",
+      "standardIds": [
+        "TA2:1208"
+      ]
+    }
+  ]
+}

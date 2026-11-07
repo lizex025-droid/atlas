@@ -2023,7 +2023,7 @@
       "kind": "bone",
       "anatomicalSystem": "Skeletal",
       "laterality": "right",
-      "version": 1,
+      "version": 2,
       "verificationStatus": "source-checked",
       "clinicalReview": {
         "status": "pending"
@@ -14635,7 +14635,7 @@
       "kind": "landmark",
       "anatomicalSystem": "Skeletal",
       "laterality": "right",
-      "version": 1,
+      "version": 2,
       "verificationStatus": "source-checked",
       "clinicalReview": {
         "status": "pending"
@@ -15400,6 +15400,18 @@
     {
       "id": "feature:FMA23467:styloid",
       "officialName": "Styloid process of right ulna",
+      "kind": "landmark",
+      "anatomicalSystem": "Skeletal",
+      "laterality": "right",
+      "version": 1,
+      "verificationStatus": "source-checked",
+      "clinicalReview": {
+        "status": "pending"
+      }
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "officialName": "Groove for ulnar nerve of right humerus",
       "kind": "landmark",
       "anatomicalSystem": "Skeletal",
       "laterality": "right",
@@ -24643,6 +24655,18 @@
       "standardIds": [
         "TA2:1247"
       ]
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "english": "Groove for ulnar nerve of right humerus",
+      "latin": "Sulcus nervi ulnaris",
+      "synonyms": [
+        "Right ulnar groove",
+        "Right retroepicondylar groove"
+      ],
+      "standardIds": [
+        "TA2:1208"
+      ]
     }
   ],
   "anatomical_hierarchies": [
@@ -30796,7 +30820,8 @@
         "feature:FMA23130:radial-fossa",
         "feature:FMA23130:olecranon-fossa",
         "feature:FMA23130:medial-supraridge",
-        "feature:FMA23130:lateral-supraridge"
+        "feature:FMA23130:lateral-supraridge",
+        "feature:FMA23130:ulnar-groove"
       ],
       "path": [
         {
@@ -77187,6 +77212,37 @@
           "name": "Styloid process"
         }
       ]
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "parentId": "FMA23130",
+      "childrenIds": [],
+      "path": [
+        {
+          "id": "system:Skeletal",
+          "name": "Skeletal system"
+        },
+        {
+          "id": "group:appendicular",
+          "name": "Appendicular skeleton"
+        },
+        {
+          "id": "group:upper-limb",
+          "name": "Upper limb"
+        },
+        {
+          "id": "group:arm",
+          "name": "Arm"
+        },
+        {
+          "id": "FMA23130",
+          "name": "Right humerus"
+        },
+        {
+          "id": "feature:FMA23130:ulnar-groove",
+          "name": "Groove for ulnar nerve"
+        }
+      ]
     }
   ],
   "hierarchy_groups": [
@@ -92042,7 +92098,6 @@
         "FMA7857",
         "FMA7957",
         "FMA16586",
-        "FMA23130",
         "FMA8364",
         "FMA13395",
         "FMA7882",
@@ -92067,6 +92122,7 @@
       "id": "atlas:skeletal-2",
       "name": "Upper limbs",
       "members": [
+        "FMA23130",
         "FMA23959",
         "FMA23951",
         "FMA24463",
@@ -115050,7 +115106,7 @@
         {
           "id": "parts",
           "status": "source-checked",
-          "facts": 7,
+          "facts": 10,
           "reviewNote": null
         },
         {
@@ -115068,13 +115124,13 @@
         {
           "id": "landmarks",
           "status": "source-checked",
-          "facts": 14,
+          "facts": 15,
           "reviewNote": null
         },
         {
           "id": "relations",
           "status": "source-checked",
-          "facts": 3,
+          "facts": 4,
           "reviewNote": null
         },
         {
@@ -115727,6 +115783,30 @@
           "meshIds": [],
           "standardId": "TA2:1195",
           "latinName": "Crista supracondylaris lateralis"
+        },
+        {
+          "text": "A shallow groove lies immediately behind the medial epicondyle of the distal humerus.",
+          "sources": [
+            "rohen-7",
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "rohen-7",
+              "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+              "status": "source-checked"
+            },
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose",
+              "status": "source-checked"
+            }
+          ],
+          "id": "feature:FMA23130:ulnar-groove",
+          "name": "Groove for ulnar nerve",
+          "latinName": "Sulcus nervi ulnaris",
+          "meshIds": [],
+          "standardId": "TA2:1208"
         }
       ],
       "attachments": [
@@ -115952,6 +116032,70 @@
             }
           ],
           "status": "source-checked"
+        },
+        {
+          "id": "parts-plate-orientation",
+          "title": "Reading the humerus in three views",
+          "status": "source-checked",
+          "facts": [
+            {
+              "text": "Start at the shoulder end. The rounded head faces medially, and the tubercles flank the intertubercular sulcus on the front of the proximal bone.",
+              "sources": [
+                "rohen-7",
+                "openstax-upper-limb"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "rohen-7",
+                  "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), anterior and medial views, labels 1, 2, 5 and 13",
+                  "status": "source-checked"
+                },
+                {
+                  "sourceId": "openstax-upper-limb",
+                  "locator": "Humerus, proximal end and Figure 8.5",
+                  "status": "source-checked"
+                }
+              ]
+            },
+            {
+              "text": "At the elbow end, the anterior fossae lie above the capitulum and trochlea and receive the radius and ulna during flexion. Turn the bone over to find the olecranon fossa, which receives the olecranon during extension.",
+              "sources": [
+                "rohen-7",
+                "openstax-upper-limb"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "rohen-7",
+                  "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), anterior and posterior views, labels 10, 12, 17, 19 and 23",
+                  "status": "source-checked"
+                },
+                {
+                  "sourceId": "openstax-upper-limb",
+                  "locator": "Humerus, distal fossae and Figure 8.5",
+                  "status": "source-checked"
+                }
+              ]
+            },
+            {
+              "text": "The posterior view separates two nerve-related landmarks. The radial groove crosses the shaft, while the ulnar groove sits at the distal medial epicondyle.",
+              "sources": [
+                "rohen-7",
+                "chaves-medial-epicondyle"
+              ],
+              "evidence": [
+                {
+                  "sourceId": "rohen-7",
+                  "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18, 21 and 22",
+                  "status": "source-checked"
+                },
+                {
+                  "sourceId": "chaves-medial-epicondyle",
+                  "locator": "Abstract, Purpose",
+                  "status": "source-checked"
+                }
+              ]
+            }
+          ]
         }
       ],
       "extensions": {}
@@ -236394,8 +236538,8 @@
         },
         {
           "id": "relations",
-          "status": "not-started",
-          "facts": 0,
+          "status": "source-checked",
+          "facts": 1,
           "reviewNote": null
         },
         {
@@ -236406,8 +236550,8 @@
         },
         {
           "id": "clinical",
-          "status": "not-started",
-          "facts": 0,
+          "status": "source-checked",
+          "facts": 1,
           "reviewNote": null
         }
       ],
@@ -241251,6 +241395,121 @@
       "articulations": [],
       "detailed": [],
       "extensions": {}
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "evaluation": [
+        {
+          "id": "description",
+          "status": "source-checked",
+          "facts": 1,
+          "reviewNote": null
+        },
+        {
+          "id": "location",
+          "status": "source-checked",
+          "facts": 1,
+          "reviewNote": null
+        },
+        {
+          "id": "relations",
+          "status": "source-checked",
+          "facts": 1,
+          "reviewNote": null
+        },
+        {
+          "id": "function",
+          "status": "source-checked",
+          "facts": 1,
+          "reviewNote": null
+        },
+        {
+          "id": "clinical",
+          "status": "source-checked",
+          "facts": 1,
+          "reviewNote": null
+        }
+      ],
+      "description": [
+        {
+          "text": "A shallow groove lies immediately behind the medial epicondyle of the distal humerus.",
+          "sources": [
+            "rohen-7",
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "rohen-7",
+              "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+              "status": "source-checked"
+            },
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "classification": [
+        {
+          "text": "The groove is a landmark of the distal humerus.",
+          "sources": [
+            "fipat"
+          ],
+          "evidence": [
+            {
+              "sourceId": "fipat",
+              "locator": "TA2 Part II, entries 1207–1208",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "location": [
+        {
+          "text": "A shallow groove lies immediately behind the medial epicondyle of the distal humerus.",
+          "sources": [
+            "rohen-7",
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "rohen-7",
+              "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+              "status": "source-checked"
+            },
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "quickFacts": [],
+      "structureAndFunction": [
+        {
+          "text": "The ulnar nerve passes along this side of the elbow behind the medial epicondyle.",
+          "sources": [
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose and Methods",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ],
+      "parts": [],
+      "surfaces": [],
+      "landmarks": [],
+      "attachments": [],
+      "articulations": [],
+      "detailed": [],
+      "extensions": {}
     }
   ],
   "anatomical_relationships": [
@@ -241322,6 +241581,22 @@
       "targetId": "FMA23467",
       "label": "Right ulna",
       "lateralityConstraint": "ipsilateral"
+    },
+    {
+      "structureId": "FMA23130",
+      "text": "The ulnar nerve passes along this side of the elbow behind the medial epicondyle.",
+      "sources": [
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose and Methods",
+          "status": "source-checked"
+        }
+      ],
+      "targetId": "feature:FMA23130:ulnar-groove",
+      "label": "Groove for ulnar nerve"
     },
     {
       "structureId": "FMA23131",
@@ -241491,6 +241766,44 @@
       "sources": [
         "stecco"
       ]
+    },
+    {
+      "structureId": "feature:FMA23130:medial-epicondyle",
+      "text": "The groove immediately behind the epicondyle marks the local course of the ulnar nerve.",
+      "sources": [
+        "rohen-7",
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "rohen-7",
+          "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+          "status": "source-checked"
+        },
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose",
+          "status": "source-checked"
+        }
+      ],
+      "targetId": "feature:FMA23130:ulnar-groove",
+      "label": "Groove for ulnar nerve"
+    },
+    {
+      "structureId": "feature:FMA23130:ulnar-groove",
+      "text": "The epicondyle forms the anterior bony boundary at this level of the cubital tunnel.",
+      "sources": [
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose",
+          "status": "source-checked"
+        }
+      ],
+      "targetId": "feature:FMA23130:medial-epicondyle",
+      "label": "Medial epicondyle"
     }
   ],
   "model_mesh_mappings": [
@@ -253885,16 +254198,22 @@
       "meshIds": [],
       "modelIds": [],
       "mappingStatus": "semantic-only-no-separate-geometry"
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "meshIds": [],
+      "modelIds": [],
+      "mappingStatus": "semantic-only-no-separate-geometry"
     }
   ],
   "anatomical_sources": [
     {
       "id": "fipat",
       "title": "FIPAT. Terminologia Anatomica, 2nd ed. (2019), Part II",
-      "url": "https://cdn.dal.ca/content/dam/dalhousie/pdf/library/FIPAT/TA2/FIPAT-TA2-Part-2.pdf",
+      "url": "https://fipat.library.dal.ca/wp-content/uploads/2020/09/FIPAT-TA2-Part-2.pdf",
       "license": "Publication CC BY-ND 4.0; individual terms public domain",
       "use": "Individual terms and standard identifiers only; no PDF adaptation or figure reuse.",
-      "locator": "TA2 1058–1066, 2549; PDF pp. 21–22, 71 (zero-based)",
+      "locator": "TA2 Part II, entries 1058–1066, 1180–1209 and 2549",
       "accessedAt": "2026-10-31"
     },
     {
@@ -254116,6 +254435,329 @@
       "access": "search-index",
       "permission": "factual-reference-only",
       "use": "Original factual synthesis only; no modern article prose, audio, screenshots or illustrations redistributed. Historical material is not current clinical guidance."
+    },
+    {
+      "id": "rohen-7",
+      "title": "Rohen, Yokochi and Lütjen-Drecoll. Color Atlas of Anatomy, 7th ed. (2011)",
+      "url": "https://iucat.iu.edu/catalog/8925617",
+      "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), right humerus",
+      "license": "Copyrighted textbook. Bibliographic citation and anatomical facts only.",
+      "use": "The supplied copy was examined privately. The link identifies the edition in an academic library catalog.",
+      "accessedAt": "2026-11-07",
+      "access": "full-text",
+      "permission": "factual-reference-only"
+    },
+    {
+      "id": "openstax-upper-limb",
+      "title": "OpenStax Anatomy and Physiology, 8.2 Bones of the Upper Limb",
+      "url": "https://openstax.org/books/anatomy-and-physiology/pages/8-2-bones-of-the-upper-limb",
+      "locator": "Humerus, especially Fig. 8.5 and the text on the distal fossae",
+      "license": "Original factual synthesis based on the OpenStax chapter.",
+      "use": "Anatomical facts only. Figure 8.5 is cited as evidence.",
+      "accessedAt": "2026-11-07",
+      "access": "full-text",
+      "permission": "factual-reference-only"
+    },
+    {
+      "id": "chaves-medial-epicondyle",
+      "title": "Chaves et al. Osseous morphology of the medial epicondyle (2021)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33420865/",
+      "locator": "Abstract, Purpose, Methods and Conclusion. doi:10.1007/s00276-020-02669-3",
+      "license": "Publisher copyright. Bibliographic citation and research findings only.",
+      "use": "Original factual synthesis from the consulted abstract.",
+      "accessedAt": "2026-11-07",
+      "access": "abstract",
+      "permission": "factual-reference-only"
+    }
+  ],
+  "book_references": [
+    {
+      "structureId": "FMA13322",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 4
+    },
+    {
+      "structureId": "FMA8066",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 3
+    },
+    {
+      "structureId": "FMA7857",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 1
+    },
+    {
+      "structureId": "FMA7957",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 3
+    },
+    {
+      "structureId": "FMA23130",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": null
+    },
+    {
+      "structureId": "FMA23130",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": null
+    },
+    {
+      "structureId": "FMA13395",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": null
+    },
+    {
+      "structureId": "FMA8229",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 3
+    },
+    {
+      "structureId": "FMA8175",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 3
+    },
+    {
+      "structureId": "feature:FMA23130:head",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 9
+    },
+    {
+      "structureId": "feature:FMA23130:head",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 13
+    },
+    {
+      "structureId": "feature:FMA23130:anatomical-neck",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 16
+    },
+    {
+      "structureId": "feature:FMA23130:anatomical-neck",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 14
+    },
+    {
+      "structureId": "feature:FMA23130:greater-tubercle",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 15
+    },
+    {
+      "structureId": "feature:FMA23130:greater-tubercle",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 1
+    },
+    {
+      "structureId": "feature:FMA23130:lesser-tubercle",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 2
+    },
+    {
+      "structureId": "feature:FMA23130:surgical-neck",
+      "sourceId": "rohen-7",
+      "printedPage": 372,
+      "pdfPage": 386,
+      "subsection": "Shoulder girdle and humerus",
+      "label": 11
+    },
+    {
+      "structureId": "feature:FMA23130:surgical-neck",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 6
+    },
+    {
+      "structureId": "feature:FMA23130:anterolateral",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 8
+    },
+    {
+      "structureId": "feature:FMA23130:anteromedial",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 15
+    },
+    {
+      "structureId": "feature:FMA23130:posterior",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 20
+    },
+    {
+      "structureId": "feature:FMA23130:capitulum",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 12
+    },
+    {
+      "structureId": "feature:FMA23130:trochlea",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 19
+    },
+    {
+      "structureId": "feature:FMA23130:intertubercular-sulcus",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 5
+    },
+    {
+      "structureId": "feature:FMA23130:greater-crest",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 4
+    },
+    {
+      "structureId": "feature:FMA23130:lesser-crest",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 3
+    },
+    {
+      "structureId": "feature:FMA23130:deltoid-tuberosity",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 7
+    },
+    {
+      "structureId": "feature:FMA23130:radial-groove",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 22
+    },
+    {
+      "structureId": "feature:FMA23130:medial-epicondyle",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 18
+    },
+    {
+      "structureId": "feature:FMA23130:lateral-epicondyle",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 11
+    },
+    {
+      "structureId": "feature:FMA23130:coronoid-fossa",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 17
+    },
+    {
+      "structureId": "feature:FMA23130:radial-fossa",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 10
+    },
+    {
+      "structureId": "feature:FMA23130:olecranon-fossa",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 23
+    },
+    {
+      "structureId": "feature:FMA23130:medial-supraridge",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 16
+    },
+    {
+      "structureId": "feature:FMA23130:lateral-supraridge",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 9
+    },
+    {
+      "structureId": "feature:FMA23130:ulnar-groove",
+      "sourceId": "rohen-7",
+      "printedPage": 373,
+      "pdfPage": 387,
+      "subsection": "Humerus",
+      "label": 21
     }
   ],
   "source_evidence": [
@@ -254332,7 +254974,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254349,7 +254991,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254366,7 +255008,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254383,7 +255025,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254400,7 +255042,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254417,7 +255059,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254434,7 +255076,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254451,7 +255093,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254468,7 +255110,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254485,7 +255127,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254502,7 +255144,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254519,7 +255161,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254536,7 +255178,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254553,7 +255195,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254570,7 +255212,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254587,7 +255229,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254604,7 +255246,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254621,7 +255263,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254638,7 +255280,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254655,7 +255297,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254672,7 +255314,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254689,7 +255331,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254706,7 +255348,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254723,7 +255365,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254740,7 +255382,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254757,7 +255399,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254774,7 +255416,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254791,7 +255433,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254808,7 +255450,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254825,7 +255467,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254842,7 +255484,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254859,7 +255501,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -254876,11 +255518,34 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
       "claimId": "FMA23130:claim:33",
+      "structureId": "FMA23130",
+      "text": "A shallow groove lies immediately behind the medial epicondyle of the distal humerus.",
+      "sourceIds": [
+        "rohen-7",
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "rohen-7",
+          "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+          "status": "source-checked"
+        },
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "FMA23130:claim:34",
       "structureId": "FMA23130",
       "text": "At the proximal end, supraspinatus, infraspinatus and teres minor insert on the greater tubercle; subscapularis inserts on the lesser tubercle. Pectoralis major, latissimus dorsi and teres major attach respectively to the lateral lip, floor and medial lip of the intertubercular groove.",
       "sourceIds": [
@@ -254893,11 +255558,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:34",
+      "claimId": "FMA23130:claim:35",
       "structureId": "FMA23130",
       "text": "Deltoid inserts on the deltoid tuberosity; coracobrachialis inserts medially on the shaft. Brachialis arises from the distal anterior humerus. The humeral triceps heads originate posteriorly, separated in part by the radial groove. Biceps crosses the bone without a humeral insertion.",
       "sourceIds": [
@@ -254910,11 +255575,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:35",
+      "claimId": "FMA23130:claim:36",
       "structureId": "FMA23130",
       "text": "The distal epicondylar regions provide common forearm muscle origins and elbow collateral-ligament attachments. The medial and lateral intermuscular septa attach along the corresponding distal shaft ridges, contributing to the boundaries of the arm compartments.",
       "sourceIds": [
@@ -254927,11 +255592,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:36",
+      "claimId": "FMA23130:claim:37",
       "structureId": "FMA23130",
       "text": "The head articulates with the scapular glenoid at the glenohumeral joint. At the elbow, the capitulum articulates with the radial head and the trochlea with the ulnar trochlear notch.",
       "sourceIds": [
@@ -254944,11 +255609,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:37",
+      "claimId": "FMA23130:claim:38",
       "structureId": "FMA23130",
       "text": "The scapula is an articulating bone on the same side. Use the linked structure to inspect the matching source mesh.",
       "sourceIds": [
@@ -254961,11 +255626,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:38",
+      "claimId": "FMA23130:claim:39",
       "structureId": "FMA23130",
       "text": "The radius is an articulating bone on the same side. Use the linked structure to inspect the matching source mesh.",
       "sourceIds": [
@@ -254978,11 +255643,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:39",
+      "claimId": "FMA23130:claim:40",
       "structureId": "FMA23130",
       "text": "The ulna is an articulating bone on the same side. Use the linked structure to inspect the matching source mesh.",
       "sourceIds": [
@@ -254995,11 +255660,28 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:40",
+      "claimId": "FMA23130:claim:41",
+      "structureId": "FMA23130",
+      "text": "The ulnar nerve passes along this side of the elbow behind the medial epicondyle.",
+      "sourceIds": [
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose and Methods",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "FMA23130:claim:42",
       "structureId": "FMA23130",
       "text": "Surgical-neck trauma can affect the axillary nerve, producing deltoid weakness and sensory disturbance over the lateral shoulder. A humeral-shaft lesion can affect the radial nerve and weaken wrist and finger extension. These are anatomical correlations; deficits depend on lesion level.",
       "sourceIds": [
@@ -255012,11 +255694,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:41",
+      "claimId": "FMA23130:claim:43",
       "structureId": "FMA23130",
       "text": "Shaft injuries require attention to the radial nerve and nearby profunda brachii vessels. Examination includes distal circulation and motor/sensory function, with the injury pattern and associated lesions interpreted by a qualified clinician. This atlas does not diagnose a fracture or determine treatment.",
       "sourceIds": [
@@ -255029,11 +255711,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:42",
+      "claimId": "FMA23130:claim:44",
       "structureId": "FMA23130",
       "text": "Identify the medially directed head, anterior lesser tubercle and posterior olecranon fossa together. The left/right identity is stored in the canonical source mapping and is not inferred from camera perspective.",
       "sourceIds": [
@@ -255046,11 +255728,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:43",
+      "claimId": "FMA23130:claim:45",
       "structureId": "FMA23130",
       "text": "The proximal humerus receives circumflex humeral arterial contributions from the axillary system. Nutrient and periosteal vessels derived from brachial and profunda brachii branches supply the shaft.",
       "sourceIds": [
@@ -255063,11 +255745,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:44",
+      "claimId": "FMA23130:claim:46",
       "structureId": "FMA23130",
       "text": "The relative contributions to the humeral head are not captured by a single arterial label; injury and surgical exposure can disturb this regional vascular network.",
       "sourceIds": [
@@ -255080,11 +255762,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:45",
+      "claimId": "FMA23130:claim:47",
       "structureId": "FMA23130",
       "text": "The humerus forms by endochondral ossification: a cartilage model is progressively replaced by bone. The shaft develops before its epiphyseal regions; growth plates separate developing ends from the diaphysis during growth.",
       "sourceIds": [
@@ -255097,11 +255779,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:46",
+      "claimId": "FMA23130:claim:48",
       "structureId": "FMA23130",
       "text": "The classical eight-centre scheme comprises the shaft, head, greater tubercle, lesser tubercle, capitulum, trochlea and the two epicondyles. The olecranon belongs to the ulna and must not be counted as a humeral centre.",
       "sourceIds": [
@@ -255114,11 +255796,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:47",
+      "claimId": "FMA23130:claim:49",
       "structureId": "FMA23130",
       "text": "Gray (1918) describes fetal shaft ossification followed by separate postnatal proximal and distal centres and later fusion. Its exact appearance/fusion ages are historical observations, not validated age-estimation rules for current patients. Modern skeletal maturation varies and requires age-, sex- and population-appropriate evidence.",
       "sourceIds": [
@@ -255131,11 +255813,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:48",
+      "claimId": "FMA23130:claim:50",
       "structureId": "FMA23130",
       "text": "A supracondylar process may project from the distal anteromedial humerus. A fibrous connection to the medial epicondyle can relate to median-nerve or brachial-artery compression. The cited dry-bone study is a sample observation, not a universal prevalence estimate.",
       "sourceIds": [
@@ -255148,11 +255830,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:49",
+      "claimId": "FMA23130:claim:51",
       "structureId": "FMA23130",
       "text": "A supratrochlear aperture is a variable opening through the septum between coronoid and olecranon fossae. It should not be confused with a normal nutrient foramen or assumed to exist in this individual source mesh.",
       "sourceIds": [
@@ -255165,11 +255847,11 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
-      "claimId": "FMA23130:claim:50",
+      "claimId": "FMA23130:claim:52",
       "structureId": "FMA23130",
       "text": "The distal medial and lateral epicondyles provide palpable, non-articular reference points on either side of the elbow. The more proximal humerus lies beneath muscle and should be interpreted using its relationships to the shoulder and arm, not treated as uniformly subcutaneous.",
       "sourceIds": [
@@ -255182,7 +255864,76 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "FMA23130:claim:53",
+      "structureId": "FMA23130",
+      "text": "Start at the shoulder end. The rounded head faces medially, and the tubercles flank the intertubercular sulcus on the front of the proximal bone.",
+      "sourceIds": [
+        "rohen-7",
+        "openstax-upper-limb"
+      ],
+      "evidence": [
+        {
+          "sourceId": "rohen-7",
+          "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), anterior and medial views, labels 1, 2, 5 and 13",
+          "status": "source-checked"
+        },
+        {
+          "sourceId": "openstax-upper-limb",
+          "locator": "Humerus, proximal end and Figure 8.5",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "FMA23130:claim:54",
+      "structureId": "FMA23130",
+      "text": "At the elbow end, the anterior fossae lie above the capitulum and trochlea and receive the radius and ulna during flexion. Turn the bone over to find the olecranon fossa, which receives the olecranon during extension.",
+      "sourceIds": [
+        "rohen-7",
+        "openstax-upper-limb"
+      ],
+      "evidence": [
+        {
+          "sourceId": "rohen-7",
+          "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), anterior and posterior views, labels 10, 12, 17, 19 and 23",
+          "status": "source-checked"
+        },
+        {
+          "sourceId": "openstax-upper-limb",
+          "locator": "Humerus, distal fossae and Figure 8.5",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "FMA23130:claim:55",
+      "structureId": "FMA23130",
+      "text": "The posterior view separates two nerve-related landmarks. The radial groove crosses the shaft, while the ulnar groove sits at the distal medial epicondyle.",
+      "sourceIds": [
+        "rohen-7",
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "rohen-7",
+          "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18, 21 and 22",
+          "status": "source-checked"
+        },
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -259900,7 +260651,7 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -259917,7 +260668,47 @@
           "status": "source-checked"
         }
       ],
-      "checkedAt": "2026-10-31",
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "feature:FMA23130:medial-epicondyle:claim:2",
+      "structureId": "feature:FMA23130:medial-epicondyle",
+      "text": "The groove immediately behind the epicondyle marks the local course of the ulnar nerve.",
+      "sourceIds": [
+        "rohen-7",
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "rohen-7",
+          "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+          "status": "source-checked"
+        },
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "feature:FMA23130:medial-epicondyle:claim:3",
+      "structureId": "feature:FMA23130:medial-epicondyle",
+      "text": "CT measurements show substantial individual variation in the medial epicondyle and adjacent groove. The groove forms part of the bony setting of the cubital tunnel.",
+      "sourceIds": [
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose and Conclusion",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     },
     {
@@ -262094,6 +262885,120 @@
         }
       ],
       "checkedAt": "2026-10-31",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "feature:FMA23130:ulnar-groove:claim:0",
+      "structureId": "feature:FMA23130:ulnar-groove",
+      "text": "A shallow groove lies immediately behind the medial epicondyle of the distal humerus.",
+      "sourceIds": [
+        "rohen-7",
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "rohen-7",
+          "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+          "status": "source-checked"
+        },
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "feature:FMA23130:ulnar-groove:claim:1",
+      "structureId": "feature:FMA23130:ulnar-groove",
+      "text": "The groove is a landmark of the distal humerus.",
+      "sourceIds": [
+        "fipat"
+      ],
+      "evidence": [
+        {
+          "sourceId": "fipat",
+          "locator": "TA2 Part II, entries 1207–1208",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "feature:FMA23130:ulnar-groove:claim:2",
+      "structureId": "feature:FMA23130:ulnar-groove",
+      "text": "A shallow groove lies immediately behind the medial epicondyle of the distal humerus.",
+      "sourceIds": [
+        "rohen-7",
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "rohen-7",
+          "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), posterior view, labels 18 and 21",
+          "status": "source-checked"
+        },
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "feature:FMA23130:ulnar-groove:claim:3",
+      "structureId": "feature:FMA23130:ulnar-groove",
+      "text": "The ulnar nerve passes along this side of the elbow behind the medial epicondyle.",
+      "sourceIds": [
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose and Methods",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "feature:FMA23130:ulnar-groove:claim:4",
+      "structureId": "feature:FMA23130:ulnar-groove",
+      "text": "The epicondyle forms the anterior bony boundary at this level of the cubital tunnel.",
+      "sourceIds": [
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
+      "locatorStatus": "claim-linked"
+    },
+    {
+      "claimId": "feature:FMA23130:ulnar-groove:claim:5",
+      "structureId": "feature:FMA23130:ulnar-groove",
+      "text": "CT measurements show substantial individual variation in the medial epicondyle and adjacent groove. The groove forms part of the bony setting of the cubital tunnel.",
+      "sourceIds": [
+        "chaves-medial-epicondyle"
+      ],
+      "evidence": [
+        {
+          "sourceId": "chaves-medial-epicondyle",
+          "locator": "Abstract, Purpose and Conclusion",
+          "status": "source-checked"
+        }
+      ],
+      "checkedAt": "2026-11-07",
       "locatorStatus": "claim-linked"
     }
   ],
@@ -273663,6 +274568,15 @@
       "verificationStatus": "tts-approximation",
       "audioAvailable": false,
       "method": "browser-speech-synthesis"
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "englishText": "Groove for ulnar nerve of right humerus",
+      "latinText": "Sulcus nervi ulnaris",
+      "sourceIds": [],
+      "verificationStatus": "tts-approximation",
+      "audioAvailable": false,
+      "method": "browser-speech-synthesis"
     }
   ],
   "clinical_correlations": [
@@ -278675,7 +279589,21 @@
     },
     {
       "id": "feature:FMA23130:medial-epicondyle",
-      "claims": []
+      "claims": [
+        {
+          "text": "CT measurements show substantial individual variation in the medial epicondyle and adjacent groove. The groove forms part of the bony setting of the cubital tunnel.",
+          "sources": [
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose and Conclusion",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "feature:FMA23130:lateral-epicondyle",
@@ -278932,6 +279860,24 @@
     {
       "id": "feature:FMA23467:styloid",
       "claims": []
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "claims": [
+        {
+          "text": "CT measurements show substantial individual variation in the medial epicondyle and adjacent groove. The groove forms part of the bony setting of the cubital tunnel.",
+          "sources": [
+            "chaves-medial-epicondyle"
+          ],
+          "evidence": [
+            {
+              "sourceId": "chaves-medial-epicondyle",
+              "locator": "Abstract, Purpose and Conclusion",
+              "status": "source-checked"
+            }
+          ]
+        }
+      ]
     }
   ],
   "anatomical_variations": [
@@ -284151,6 +285097,10 @@
     },
     {
       "id": "feature:FMA23467:styloid",
+      "sections": []
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
       "sections": []
     }
   ],
@@ -420449,21 +421399,9 @@
         },
         {
           "id": "feature:FMA23130:medial-epicondyle",
-          "code": "section:relations",
-          "severity": "review",
-          "message": "Section requires research/review: relations"
-        },
-        {
-          "id": "feature:FMA23130:medial-epicondyle",
           "code": "section:function",
           "severity": "review",
           "message": "Section requires research/review: function"
-        },
-        {
-          "id": "feature:FMA23130:medial-epicondyle",
-          "code": "section:clinical",
-          "severity": "review",
-          "message": "Section requires research/review: clinical"
         }
       ]
     },
@@ -422320,6 +423258,17 @@
           "code": "section:clinical",
           "severity": "review",
           "message": "Section requires research/review: clinical"
+        }
+      ]
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "issues": [
+        {
+          "id": "feature:FMA23130:ulnar-groove",
+          "code": "medical-review",
+          "severity": "review",
+          "message": "Independent medical review pending"
         }
       ]
     }

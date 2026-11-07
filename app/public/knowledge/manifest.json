@@ -4,12 +4,12 @@
     {
       "path": "/knowledge/coverage.json",
       "bytes": 1136104,
-      "sha256": "eab13274bc4c31279815d5ddcb65ee32ccf88fde3958410e1bccd48440fd970c"
+      "sha256": "374b65e68300d8e40d7131da892373952c90f2728884ba1c8ab4a69c6eb3feb0"
     },
     {
       "path": "/knowledge/database.json",
-      "bytes": 10643239,
-      "sha256": "48703a56bb230f37f3dbc83ae81e1e45f558e0ba4c25c5c95101426144d71034"
+      "bytes": 10672151,
+      "sha256": "1efb5e2bed0d184ee7f538e13ce14358072a3511953ae8257a5b4b9dcce93bf6"
     },
     {
       "path": "/knowledge/import-example.json",

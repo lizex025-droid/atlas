@@ -1,6 +1,5 @@
-import { CoverageDashboard } from './CoverageDashboard';
 import { BoneLandmarkExplorer } from './BoneLandmarkExplorer';
-import { boneLandmarks,isBone,landmarkCamera,boneStudyCamera,boneStudyState } from './landmarks';
+import { boneLandmarks,getLandmarkAnchor,isBone,landmarkCamera,boneStudyCamera,boneStudyState } from './landmarks';
 import { EntryScreen } from './EntryScreen';
 import type { EntryPage } from './EntryScreen';
 import type { AtlasCard } from './atlasCatalog';
@@ -11,6 +10,7 @@ import { anatomy, byId } from './anatomy';
 import { modelModes, applyModelMode, activeModelMode } from './modelModes';
 import type { ModelModeId } from './modelModes';
 const Viewer=lazy(()=>import('./Viewer').then(module=>({default:module.Viewer})));
+const CoverageDashboard=lazy(()=>import('./CoverageDashboard').then(module=>({default:module.CoverageDashboard})));
 import type { ViewerHandle } from './Viewer';
 import { InformationPanel } from './InformationPanel';
 import { WorkspaceDrawer, defaultSettings } from './WorkspaceDrawer';
@@ -45,7 +45,16 @@ export default function App(){
  const apply=useCallback((update:(s:WorkspaceState)=>WorkspaceState)=>dispatch({type:'apply',update}),[]);
  const select=useCallback((id:string,focus=false)=>{const camera=viewer.current?.capture();apply(s=>selectStructure(s,id,multi,focus,camera??s.camera));setNote('');setPanelOpen(true);setLandmarkMode(false);setLandmarkSelection(null);setStatus('Selected '+titleFor(id));},[apply,multi]);
  const chooseModelMode=useCallback((mode:ModelModeId)=>{const camera=viewer.current?.capture();apply(s=>applyModelMode(s,mode,camera??s.camera));setStatus('Showing '+modelModes.find(preset=>preset.id===mode)?.label+' anatomy');},[apply]);
- const enterLandmarks=useCallback((id:string)=>{if(!isBone(id))return;const camera=viewer.current?.capture();apply(s=>({...selectStructure(s,id,false,false),opacity:{...s.opacity,[id]:1},camera:boneStudyCamera(id,camera??s.camera,explode)}));setLandmarkMode(true);setLandmarkSelection(null);setMarkersVisible(true);setLandmarkCategory('all');setPanelOpen(false);setDrawer(null);setStatus('Bony Markings · '+titleFor(id));},[apply,explode]);
+ const enterLandmarks=useCallback((id:string,featureId?:string)=>{
+  if(!isBone(id))return;
+  const anchor=featureId?getLandmarkAnchor(id,featureId):null;
+  if(featureId&&!anchor)return;
+  const camera=viewer.current?.capture();
+  apply(s=>({...selectStructure(s,id,false,false),opacity:{...s.opacity,[id]:1},
+   camera:anchor?landmarkCamera(id,anchor,camera??s.camera,explode):boneStudyCamera(id,camera??s.camera,explode)}));
+  setLandmarkMode(true);setLandmarkSelection(featureId?{boneId:id,id:featureId}:null);setMarkersVisible(true);
+  setLandmarkCategory('all');setPanelOpen(false);setDrawer(null);setStatus('Bony Markings · '+titleFor(id));
+ },[apply,explode]);
  const action=useCallback((name:string)=>{
   if(name==='coverage'){route('coverage');return;}
   if(name==='multi'){setMulti(v=>!v);return;}
@@ -64,12 +73,22 @@ export default function App(){
  const openCard=(card:AtlasCard)=>{setQuiz(false);apply(s=>({...s,hidden:anatomy.filter(a=>!card.members.includes(a.id)).map(a=>a.id),opacity:{},selected:null,selectedIds:card.members,groupId:card.id,camera:frame(card.members,defaultCamera)}));setDrawer(null);setSection(null);setExplode(0);route('workspace');setStatus('Opened '+card.title);};
  const openMode=(mode:'workspace'|'quiz'|'library'|'section')=>{setQuiz(mode==='quiz');if(mode==='quiz')setStatus('Identification practice');setDrawer(mode==='library'?'Library':mode==='section'?'Tools':null);if(mode==='section'){setSection(0);setExplode(0);}route('workspace');};
  const showQuestion=useCallback((id:string)=>{apply(s=>visibility(selectStructure(s,id,false,true,defaultCamera),'isolate'));},[apply]);
- const entryScreen=entryPage==='coverage'?<CoverageDashboard close={()=>route('atlas')} select={id=>{setQuiz(false);select(id,false);setDrawer(null);route('workspace');}}/>:entryPage!=='workspace'?<EntryScreen openCoverage={()=>route('coverage')} page={entryPage} route={route} hasWorkspace={hasEntered} openCard={openCard} openStructure={id=>{setQuiz(false);select(id,true);setDrawer(null);route('workspace');}} openMode={openMode}/>:null;
+ const entryScreen=entryPage==='coverage'?<Suspense fallback={<p role="status">Loading coverage</p>}><CoverageDashboard close={()=>route('atlas')} select={id=>{setQuiz(false);select(id,false);setDrawer(null);route('workspace');}}/></Suspense>:entryPage!=='workspace'?<EntryScreen openCoverage={()=>route('coverage')} page={entryPage} route={route} hasWorkspace={hasEntered} openCard={openCard} openStructure={id=>{setQuiz(false);select(id,true);setDrawer(null);route('workspace');}} openMode={openMode}/>:null;
  const selectedRecord=state.selected?getKnowledge(state.selected):null;
  const landmarkBone=landmarkMode&&!quiz&&isBone(state.selected)?state.selected:null;
  const landmarkItems=useMemo(()=>landmarkBone?boneLandmarks(landmarkBone):[],[landmarkBone]);
  const activeLandmark=landmarkSelection?.boneId===landmarkBone?landmarkItems.find(l=>l.id===landmarkSelection.id)??null:null;
- function selectLandmark(id:string|null){if(!landmarkBone)return;setLandmarkSelection(id?{boneId:landmarkBone,id}:null);const item=landmarkItems.find(l=>l.id===id);if(item?.anchor){const camera=viewer.current?.capture()??state.camera;apply(s=>({...s,camera:landmarkCamera(landmarkBone,item.anchor!,camera,explode)}));}setStatus(item?'Landmark: '+item.name:'Bone landmark overview');}
+ function selectLandmark(id:string|null,focus=false){
+  if(!landmarkBone)return;
+  setLandmarkSelection(id?{boneId:landmarkBone,id}:null);
+  const item=landmarkItems.find(l=>l.id===id);
+  if(focus&&item?.anchor){
+   const anchor=item.anchor;
+   const camera=viewer.current?.capture()??state.camera;
+   apply(s=>({...s,camera:landmarkCamera(landmarkBone,anchor,camera,explode)}));
+  }
+  setStatus(item?'Landmark: '+item.name:'Bone landmark overview');
+ }
  function focusBone(){if(!landmarkBone)return;const camera=viewer.current?.capture()??state.camera;apply(s=>({...s,camera:boneStudyCamera(landmarkBone,camera,explode)}));}
  const renderState=useMemo(()=>boneStudyState(state,landmarkBone,boneContext),[state,landmarkBone,boneContext]);
  const activeMode=activeModelMode(renderState);
@@ -79,12 +98,12 @@ export default function App(){
  return <>{entryScreen}{hasEntered?<div aria-hidden={entryPage!=='workspace'} inert={entryPage!=='workspace'} className={'anatomy-workspace '+(panelOpen||quiz?'':'panel-collapsed')+(landmarkBone?' landmark-mode':'')} data-contrast={settings.highContrast} data-large-text={settings.largeText} data-reduced-motion={settings.reducedMotion}>
  <header className="app-header"><a className="wordmark" href="#" onClick={e=>{e.preventDefault();setDrawer('Hub');}}><span className="brand-symbol"><Layers size={17}/></span>ANATOMY<span>ATLAS</span></a><button className="workspace-entry-button" onClick={()=>route('atlas')}>ATLAS COLLECTION</button><span className="header-edition">EXPLORER / BODYPARTS3D</span><div className="header-status"><i/> Local study workspace <span>v0.4</span></div></header>
  <div className="top-navigation"><div className="history-controls"><button title="Home" aria-label="Reset workspace" onClick={()=>action('home')}><Home size={20}/><small>Home</small></button><button title="Undo" aria-label="Undo" disabled={!history.past.length} onClick={()=>dispatch({type:'undo'})}><Undo2 size={23}/><small>Undo</small></button><button className="panel-toggle" aria-label={panelOpen?'Collapse information panel':'Show information panel'} onClick={()=>{if(landmarkBone){setLandmarkMode(false);setPanelOpen(true);}else setPanelOpen(v=>!v);}}>{panelOpen?<X size={18}/>:<Menu size={18}/>}</button></div><nav className="anatomical-breadcrumbs" aria-label="Anatomical hierarchy">{!quiz&&hierarchy.length?hierarchy.map((p,i)=><span key={p.id}><button aria-current={i===hierarchy.length-1?'page':undefined} disabled={!groups.has(p.id)&&!byId.has(p.id)&&p.id!==state.selected} onClick={()=>select(p.id,false)}>{p.name}</button>{i<hierarchy.length-1?<ChevronRight size={12}/>:null}</span>):<span className="breadcrumb-placeholder">Full body <ChevronRight size={12}/> Anatomical exploration</span>}</nav></div>
- {quiz?<IdentificationQuiz onQuestion={showQuestion} onExit={()=>setQuiz(false)}/>:<InformationPanel collapsed={!panelOpen} onClose={()=>setPanelOpen(false)} selected={state.selected} groupId={state.groupId} selectedCount={state.selectedIds.length} multi={multi} onSelect={select} onAction={action} onSearch={()=>setDrawer('Search')}/>}
- <main className="anatomy-viewport"><Suspense fallback={<div className="webgl-error" role="status">Preparing 3D workspace</div>}><Viewer ref={viewer} state={quiz?{...renderState,annotations:[]}:renderState} cameraRequest={0} labels={settings.labels&&!quiz&&!landmarkBone} onSelect={id=>{if(!quiz){if(isBone(id)&&!multi)enterLandmarks(id);else select(id);}}} onFocus={id=>{if(!quiz){if(isBone(id)&&!multi)enterLandmarks(id);else select(id,true);}}} onProgress={setProgress} retry={retry} selectedIds={state.selectedIds} settings={settings} section={section} explode={explode} landmarkBone={landmarkBone} landmarks={markersVisible&&section===null?landmarkItems.filter(l=>landmarkCategory==='all'||l.category===landmarkCategory):[]} selectedLandmark={activeLandmark?.id} onLandmark={selectLandmark}/></Suspense>
+ {quiz?<IdentificationQuiz onQuestion={showQuestion} onExit={()=>setQuiz(false)}/>:<InformationPanel collapsed={!panelOpen} onClose={()=>setPanelOpen(false)} selected={state.selected} groupId={state.groupId} selectedCount={state.selectedIds.length} multi={multi} onSelect={select} onLocateLandmark={enterLandmarks} onAction={action} onSearch={()=>setDrawer('Search')}/>}
+ <main className="anatomy-viewport"><Suspense fallback={<div className="webgl-error" role="status">Preparing 3D workspace</div>}><Viewer ref={viewer} state={quiz?{...renderState,annotations:[]}:renderState} cameraRequest={0} labels={settings.labels&&!quiz&&!landmarkBone} onSelect={id=>{if(!quiz)select(id);}} onFocus={id=>{if(!quiz){if(isBone(id)&&!multi)enterLandmarks(id);else select(id,true);}}} onProgress={setProgress} retry={retry} selectedIds={state.selectedIds} settings={settings} section={section} explode={explode} landmarkBone={landmarkBone} landmarks={markersVisible&&section===null?landmarkItems.filter(l=>landmarkCategory==='all'||l.category===landmarkCategory):[]} selectedLandmark={activeLandmark?.id} onLandmark={selectLandmark}/></Suspense>
  {!quiz&&!landmarkBone?<div className={"model-mode-switch"+(isBone(state.selected)?" with-markings":"")} role="group" aria-label="Anatomy view presets">{modelModes.map(preset=><button key={preset.id} type="button" title={preset.detail} aria-label={'Show '+preset.label} aria-pressed={activeMode===preset.id} onClick={()=>chooseModelMode(preset.id)}>{preset.label}</button>)}</div>:null}
  {!quiz&&!landmarkBone?<button className="mobile-info-trigger" aria-controls="anatomical-information" aria-expanded={panelOpen} onClick={()=>setPanelOpen(v=>!v)}><PanelsTopLeft size={17}/>{panelOpen?'Hide info':'Information'}</button>:null}
  {!quiz&&isBone(state.selected)?<button className="markings-button" onClick={()=>landmarkBone?(setLandmarkMode(false),setPanelOpen(true)):enterLandmarks(state.selected!)}>{landmarkBone?'Standard workspace':'Bony Markings'}</button>:null}
- {landmarkBone?<BoneLandmarkExplorer key={landmarkBone} boneId={landmarkBone} items={landmarkItems} selected={activeLandmark} markersVisible={markersVisible} setMarkersVisible={setMarkersVisible} select={selectLandmark} focusBone={()=>{selectLandmark(null);focusBone();}} close={()=>{setLandmarkMode(false);setPanelOpen(true);}} context={boneContext} setContext={setBoneContext} category={landmarkCategory} setCategory={setLandmarkCategory} sectionActive={section!==null}/>:null}
+ {landmarkBone?<BoneLandmarkExplorer key={landmarkBone} boneId={landmarkBone} items={landmarkItems} selected={activeLandmark} markersVisible={markersVisible} setMarkersVisible={setMarkersVisible} select={selectLandmark} openRecord={id=>select(id,false)} focusBone={()=>{selectLandmark(null);focusBone();}} close={()=>{setLandmarkMode(false);setPanelOpen(true);}} context={boneContext} setContext={setBoneContext} category={landmarkCategory} setCategory={setLandmarkCategory} sectionActive={section!==null}/>:null}
  <div className="viewport-caption"><span>{quiz?'IDENTIFICATION PRACTICE':state.groupId?groups.get(state.groupId)?.name:state.selected?selectedRecord?.officialName:'HUMAN ANATOMY'}</span><small>{state.selectedIds.length?state.selectedIds.length+' selected':visible+' visible structures'}</small></div>
  <div className="camera-controls" aria-label="Camera views">{Object.entries(cameraPresets).map(([name,view])=><button key={name} onClick={()=>apply(s=>({...s,camera:view}))}>{name}</button>)}<button aria-label="Reset camera" title="Reset camera" onClick={()=>action('camera')}><RotateCcw size={14}/></button><button aria-label="Focus selection" title="Focus selection" disabled={!state.selectedIds.length} onClick={()=>action('focus')}><Focus size={15}/></button></div>
  <div className="model-load-status" data-testid="model-loading" data-errors={JSON.stringify(progress.errors)} data-loaded={progress.loaded} data-total={progress.total} data-expected={expectedChunks}>{progress.errors.length?<><span role="alert" title={progress.errors.join("; ")}>Model loading failed.</span><button onClick={()=>setRetry(n=>n+1)}>Retry models</button></>:<span>{progress.total===0?'No visible meshes':progress.loaded===progress.total&&progress.total===expectedChunks?'Models ready':'Loading surfaces'} · {progress.loaded}/{progress.total} · {(progress.bytes/1048576).toFixed(1)} MiB</span>}</div>

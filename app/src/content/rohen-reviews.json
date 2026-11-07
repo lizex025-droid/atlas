@@ -1,0 +1,495 @@
+{
+  "schemaVersion": 1,
+  "pages": [
+    {
+      "pdfPage": 386,
+      "printedPage": 372,
+      "chapter": "Upper Limb",
+      "subsection": "Shoulder girdle and humerus",
+      "figureId": "right-shoulder-girdle-two-views",
+      "laterality": "right",
+      "views": [
+        "posterior",
+        "anterior"
+      ],
+      "visuallyReviewed": true,
+      "indexPagesChecked": [
+        528
+      ],
+      "indexReconciliation": "Humerus entry checked for this spread. Whole-index reconciliation pending.",
+      "subjectIds": [
+        "FMA13395",
+        "FMA23130"
+      ],
+      "labelCount": 16,
+      "labels": [
+        {
+          "label": 1,
+          "recordIds": [
+            "FMA7857"
+          ],
+          "views": [
+            "posterior"
+          ]
+        },
+        {
+          "label": 2,
+          "recordIds": [],
+          "views": [
+            "posterior"
+          ],
+          "unresolved": {
+            "conceptId": "right-costotransverse-joints",
+            "name": "Right costotransverse joints",
+            "reason": "Requires level-specific joint identities and verified costal and vertebral partners.",
+            "kind": "joint"
+          }
+        },
+        {
+          "label": 3,
+          "recordIds": [
+            "FMA7957",
+            "FMA8066",
+            "FMA8175",
+            "FMA8229"
+          ],
+          "views": [
+            "posterior"
+          ]
+        },
+        {
+          "label": 4,
+          "recordIds": [
+            "FMA13322"
+          ],
+          "views": [
+            "posterior",
+            "anterior"
+          ]
+        },
+        {
+          "label": 5,
+          "recordIds": [],
+          "views": [
+            "posterior",
+            "anterior"
+          ],
+          "unresolved": {
+            "conceptId": "right-acromioclavicular-joint",
+            "name": "Right acromioclavicular joint",
+            "reason": "A dedicated joint record is needed. The clavicle mesh cannot substitute for the joint.",
+            "kind": "joint"
+          }
+        },
+        {
+          "label": 6,
+          "recordIds": [],
+          "views": [
+            "posterior",
+            "anterior"
+          ],
+          "unresolved": {
+            "conceptId": "right-acromion",
+            "name": "Acromion of right scapula",
+            "reason": "Requires its own canonical feature record and scapular backlink.",
+            "kind": "landmark"
+          }
+        },
+        {
+          "label": 7,
+          "recordIds": [],
+          "views": [
+            "posterior",
+            "anterior"
+          ],
+          "unresolved": {
+            "conceptId": "right-scapular-notch",
+            "name": "Scapular notch of right scapula",
+            "reason": "Requires its own canonical feature record and scapular backlink.",
+            "kind": "landmark"
+          }
+        },
+        {
+          "label": 8,
+          "recordIds": [],
+          "views": [
+            "posterior"
+          ],
+          "unresolved": {
+            "conceptId": "right-scapular-spine",
+            "name": "Spine of right scapula",
+            "reason": "Requires its own canonical feature record and scapular backlink.",
+            "kind": "landmark"
+          }
+        },
+        {
+          "label": 9,
+          "recordIds": [
+            "feature:FMA23130:head"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 10,
+          "recordIds": [],
+          "views": [
+            "posterior",
+            "anterior"
+          ],
+          "unresolved": {
+            "conceptId": "right-glenoid-cavity",
+            "name": "Glenoid cavity of right scapula",
+            "reason": "Requires its own canonical feature record and ipsilateral humeral-head relationship.",
+            "kind": "landmark"
+          }
+        },
+        {
+          "label": 11,
+          "recordIds": [
+            "feature:FMA23130:surgical-neck"
+          ],
+          "views": [
+            "posterior",
+            "anterior"
+          ]
+        },
+        {
+          "label": 12,
+          "recordIds": [],
+          "views": [
+            "posterior"
+          ],
+          "unresolved": {
+            "conceptId": "right-scapular-posterior-surface",
+            "name": "Posterior surface of right scapula",
+            "reason": "Requires its own canonical feature record and scapular backlink.",
+            "kind": "landmark"
+          }
+        },
+        {
+          "label": 13,
+          "recordIds": [],
+          "views": [
+            "anterior"
+          ],
+          "unresolved": {
+            "conceptId": "right-coracoid-process",
+            "name": "Coracoid process of right scapula",
+            "reason": "Requires its own canonical feature record and scapular backlink.",
+            "kind": "landmark"
+          }
+        },
+        {
+          "label": 14,
+          "recordIds": [],
+          "views": [
+            "anterior"
+          ],
+          "unresolved": {
+            "conceptId": "right-infraglenoid-tubercle",
+            "name": "Infraglenoid tubercle of right scapula",
+            "reason": "Requires its own canonical feature record and scapular backlink.",
+            "kind": "landmark"
+          }
+        },
+        {
+          "label": 15,
+          "recordIds": [
+            "feature:FMA23130:greater-tubercle"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 16,
+          "recordIds": [
+            "feature:FMA23130:anatomical-neck"
+          ],
+          "views": [
+            "anterior"
+          ]
+        }
+      ],
+      "modelReviews": [],
+      "unresolvedSubjects": [
+        {
+          "conceptId": "right-glenohumeral-joint",
+          "name": "Right glenohumeral joint",
+          "kind": "joint",
+          "reason": "Register a joint concept with independently sourced articular, capsular and stabilizing anatomy."
+        }
+      ]
+    },
+    {
+      "pdfPage": 387,
+      "printedPage": 373,
+      "chapter": "Upper Limb",
+      "subsection": "Humerus",
+      "figureId": "humerus-three-views",
+      "laterality": "right",
+      "views": [
+        "anterior",
+        "medial",
+        "posterior"
+      ],
+      "visuallyReviewed": true,
+      "indexPagesChecked": [
+        522,
+        523,
+        524,
+        526,
+        528,
+        543,
+        544
+      ],
+      "indexReconciliation": "Related entries checked for this page. Whole-index reconciliation pending.",
+      "labels": [
+        {
+          "label": 1,
+          "recordIds": [
+            "feature:FMA23130:greater-tubercle"
+          ],
+          "views": [
+            "anterior",
+            "posterior"
+          ]
+        },
+        {
+          "label": 2,
+          "recordIds": [
+            "feature:FMA23130:lesser-tubercle"
+          ],
+          "views": [
+            "anterior",
+            "medial"
+          ]
+        },
+        {
+          "label": 3,
+          "recordIds": [
+            "feature:FMA23130:lesser-crest"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 4,
+          "recordIds": [
+            "feature:FMA23130:greater-crest"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 5,
+          "recordIds": [
+            "feature:FMA23130:intertubercular-sulcus"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 6,
+          "recordIds": [
+            "feature:FMA23130:surgical-neck"
+          ],
+          "views": [
+            "anterior",
+            "medial",
+            "posterior"
+          ]
+        },
+        {
+          "label": 7,
+          "recordIds": [
+            "feature:FMA23130:deltoid-tuberosity"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 8,
+          "recordIds": [
+            "feature:FMA23130:anterolateral"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 9,
+          "recordIds": [
+            "feature:FMA23130:lateral-supraridge"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 10,
+          "recordIds": [
+            "feature:FMA23130:radial-fossa"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 11,
+          "recordIds": [
+            "feature:FMA23130:lateral-epicondyle"
+          ],
+          "views": [
+            "anterior",
+            "posterior"
+          ]
+        },
+        {
+          "label": 12,
+          "recordIds": [
+            "feature:FMA23130:capitulum"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 13,
+          "recordIds": [
+            "feature:FMA23130:head"
+          ],
+          "views": [
+            "anterior",
+            "medial",
+            "posterior"
+          ]
+        },
+        {
+          "label": 14,
+          "recordIds": [
+            "feature:FMA23130:anatomical-neck"
+          ],
+          "views": [
+            "anterior",
+            "medial",
+            "posterior"
+          ]
+        },
+        {
+          "label": 15,
+          "recordIds": [
+            "feature:FMA23130:anteromedial"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 16,
+          "recordIds": [
+            "feature:FMA23130:medial-supraridge"
+          ],
+          "views": [
+            "anterior",
+            "medial"
+          ]
+        },
+        {
+          "label": 17,
+          "recordIds": [
+            "feature:FMA23130:coronoid-fossa"
+          ],
+          "views": [
+            "anterior"
+          ]
+        },
+        {
+          "label": 18,
+          "recordIds": [
+            "feature:FMA23130:medial-epicondyle"
+          ],
+          "views": [
+            "anterior",
+            "medial",
+            "posterior"
+          ]
+        },
+        {
+          "label": 19,
+          "recordIds": [
+            "feature:FMA23130:trochlea"
+          ],
+          "views": [
+            "anterior",
+            "posterior"
+          ]
+        },
+        {
+          "label": 20,
+          "recordIds": [
+            "feature:FMA23130:posterior"
+          ],
+          "views": [
+            "posterior"
+          ]
+        },
+        {
+          "label": 21,
+          "recordIds": [
+            "feature:FMA23130:ulnar-groove"
+          ],
+          "views": [
+            "posterior"
+          ]
+        },
+        {
+          "label": 22,
+          "recordIds": [
+            "feature:FMA23130:radial-groove"
+          ],
+          "views": [
+            "posterior"
+          ]
+        },
+        {
+          "label": 23,
+          "recordIds": [
+            "feature:FMA23130:olecranon-fossa"
+          ],
+          "views": [
+            "posterior"
+          ]
+        }
+      ],
+      "subjectIds": [
+        "FMA23130"
+      ],
+      "featureParentId": "FMA23130",
+      "modelReviews": [
+        {
+          "meshId": "FMA23130",
+          "status": "gross-features-only",
+          "checks": {
+            "structuralCompleteness": "Proximal end, shaft and distal end are identifiable. Joint cartilage and fine subdivisions are outside the installed asset.",
+            "shapeFidelity": "Five gross areas localize in multi-view comparison. The reduced surface shows visible discontinuities near the proximal contour and anterior distal fossa.",
+            "relativeDimensions": "Gross proportions observed visually. No registered measurement or population benchmark.",
+            "orientation": "Right-side mesh and medial-facing head are consistent with the source record and asset coordinates.",
+            "neighbors": "Registry links ipsilateral scapula, radius and ulna. Joint congruence and specimen registration remain unmeasured.",
+            "landmarks": "Five representative surface points on indexed triangles, with side and source digest checked.",
+            "topology": "2,233 indexed vertices and 3,784 triangles. 564 indexed boundary edges, zero nonmanifold edges and zero degenerate triangles at the audit threshold. The observed discontinuities preclude a full fidelity pass.",
+            "interactivity": "Only the existing whole bone is selectable geometry. Reviewed points and semantic records are tracked separately."
+          },
+          "blocker": "A higher-resolution, licensed right humerus or segmented imaging with suitable comparative landmarks is needed for quantitative geometry verification and precise fine landmarks."
+        }
+      ],
+      "labelCount": 23
+    }
+  ]
+}

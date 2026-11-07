@@ -1,0 +1,136 @@
+{
+  "schemaVersion": 1,
+  "boneId": "FMA23130",
+  "meshId": "FMA23130",
+  "chunkUrl": "/models/bodyparts3d/skeletal-trunk-2.glb",
+  "chunkSha256": "ee64845d91b5029adb79d6105cec5b8d5c0b602f60066b3250331fde7469c56a",
+  "vertexCount": 2233,
+  "triangleCount": 3784,
+  "coordinateSpace": "mesh-local",
+  "license": "CC-BY-SA-2.1-JP",
+  "attribution": "BodyParts3D / The Database Center for Life Science, Japan. Model-derived surface bindings under the same license. See /models/ATTRIBUTION.txt.",
+  "review": {
+    "status": "geometry-reviewed",
+    "method": "Manually identified in orthographic and oblique views of the original right mesh, projected to its indexed triangles and checked in annotated renders against anatomical reference views.",
+    "reviewedAt": "2026-11-07",
+    "medicalReview": "pending",
+    "limitation": "Representative gross surface points only. The polygon-reduced mesh shows surface discontinuities and does not establish exact landmark boundaries, cartilage, attachment footprints or patient-specific measurements."
+  },
+  "anchors": {
+    "head": {
+      "triangle": [
+        1891,
+        1885,
+        1884
+      ],
+      "weights": [
+        0.4859383331414174,
+        0.10556305297354655,
+        0.40849861388503605
+      ],
+      "position": [
+        -0.46316271517692087,
+        1.764068526165826,
+        -0.09758622122995028
+      ],
+      "normal": [
+        0.9038921965463744,
+        0.3854353940330515,
+        -0.1855221120221437
+      ],
+      "reviewNote": "Rounded articular head viewed from medial."
+    },
+    "greater-tubercle": {
+      "triangle": [
+        1066,
+        1083,
+        1082
+      ],
+      "weights": [
+        0.16496571610283095,
+        0.3838894793864821,
+        0.4511448045106869
+      ],
+      "position": [
+        -0.6090616007284733,
+        1.767211383308683,
+        -0.08501479265852165
+      ],
+      "normal": [
+        -0.9849530182767365,
+        0.17034364107176192,
+        -0.029164974437869483
+      ],
+      "reviewNote": "Gross prominence lateral to the head, above the shaft."
+    },
+    "medial-epicondyle": {
+      "triangle": [
+        931,
+        923,
+        886
+      ],
+      "weights": [
+        0.313367769262737,
+        0.5864117015041287,
+        0.10022052923313426
+      ],
+      "position": [
+        -0.5993466759409224,
+        0.8746399547372545,
+        -0.12550109418888278
+      ],
+      "normal": [
+        0.09628059538042946,
+        0.015768429799713147,
+        -0.9952293221036251
+      ],
+      "reviewNote": "Medial distal projection, beside the trochlea."
+    },
+    "lateral-epicondyle": {
+      "triangle": [
+        117,
+        82,
+        122
+      ],
+      "weights": [
+        0.337159002014816,
+        0.014431659580608687,
+        0.6484093384045753
+      ],
+      "position": [
+        -0.7612038187980652,
+        0.8809256690229688,
+        -0.14349640192312352
+      ],
+      "normal": [
+        -0.35515216617718526,
+        -0.22520957231839733,
+        -0.9072748136015997
+      ],
+      "reviewNote": "Lateral distal projection, outside the olecranon fossa."
+    },
+    "olecranon-fossa": {
+      "triangle": [
+        525,
+        422,
+        420
+      ],
+      "weights": [
+        0.3988083200022234,
+        0.30549443065619203,
+        0.29569724934158464
+      ],
+      "position": [
+        -0.6842038187980651,
+        0.9076399547372545,
+        -0.12076389422353806
+      ],
+      "normal": [
+        0.30372147228981383,
+        -0.6523420965439709,
+        -0.6944084218575726
+      ],
+      "reviewNote": "Central depression on the posterior distal humerus."
+    }
+  }
+}

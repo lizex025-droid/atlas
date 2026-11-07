@@ -1,14 +1,17 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-31T12:56:09.420Z",
+  "checkedAt": "2026-11-07T00:21:06.673Z",
   "complete": false,
   "modelDigest": "aa48a5fbbc19c8a155bda0487aa525091e360ac17eb63ced76e8cc4998850528",
-  "reportSha256": "a9cd37b2b5c9210c509ec887555f611f6a3d1a4481788d6c64b7e7763be0e933",
+  "modelDigests": {
+    "FMA9968": "aa48a5fbbc19c8a155bda0487aa525091e360ac17eb63ced76e8cc4998850528",
+    "FMA23130": "ee64845d91b5029adb79d6105cec5b8d5c0b602f60066b3250331fde7469c56a"
+  },
+  "reportSha256": "3bbb7e86fc8065fd2aaf32049449fd9931d376bbe4ff254160991500444aa929",
   "next": [
-    "Independent anatomical review of six gross T7 anchors",
-    "Map T7 pedicles and laminae only after reliable surface review",
-    "Seek licensed higher-resolution T7 facet/notch geometry",
-    "Review humeral feature anchors without mirroring across sides"
+    "Obtain independent review of T7 and right humerus surface points",
+    "Review the left humerus independently",
+    "Seek higher-resolution licensed geometry for fine features"
   ],
   "coverage": [
     {
@@ -942,8 +945,8 @@
         "FMA23130"
       ],
       "mapping": "exact-name",
-      "region": "Trunk",
-      "anchors": 0
+      "region": "Upper limbs",
+      "anchors": 5
     },
     {
       "id": "adult-bone:087",
@@ -2411,6 +2414,146 @@
       "id": "landmark:FMA9968:inferior-notch-right",
       "status": "unverified",
       "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "feature:FMA23130:head",
+      "status": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:anatomical-neck",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:greater-tubercle",
+      "status": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:lesser-tubercle",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:surgical-neck",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:body",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:condyle",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:anterolateral",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:anteromedial",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:posterior",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:anterior-border",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:medial-border",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:lateral-border",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:capitulum",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:trochlea",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:intertubercular-sulcus",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:greater-crest",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:lesser-crest",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:deltoid-tuberosity",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:radial-groove",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:medial-epicondyle",
+      "status": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:lateral-epicondyle",
+      "status": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:coronoid-fossa",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:radial-fossa",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:olecranon-fossa",
+      "status": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:medial-supraridge",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:lateral-supraridge",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "status": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
     }
   ]
 }

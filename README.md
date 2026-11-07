@@ -1,10 +1,12 @@
 # AnatomyAtlas independent anatomy workspace
 
-Interactive **Bony Markings**: click a bone in 3D or select it and press Bony Markings. T7 (FMA9968) has six reviewed gross surface anchors with hover, details, occlusion, category filtering and saved landmark views. Other bones show explicit mapping gaps; 206-bone coverage is tracked, not claimed complete. [Landmark guide](LANDMARK_SYSTEM.md) · [actual coverage](LANDMARK_COVERAGE_REPORT.md) · [resume checkpoint](LANDMARK_PROGRESS.json).
+Select a bone in 3D to open its information panel. Use **Bony Markings** or double-click the bone for the landmark study. T7 has six reviewed gross surface points and the right humerus has five. Other bones show explicit mapping gaps. [Landmark guide](LANDMARK_SYSTEM.md) · [actual coverage](LANDMARK_COVERAGE_REPORT.md) · [resume checkpoint](LANDMARK_PROGRESS.json).
 
 Version 0.4 adds the model-driven knowledge system, detailed partial upper-limb bone records, contextual information tabs, working approximate native pronunciation, licensed/source-evidenced import workflow and `/#coverage`. The requested complete medical corpus is not finished: all 1,171 modeled IDs are mapped, 11 profiles are partial, 1,160 are metadata-only, and none is independently medically verified.
 
 Start with [implementation and test results](IMPLEMENTATION_STATUS.md), [actual coverage](ANATOMICAL_COVERAGE_REPORT.md), [knowledge delivery report](KNOWLEDGE_IMPLEMENTATION_REPORT.md), [population workflow](CONTENT_POPULATION_WORKFLOW.md), [resumable checkpoint](CONTENT_PROGRESS.json) and [continuation prompt](POPULATION_MASTER_PROMPT.md). [Final screenshots](VISUAL_QA_REPORT.md) document the working app, not mockups.
+
+The [Rohen book integration](book-integration/README.md) tracks page review separately from sourced content and geometry. Open `/#coverage` to see the current batch.
 
 The independent application is in [app](app). Run `npm install`, then `npm run dev` there; `npm run build` produces `app/dist`. Consult the app README for controls and tests.
 

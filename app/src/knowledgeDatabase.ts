@@ -1,5 +1,6 @@
 import type { AnatomyRecord,SourceReference } from './knowledgeSchema';
 import { evaluateSections,recordFacts,validateRecord } from './coverage';
+import { bookReferencesFor } from './bookReferences';
 export function normalizedDatabase(records:AnatomyRecord[],sources:SourceReference[],hierarchyGroups:unknown[]){
  return {
   schemaVersion:1,
@@ -11,6 +12,7 @@ export function normalizedDatabase(records:AnatomyRecord[],sources:SourceReferen
   anatomical_relationships:records.flatMap(r=>r.anatomicalRelations.map(f=>({structureId:r.id,...f}))),
   model_mesh_mappings:records.map(r=>({id:r.id,meshIds:r.meshIds,modelIds:r.modelIds,mappingStatus:r.meshIds.length?'installed':'semantic-only-no-separate-geometry'})),
   anatomical_sources:sources,
+  book_references:records.flatMap(r=>bookReferencesFor(r.id).map(reference=>({structureId:r.id,sourceId:'rohen-7',...reference}))),
   source_evidence:records.flatMap(r=>recordFacts(r).map((fact,i)=>({claimId:r.id+':claim:'+i,structureId:r.id,text:fact.text,sourceIds:fact.sources,evidence:fact.evidence??[],checkedAt:r.lastReviewedAt,locatorStatus:fact.evidence?.length?'claim-linked':'legacy-source-level-only'}))),
   pronunciation_records:records.map(r=>({id:r.id,...r.pronunciation})),
   clinical_correlations:records.map(r=>({id:r.id,claims:r.clinicalNotes})),

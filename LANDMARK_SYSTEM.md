@@ -1,10 +1,12 @@
 # Interactive bone landmarks in the existing AnatomyAtlas app
 
+The Rohen integration adds the right humerus as a second mesh-specific binding. A single model click opens anatomical information. Explicit **Bony Markings**, double-click, or **Locate surface point** opens the landmark study. Use **Focus landmark with bone context** to reframe after selection. The T7 implementation notes below document the original batch. Current totals and topology checks are in [LANDMARK_COVERAGE_REPORT.md](LANDMARK_COVERAGE_REPORT.md).
+
 This feature is integrated into the existing renderer, canonical bone selection, visibility tools, camera and local scene library. Both supplied reference images were visually opened. No AnatomyLearning meshes, textures, marker coordinates, scripts, text or branding were copied.
 
 ## Using it
 
-Click an actual bone in the viewport to open Bony Markings and smoothly frame the bone. Multiselection retains its existing additive behavior. Search/list selection continues to open the standard information panel without moving the camera; use the Bony Markings button to enter study mode. Standard workspace / Workspace exits the mode and restores normal visibility context. Orbit, pan and zoom remain available.
+Click a bone in the viewport to open its information panel. Double-click it or use Bony Markings to enter study mode and frame the bone. Multiselection retains its additive behavior. Search and list selection open the information panel without moving the camera. Standard workspace / Workspace exits the mode and restores normal visibility context. Orbit, pan and zoom remain available.
 
 The floating heading identifies the exact canonical bone. Circular surface markers use the category legend. Hover or keyboard focus shows the name; click selects the record, shows description, classification, side, relationships and source links, and frames the marker while retaining bone context. The list provides keyboard-accessible selection of occluded anchors. Whole bone returns to the overview. The Markers toggle affects points only; category filtering affects both points and list. Hidden points behind actual scene surfaces are not interactive. The details panel can collapse to its toolbar to expose the anatomy on a phone; portrait projection widens the usable view. Collapsed information controls are inert to keyboard/screen-reader navigation.
 

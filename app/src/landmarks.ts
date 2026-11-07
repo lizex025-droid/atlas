@@ -1,4 +1,5 @@
 import anchors from './content/t7-anchors.json';
+import rightHumerusAnchors from './content/right-humerus-anchors.json';
 import chunks from './chunks.json';
 import { anatomy } from './anatomy';
 import { byId } from './anatomy';
@@ -50,7 +51,18 @@ const seeds:Seed[]=[
   ['inferior-notch-'+side,side[0].toUpperCase()+side.slice(1)+' inferior vertebral notch','depression','Concavity below the pedicle.','Adjacent notches contribute to the intervertebral foramen.'],
  ] as Seed[]),
 ];
-export const landmarkBindingMatches=chunks.some(c=>c.id===byId.get(anchors.meshId)?.chunk&&c.url===anchors.chunkUrl&&c.sha256===anchors.chunkSha256);
+type LandmarkBinding = Omit<typeof anchors,'anchors'> & {anchors:Record<string,SurfaceAnchor>};
+export const landmarkModelBindings:LandmarkBinding[]=[anchors,rightHumerusAnchors];
+export function matchesLandmarkChunk(binding:LandmarkBinding){
+ return chunks.some(c=>c.id===byId.get(binding.meshId)?.chunk&&c.url===binding.chunkUrl&&c.sha256===binding.chunkSha256&&c.structures.includes(binding.meshId));
+}
+const bindingsByBone=new Map(landmarkModelBindings.filter(matchesLandmarkChunk).map(binding=>[binding.boneId,binding]));
+export const landmarkBindingFor=(boneId:string)=>bindingsByBone.get(boneId);
+export const landmarkBindingMatches=matchesLandmarkChunk(anchors);
+const humerusCategories:Record<string,LandmarkCategory>={
+ head:'articular','greater-tubercle':'tubercle','medial-epicondyle':'process',
+ 'lateral-epicondyle':'process','olecranon-fossa':'depression','ulnar-groove':'depression',
+};
 export const t7Landmarks:BoneLandmark[]=seeds.map(([key,name,category,description,relations='',kind='surface'])=>{
  const anchor=landmarkBindingMatches?(anchors.anchors as Record<string,SurfaceAnchor>)[key]??null:null;
  return {id:'landmark:FMA9968:'+key,boneId:'FMA9968',name,category,side:key.includes('left')?'left':key.includes('right')?'right':'midline',description,relations,sourceIds:['gray-vertebra','gray-thoracic'],attachmentKind:anchor?'region':kind,anchor,mappingStatus:anchor?'geometry-reviewed':'unverified',reason:anchor?'Gross feature reviewed against source-mesh views; independent anatomical review pending.':kind==='space'?'An anatomical space has no single surface attachment.':'No reliable model-specific surface anchor has been established on this reduced mesh.'};
@@ -62,7 +74,22 @@ export function validLandmarkView(value:unknown):value is LandmarkView{if(!value
 export function boneLandmarks(id:string):BoneLandmark[]{
  if(id==='FMA9968')return t7Landmarks;
  if(!isBone(id))return [];
- const r=getKnowledge(id);return [...new Map([...r.parts,...r.surfaces,...r.landmarks].map(f=>[f.id,f])).values()].map(f=>({id:f.id,boneId:id,name:f.name,category:'marking',side:r.laterality??'unspecified',description:f.text,relations:'',sourceIds:f.sources,attachmentKind:'region',anchor:null,mappingStatus:'unverified',reason:'Information exists; a reliable anchor on this particular mesh has not been established.'}));
+ const r=getKnowledge(id);
+ const binding=landmarkBindingFor(id);
+ return [...new Map([...r.parts,...r.surfaces,...r.landmarks].map(f=>[f.id,f])).values()].map(f=>{
+  const key=f.id.slice(f.id.lastIndexOf(':')+1);
+  const anchor=binding?.anchors[key]??null;
+  return {
+   id:f.id,boneId:id,name:f.name,category:id===rightHumerusAnchors.boneId?humerusCategories[key]??'marking':'marking',
+   side:r.laterality??'unspecified',description:f.text,relations:'',sourceIds:f.sources,
+   attachmentKind:'region',anchor,mappingStatus:anchor?'geometry-reviewed':'unverified',
+   reason:anchor?'Representative point on the licensed reduced mesh. Independent anatomical review is pending.':
+     'Information exists. A reliable anchor on this particular mesh has not been established.',
+  };
+ });
+}
+export function getLandmarkAnchor(boneId:string,featureId:string){
+ return boneLandmarks(boneId).find(item=>item.id===featureId)?.anchor??null;
 }
 export function boneCoverage(){return adultSkeleton.map(b=>({...b,region:b.meshIds.length?byId.get(b.meshIds[0])?.region??'Unknown':'Not installed',anchors:b.meshIds.reduce((n,id)=>n+boneLandmarks(id).filter(l=>l.anchor).length,0)}));}
 export function boneStudyState<T extends SceneState>(state:T,boneId:string|null,context:'show'|'dim'|'isolate'):T{
@@ -78,8 +105,10 @@ export function boneStudyCamera(boneId:string,camera:CameraView,explode=0):Camer
 }
 export function landmarkCamera(boneId:string,anchor:SurfaceAnchor,camera:CameraView,explode=0):CameraView{
  const bone=byId.get(boneId);if(!bone)return camera;const offset=explodeOffset(boneId,explode);
- const target=anchor.position.map((v,i)=>v*.35+bone.position[i]*.65+offset[i]) as Vec3;
- const distance=Math.max(.2,Math.hypot(...bone.size)/2/Math.sin(43*Math.PI/360)*.78);
+ const compact=boneId==='FMA9968';
+ const anchorWeight=compact?.35:.18;
+ const target=anchor.position.map((v,i)=>v*anchorWeight+bone.position[i]*(1-anchorWeight)+offset[i]) as Vec3;
+ const distance=Math.max(.2,Math.hypot(...bone.size)/2/Math.sin(43*Math.PI/360)*(compact?.78:1.22));
  const n=anchor.normal;const length=Math.hypot(...n)||1;
  return {target,position:target.map((v,i)=>v+n[i]/length*distance) as Vec3};
 }

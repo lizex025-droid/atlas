@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "complete": false,
+  "metrics": [
+    {
+      "label": "Physical pages inventoried",
+      "done": 548,
+      "total": 548,
+      "scope": "Edition-specific pagination ledger"
+    },
+    {
+      "label": "Anatomy pages visually audited",
+      "done": 2,
+      "total": 502,
+      "scope": "Inspected against the page image"
+    },
+    {
+      "label": "Anatomical concepts mapped",
+      "done": 31,
+      "total": 41,
+      "scope": "Concepts identified on reviewed pages"
+    },
+    {
+      "label": "Source-checked knowledge sections",
+      "done": 68,
+      "total": 283,
+      "scope": "Applicable sections on mapped records"
+    },
+    {
+      "label": "Records registered in the website",
+      "done": 31,
+      "total": 31,
+      "scope": "Registry, search and source-reference links"
+    },
+    {
+      "label": "Existing separate 3D meshes",
+      "done": 8,
+      "total": 31,
+      "scope": "Whole structures and individually segmented features"
+    },
+    {
+      "label": "Full geometry validation passes",
+      "done": 0,
+      "total": 1,
+      "scope": "Models compared to reference views"
+    },
+    {
+      "label": "Landmark knowledge records",
+      "done": 23,
+      "total": 30,
+      "scope": "Features on reviewed plates"
+    },
+    {
+      "label": "Landmarks with reviewed surface points",
+      "done": 5,
+      "total": 30,
+      "scope": "Representative points on the licensed asset"
+    },
+    {
+      "label": "Records with traceable evidence and rights notes",
+      "done": 24,
+      "total": 31,
+      "scope": "Claim locators and declared reuse basis"
+    },
+    {
+      "label": "Independent medical review",
+      "done": 0,
+      "total": 31,
+      "scope": "Mapped records"
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": "General Anatomy",
+      "anatomyPages": 18,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Head and Neck",
+      "anatomyPages": 168,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Trunk",
+      "anatomyPages": 56,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Thoracic Organs",
+      "anatomyPages": 48,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Abdominal Organs",
+      "anatomyPages": 32,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Retroperitoneal Organs",
+      "anatomyPages": 45,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Upper Limb",
+      "anatomyPages": 64,
+      "visuallyReviewed": 2
+    },
+    {
+      "chapter": "Lower Limb",
+      "anatomyPages": 71,
+      "visuallyReviewed": 0
+    }
+  ]
+}

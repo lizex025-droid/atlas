@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "checkedAt": "2026-10-31T12:56:09.420Z",
+  "checkedAt": "2026-11-07T00:21:06.673Z",
   "complete": false,
   "expectedReferenceBones": 206,
   "referenceBonesWithGeometry": 199,
-  "referenceBonesWithAnchors": 1,
-  "surfaceAnchors": 6,
+  "referenceBonesWithAnchors": 2,
+  "surfaceAnchors": 11,
   "unmappedT7Features": 23,
   "independentMedicalReview": "pending",
   "geometryBinding": {
@@ -792,6 +792,2074 @@
       "anchor": null,
       "mappingStatus": "unverified",
       "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+    },
+    {
+      "id": "feature:FMA23130:head",
+      "boneId": "FMA23130",
+      "name": "Head",
+      "category": "articular",
+      "side": "right",
+      "description": "The rounded proximal articular region faces the glenoid cavity. Its margin is delimited by the anatomical neck, separating the smooth head from the tubercles.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": {
+        "triangle": [
+          1891,
+          1885,
+          1884
+        ],
+        "weights": [
+          0.4859383331414174,
+          0.10556305297354655,
+          0.40849861388503605
+        ],
+        "position": [
+          -0.46316271517692087,
+          1.764068526165826,
+          -0.09758622122995028
+        ],
+        "normal": [
+          0.9038921965463744,
+          0.3854353940330515,
+          -0.1855221120221437
+        ],
+        "reviewNote": "Rounded articular head viewed from medial."
+      },
+      "mappingStatus": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:anatomical-neck",
+      "boneId": "FMA23130",
+      "name": "Anatomical neck",
+      "category": "marking",
+      "side": "right",
+      "description": "A groove bordering the head and providing attachment to the shoulder joint capsule. It is proximal to the surgical neck and should not be used as a synonym for it.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:greater-tubercle",
+      "boneId": "FMA23130",
+      "name": "Greater tubercle",
+      "category": "tubercle",
+      "side": "right",
+      "description": "The lateral proximal prominence bears superior, middle and inferior tendon impressions for supraspinatus, infraspinatus and teres minor respectively.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": {
+        "triangle": [
+          1066,
+          1083,
+          1082
+        ],
+        "weights": [
+          0.16496571610283095,
+          0.3838894793864821,
+          0.4511448045106869
+        ],
+        "position": [
+          -0.6090616007284733,
+          1.767211383308683,
+          -0.08501479265852165
+        ],
+        "normal": [
+          -0.9849530182767365,
+          0.17034364107176192,
+          -0.029164974437869483
+        ],
+        "reviewNote": "Gross prominence lateral to the head, above the shaft."
+      },
+      "mappingStatus": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:lesser-tubercle",
+      "boneId": "FMA23130",
+      "name": "Lesser tubercle",
+      "category": "marking",
+      "side": "right",
+      "description": "The anterior proximal prominence receives subscapularis. The intertubercular sulcus separates it from the greater tubercle.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:surgical-neck",
+      "boneId": "FMA23130",
+      "name": "Surgical neck",
+      "category": "marking",
+      "side": "right",
+      "description": "The narrowing immediately distal to the tubercles connects the proximal expansion with the shaft. It is anatomically distinct from the rim around the head.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:body",
+      "boneId": "FMA23130",
+      "name": "Body",
+      "category": "marking",
+      "side": "right",
+      "description": "The shaft has three surfaces and three borders. Its proximal and distal shape differ, and the deltoid tuberosity and radial groove interrupt an otherwise continuous cortical surface.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:condyle",
+      "boneId": "FMA23130",
+      "name": "Condyle",
+      "category": "marking",
+      "side": "right",
+      "description": "The distal articular complex includes the capitulum laterally and trochlea medially. Adjacent fossae and epicondyles are important neighbouring features, rather than interchangeable names for these joint surfaces.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:anterolateral",
+      "boneId": "FMA23130",
+      "name": "Anterolateral surface",
+      "category": "marking",
+      "side": "right",
+      "description": "The shaft surface between the anterior and lateral borders includes the deltoid tuberosity. Distal to this attachment it contributes to the origin of brachialis.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:anteromedial",
+      "boneId": "FMA23130",
+      "name": "Anteromedial surface",
+      "category": "marking",
+      "side": "right",
+      "description": "The shaft surface between anterior and medial borders includes the continuation of the intertubercular region, a coracobrachialis insertion area and a distal brachialis origin area.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:posterior",
+      "boneId": "FMA23130",
+      "name": "Posterior surface",
+      "category": "marking",
+      "side": "right",
+      "description": "The radial groove crosses this region. The lateral head of triceps originates superior to the groove and the medial head principally inferior to it.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:anterior-border",
+      "boneId": "FMA23130",
+      "name": "Anterior border",
+      "category": "marking",
+      "side": "right",
+      "description": "The boundary between the two anterior shaft surfaces descends from the greater-tubercle crest toward the coronoid fossa; it is related to pectoralis major insertion proximally and brachialis attachment distally.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:medial-border",
+      "boneId": "FMA23130",
+      "name": "Medial border",
+      "category": "marking",
+      "side": "right",
+      "description": "The boundary between anteromedial and posterior regions extends toward the medial epicondyle. Distally it contributes to the medial supracondylar ridge and attachment of the medial intermuscular septum.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:lateral-border",
+      "boneId": "FMA23130",
+      "name": "Lateral border",
+      "category": "marking",
+      "side": "right",
+      "description": "This boundary between anterolateral and posterior surfaces descends toward the lateral epicondyle, becoming the lateral supracondylar ridge distally. The radial groove crosses its middle region.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:capitulum",
+      "boneId": "FMA23130",
+      "name": "Capitulum",
+      "category": "marking",
+      "side": "right",
+      "description": "The rounded lateral distal articular prominence meets the fovea of the radial head. Its articular surface is mainly anterior and inferior.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:trochlea",
+      "boneId": "FMA23130",
+      "name": "Trochlea",
+      "category": "marking",
+      "side": "right",
+      "description": "The pulley-shaped medial distal articular surface fits the trochlear notch of the ulna and extends onto the anterior, inferior and posterior aspects of the distal bone.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:intertubercular-sulcus",
+      "boneId": "FMA23130",
+      "name": "Intertubercular sulcus",
+      "category": "marking",
+      "side": "right",
+      "description": "The groove between the proximal tubercles accommodates the tendon of the long head of biceps. Its floor and two lips have distinct muscle attachments.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:greater-crest",
+      "boneId": "FMA23130",
+      "name": "Crest of greater tubercle",
+      "category": "marking",
+      "side": "right",
+      "description": "The lateral lip of the intertubercular sulcus provides insertion for pectoralis major and continues toward the anterior shaft border.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:lesser-crest",
+      "boneId": "FMA23130",
+      "name": "Crest of lesser tubercle",
+      "category": "marking",
+      "side": "right",
+      "description": "The medial lip of the intertubercular sulcus receives teres major. Latissimus dorsi attaches in the floor of the groove rather than on this crest.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:deltoid-tuberosity",
+      "boneId": "FMA23130",
+      "name": "Deltoid tuberosity",
+      "category": "marking",
+      "side": "right",
+      "description": "A roughened lateral mid-shaft insertion area for deltoid. It provides an orientation landmark and a useful reference when describing shaft attachments.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:radial-groove",
+      "boneId": "FMA23130",
+      "name": "Radial groove",
+      "category": "marking",
+      "side": "right",
+      "description": "An oblique posterior shaft groove related to the radial nerve and profunda brachii vessels. Triceps origins lie on either side of this region.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:medial-epicondyle",
+      "boneId": "FMA23130",
+      "name": "Medial epicondyle",
+      "category": "process",
+      "side": "right",
+      "description": "The larger medial distal projection gives attachment to the common flexor origin and ulnar collateral ligament. The ulnar nerve passes behind it.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": {
+        "triangle": [
+          931,
+          923,
+          886
+        ],
+        "weights": [
+          0.313367769262737,
+          0.5864117015041287,
+          0.10022052923313426
+        ],
+        "position": [
+          -0.5993466759409224,
+          0.8746399547372545,
+          -0.12550109418888278
+        ],
+        "normal": [
+          0.09628059538042946,
+          0.015768429799713147,
+          -0.9952293221036251
+        ],
+        "reviewNote": "Medial distal projection, beside the trochlea."
+      },
+      "mappingStatus": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:lateral-epicondyle",
+      "boneId": "FMA23130",
+      "name": "Lateral epicondyle",
+      "category": "process",
+      "side": "right",
+      "description": "The lateral distal prominence gives attachment to the common extensor region and radial collateral ligament of the elbow.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": {
+        "triangle": [
+          117,
+          82,
+          122
+        ],
+        "weights": [
+          0.337159002014816,
+          0.014431659580608687,
+          0.6484093384045753
+        ],
+        "position": [
+          -0.7612038187980652,
+          0.8809256690229688,
+          -0.14349640192312352
+        ],
+        "normal": [
+          -0.35515216617718526,
+          -0.22520957231839733,
+          -0.9072748136015997
+        ],
+        "reviewNote": "Lateral distal projection, outside the olecranon fossa."
+      },
+      "mappingStatus": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:coronoid-fossa",
+      "boneId": "FMA23130",
+      "name": "Coronoid fossa",
+      "category": "marking",
+      "side": "right",
+      "description": "The anterior depression above the trochlea receives the coronoid process of the ulna as the elbow flexes.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:radial-fossa",
+      "boneId": "FMA23130",
+      "name": "Radial fossa",
+      "category": "marking",
+      "side": "right",
+      "description": "The small anterior depression above the capitulum accommodates the radial head during elbow flexion.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:olecranon-fossa",
+      "boneId": "FMA23130",
+      "name": "Olecranon fossa",
+      "category": "depression",
+      "side": "right",
+      "description": "The large posterior distal depression accommodates the olecranon during elbow extension. A thin septum separates it from the anterior coronoid fossa.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": {
+        "triangle": [
+          525,
+          422,
+          420
+        ],
+        "weights": [
+          0.3988083200022234,
+          0.30549443065619203,
+          0.29569724934158464
+        ],
+        "position": [
+          -0.6842038187980651,
+          0.9076399547372545,
+          -0.12076389422353806
+        ],
+        "normal": [
+          0.30372147228981383,
+          -0.6523420965439709,
+          -0.6944084218575726
+        ],
+        "reviewNote": "Central depression on the posterior distal humerus."
+      },
+      "mappingStatus": "geometry-reviewed",
+      "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+    },
+    {
+      "id": "feature:FMA23130:medial-supraridge",
+      "boneId": "FMA23130",
+      "name": "Medial supracondylar ridge",
+      "category": "marking",
+      "side": "right",
+      "description": "A distal continuation of the medial border associated with the medial intermuscular septum and neighbouring muscle origins.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:lateral-supraridge",
+      "boneId": "FMA23130",
+      "name": "Lateral supracondylar ridge",
+      "category": "marking",
+      "side": "right",
+      "description": "The distal lateral ridge gives attachment to brachioradialis superiorly, extensor carpi radialis longus inferiorly and the lateral intermuscular septum.",
+      "relations": "",
+      "sourceIds": [
+        "gray-humerus"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "boneId": "FMA23130",
+      "name": "Groove for ulnar nerve",
+      "category": "depression",
+      "side": "right",
+      "description": "The distal humerus has a bony channel immediately behind the medial epicondyle.",
+      "relations": "",
+      "sourceIds": [
+        "rohen-7",
+        "chaves-medial-epicondyle"
+      ],
+      "attachmentKind": "region",
+      "anchor": null,
+      "mappingStatus": "unverified",
+      "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+    }
+  ],
+  "models": [
+    {
+      "boneId": "FMA9968",
+      "geometryBinding": {
+        "schemaVersion": 1,
+        "boneId": "FMA9968",
+        "meshId": "FMA9968",
+        "chunkUrl": "/models/bodyparts3d/skeletal-trunk-0.glb",
+        "chunkSha256": "aa48a5fbbc19c8a155bda0487aa525091e360ac17eb63ced76e8cc4998850528",
+        "vertexCount": 1478,
+        "triangleCount": 2574,
+        "coordinateSpace": "mesh-local",
+        "license": "CC-BY-SA-2.1-JP",
+        "attribution": "BodyParts3D / The Database Center for Life Science, Japan. Original AnatomyAtlas gross-feature surface bindings derived from the licensed mesh; see /models/ATTRIBUTION.txt.",
+        "review": {
+          "status": "geometry-reviewed",
+          "method": "Manual gross-feature identification in eight orthogonal/oblique source-mesh views, surface ray projection and annotated multi-view review. No automatic anatomical inference.",
+          "reviewedAt": "2026-10-31",
+          "medicalReview": "pending",
+          "limitation": "Polygon-reduced gross bony surface; not cartilage, histology or a segmented feature mask."
+        },
+        "anchors": {
+          "body": {
+            "triangle": [
+              519,
+              473,
+              475
+            ],
+            "weights": [
+              0.6917889459690593,
+              0.08716965960753517,
+              0.2210413944234055
+            ],
+            "position": [
+              0,
+              1.443,
+              -0.11521092365984908
+            ],
+            "normal": [
+              -0.07594528454683083,
+              0.0648977333775392,
+              0.9949977879159122
+            ],
+            "reviewNote": "Anterior vertebral body surface"
+          },
+          "superior-endplate": {
+            "triangle": [
+              238,
+              798,
+              244
+            ],
+            "weights": [
+              0.00063585160994728,
+              0.5601450337340858,
+              0.4392191146559669
+            ],
+            "position": [
+              0,
+              1.4624876892869518,
+              -0.16
+            ],
+            "normal": [
+              0.008647751296712535,
+              0.99969447778731,
+              -0.023155290520048333
+            ],
+            "reviewNote": "Central superior bony endplate"
+          },
+          "inferior-endplate": {
+            "triangle": [
+              521,
+              482,
+              526
+            ],
+            "weights": [
+              0.6122023542045167,
+              0.2780707983271265,
+              0.10972684746835669
+            ],
+            "position": [
+              0,
+              1.3976652064471988,
+              -0.16
+            ],
+            "normal": [
+              -0.06278343048993061,
+              -0.9812565761333453,
+              0.18219158227256385
+            ],
+            "reviewNote": "Central inferior bony endplate"
+          },
+          "spinous": {
+            "triangle": [
+              666,
+              669,
+              670
+            ],
+            "weights": [
+              0.4632477307808532,
+              0.48736048536949633,
+              0.04939178384965048
+            ],
+            "position": [
+              0,
+              1.307,
+              -0.3179994773492527
+            ],
+            "normal": [
+              -0.0834695025765306,
+              -0.567951423112356,
+              -0.818818675363646
+            ],
+            "reviewNote": "Posteroinferior spinous-process tip"
+          },
+          "transverse-left": {
+            "triangle": [
+              1266,
+              1282,
+              1270
+            ],
+            "weights": [
+              0.004445823650661929,
+              0.8852732509383296,
+              0.11028092541100845
+            ],
+            "position": [
+              0.12019871689065675,
+              1.438,
+              -0.283
+            ],
+            "normal": [
+              0.7288093862103584,
+              0.15606857860779097,
+              0.6666929408228532
+            ],
+            "reviewNote": "Lateral end of left transverse process"
+          },
+          "transverse-right": {
+            "triangle": [
+              17,
+              26,
+              3
+            ],
+            "weights": [
+              0.11915003285045411,
+              0.6787117194820069,
+              0.20213824766753896
+            ],
+            "position": [
+              -0.11781642358515715,
+              1.438,
+              -0.283
+            ],
+            "normal": [
+              -0.8422401688250805,
+              0.3052348368172984,
+              0.44436830716267034
+            ],
+            "reviewNote": "Lateral end of right transverse process"
+          }
+        }
+      },
+      "surfaceAnchors": 6,
+      "unmappedFeatures": 23,
+      "features": [
+        {
+          "id": "landmark:FMA9968:body",
+          "boneId": "FMA9968",
+          "name": "Vertebral body",
+          "category": "marking",
+          "side": "midline",
+          "description": "Anterior load-bearing region.",
+          "relations": "The arch lies behind it; adjacent bodies are connected through discs.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              519,
+              473,
+              475
+            ],
+            "weights": [
+              0.6917889459690593,
+              0.08716965960753517,
+              0.2210413944234055
+            ],
+            "position": [
+              0,
+              1.443,
+              -0.11521092365984908
+            ],
+            "normal": [
+              -0.07594528454683083,
+              0.0648977333775392,
+              0.9949977879159122
+            ],
+            "reviewNote": "Anterior vertebral body surface"
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+        },
+        {
+          "id": "landmark:FMA9968:superior-endplate",
+          "boneId": "FMA9968",
+          "name": "Superior bony endplate",
+          "category": "articular",
+          "side": "midline",
+          "description": "Upper bony surface of the vertebral body.",
+          "relations": "Faces the disc above. The model does not resolve the cartilaginous endplate.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              238,
+              798,
+              244
+            ],
+            "weights": [
+              0.00063585160994728,
+              0.5601450337340858,
+              0.4392191146559669
+            ],
+            "position": [
+              0,
+              1.4624876892869518,
+              -0.16
+            ],
+            "normal": [
+              0.008647751296712535,
+              0.99969447778731,
+              -0.023155290520048333
+            ],
+            "reviewNote": "Central superior bony endplate"
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+        },
+        {
+          "id": "landmark:FMA9968:inferior-endplate",
+          "boneId": "FMA9968",
+          "name": "Inferior bony endplate",
+          "category": "articular",
+          "side": "midline",
+          "description": "Lower bony surface of the vertebral body.",
+          "relations": "Faces the disc below; this marker identifies bone, not cartilage.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              521,
+              482,
+              526
+            ],
+            "weights": [
+              0.6122023542045167,
+              0.2780707983271265,
+              0.10972684746835669
+            ],
+            "position": [
+              0,
+              1.3976652064471988,
+              -0.16
+            ],
+            "normal": [
+              -0.06278343048993061,
+              -0.9812565761333453,
+              0.18219158227256385
+            ],
+            "reviewNote": "Central inferior bony endplate"
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+        },
+        {
+          "id": "landmark:FMA9968:spinous",
+          "boneId": "FMA9968",
+          "name": "Spinous process",
+          "category": "process",
+          "side": "midline",
+          "description": "Midline projection extending backward and downward.",
+          "relations": "Muscle and ligament attachment region; the marker is not an attachment footprint.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              666,
+              669,
+              670
+            ],
+            "weights": [
+              0.4632477307808532,
+              0.48736048536949633,
+              0.04939178384965048
+            ],
+            "position": [
+              0,
+              1.307,
+              -0.3179994773492527
+            ],
+            "normal": [
+              -0.0834695025765306,
+              -0.567951423112356,
+              -0.818818675363646
+            ],
+            "reviewNote": "Posteroinferior spinous-process tip"
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+        },
+        {
+          "id": "landmark:FMA9968:transverse-left",
+          "boneId": "FMA9968",
+          "name": "Left transverse process",
+          "category": "process",
+          "side": "left",
+          "description": "Left lateral projection of the vertebral arch.",
+          "relations": "Its anterior extremity carries the transverse costal facet.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              1266,
+              1282,
+              1270
+            ],
+            "weights": [
+              0.004445823650661929,
+              0.8852732509383296,
+              0.11028092541100845
+            ],
+            "position": [
+              0.12019871689065675,
+              1.438,
+              -0.283
+            ],
+            "normal": [
+              0.7288093862103584,
+              0.15606857860779097,
+              0.6666929408228532
+            ],
+            "reviewNote": "Lateral end of left transverse process"
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+        },
+        {
+          "id": "landmark:FMA9968:transverse-right",
+          "boneId": "FMA9968",
+          "name": "Right transverse process",
+          "category": "process",
+          "side": "right",
+          "description": "Right lateral projection of the vertebral arch.",
+          "relations": "Its anterior extremity carries the transverse costal facet.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              17,
+              26,
+              3
+            ],
+            "weights": [
+              0.11915003285045411,
+              0.6787117194820069,
+              0.20213824766753896
+            ],
+            "position": [
+              -0.11781642358515715,
+              1.438,
+              -0.283
+            ],
+            "normal": [
+              -0.8422401688250805,
+              0.3052348368172984,
+              0.44436830716267034
+            ],
+            "reviewNote": "Lateral end of right transverse process"
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Gross feature reviewed against source-mesh views; independent anatomical review pending."
+        },
+        {
+          "id": "landmark:FMA9968:pedicle-left",
+          "boneId": "FMA9968",
+          "name": "Left pedicle",
+          "category": "marking",
+          "side": "left",
+          "description": "Short bridge from body to arch.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:pedicle-right",
+          "boneId": "FMA9968",
+          "name": "Right pedicle",
+          "category": "marking",
+          "side": "right",
+          "description": "Short bridge from body to arch.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:lamina-left",
+          "boneId": "FMA9968",
+          "name": "Left lamina",
+          "category": "marking",
+          "side": "left",
+          "description": "Plate joining the arch to the spinous region.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:lamina-right",
+          "boneId": "FMA9968",
+          "name": "Right lamina",
+          "category": "marking",
+          "side": "right",
+          "description": "Plate joining the arch to the spinous region.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:vertebral-foramen",
+          "boneId": "FMA9968",
+          "name": "Vertebral foramen",
+          "category": "foramen",
+          "side": "midline",
+          "description": "Opening bounded by body and arch.",
+          "relations": "A space, not a bony surface point; no marker is placed in empty space.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "space",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "An anatomical space has no single surface attachment."
+        },
+        {
+          "id": "landmark:FMA9968:superior-articular-process-left",
+          "boneId": "FMA9968",
+          "name": "Left superior articular process",
+          "category": "process",
+          "side": "left",
+          "description": "Upward projection at the pedicle-lamina junction.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:inferior-articular-process-left",
+          "boneId": "FMA9968",
+          "name": "Left inferior articular process",
+          "category": "process",
+          "side": "left",
+          "description": "Downward projection continuous with the lamina.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:superior-articular-facet-left",
+          "boneId": "FMA9968",
+          "name": "Left superior articular facet",
+          "category": "articular",
+          "side": "left",
+          "description": "Joint surface facing predominantly backward.",
+          "relations": "Meets the inferior facet of the vertebra above.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:inferior-articular-facet-left",
+          "boneId": "FMA9968",
+          "name": "Left inferior articular facet",
+          "category": "articular",
+          "side": "left",
+          "description": "Joint surface facing predominantly forward.",
+          "relations": "Meets the superior facet of the vertebra below.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:superior-costal-left",
+          "boneId": "FMA9968",
+          "name": "Left superior costal demifacet",
+          "category": "articular",
+          "side": "left",
+          "description": "Rib-head surface near the upper body-pedicle junction.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:inferior-costal-left",
+          "boneId": "FMA9968",
+          "name": "Left inferior costal demifacet",
+          "category": "articular",
+          "side": "left",
+          "description": "Rib-head surface near the lower lateral body margin.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:transverse-costal-left",
+          "boneId": "FMA9968",
+          "name": "Left transverse costal facet",
+          "category": "articular",
+          "side": "left",
+          "description": "Anterior surface near the transverse-process end.",
+          "relations": "Receives the rib tubercle.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:superior-notch-left",
+          "boneId": "FMA9968",
+          "name": "Left superior vertebral notch",
+          "category": "depression",
+          "side": "left",
+          "description": "Concavity above the pedicle.",
+          "relations": "Adjacent notches contribute to the intervertebral foramen.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:inferior-notch-left",
+          "boneId": "FMA9968",
+          "name": "Left inferior vertebral notch",
+          "category": "depression",
+          "side": "left",
+          "description": "Concavity below the pedicle.",
+          "relations": "Adjacent notches contribute to the intervertebral foramen.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:superior-articular-process-right",
+          "boneId": "FMA9968",
+          "name": "Right superior articular process",
+          "category": "process",
+          "side": "right",
+          "description": "Upward projection at the pedicle-lamina junction.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:inferior-articular-process-right",
+          "boneId": "FMA9968",
+          "name": "Right inferior articular process",
+          "category": "process",
+          "side": "right",
+          "description": "Downward projection continuous with the lamina.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:superior-articular-facet-right",
+          "boneId": "FMA9968",
+          "name": "Right superior articular facet",
+          "category": "articular",
+          "side": "right",
+          "description": "Joint surface facing predominantly backward.",
+          "relations": "Meets the inferior facet of the vertebra above.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:inferior-articular-facet-right",
+          "boneId": "FMA9968",
+          "name": "Right inferior articular facet",
+          "category": "articular",
+          "side": "right",
+          "description": "Joint surface facing predominantly forward.",
+          "relations": "Meets the superior facet of the vertebra below.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:superior-costal-right",
+          "boneId": "FMA9968",
+          "name": "Right superior costal demifacet",
+          "category": "articular",
+          "side": "right",
+          "description": "Rib-head surface near the upper body-pedicle junction.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:inferior-costal-right",
+          "boneId": "FMA9968",
+          "name": "Right inferior costal demifacet",
+          "category": "articular",
+          "side": "right",
+          "description": "Rib-head surface near the lower lateral body margin.",
+          "relations": "",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:transverse-costal-right",
+          "boneId": "FMA9968",
+          "name": "Right transverse costal facet",
+          "category": "articular",
+          "side": "right",
+          "description": "Anterior surface near the transverse-process end.",
+          "relations": "Receives the rib tubercle.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:superior-notch-right",
+          "boneId": "FMA9968",
+          "name": "Right superior vertebral notch",
+          "category": "depression",
+          "side": "right",
+          "description": "Concavity above the pedicle.",
+          "relations": "Adjacent notches contribute to the intervertebral foramen.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        },
+        {
+          "id": "landmark:FMA9968:inferior-notch-right",
+          "boneId": "FMA9968",
+          "name": "Right inferior vertebral notch",
+          "category": "depression",
+          "side": "right",
+          "description": "Concavity below the pedicle.",
+          "relations": "Adjacent notches contribute to the intervertebral foramen.",
+          "sourceIds": [
+            "gray-vertebra",
+            "gray-thoracic"
+          ],
+          "attachmentKind": "surface",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "No reliable model-specific surface anchor has been established on this reduced mesh."
+        }
+      ],
+      "indexedTopology": {
+        "vertexCount": 1478,
+        "triangleCount": 2574,
+        "boundaryEdges": 456,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
+    },
+    {
+      "boneId": "FMA23130",
+      "geometryBinding": {
+        "schemaVersion": 1,
+        "boneId": "FMA23130",
+        "meshId": "FMA23130",
+        "chunkUrl": "/models/bodyparts3d/skeletal-trunk-2.glb",
+        "chunkSha256": "ee64845d91b5029adb79d6105cec5b8d5c0b602f60066b3250331fde7469c56a",
+        "vertexCount": 2233,
+        "triangleCount": 3784,
+        "coordinateSpace": "mesh-local",
+        "license": "CC-BY-SA-2.1-JP",
+        "attribution": "BodyParts3D / The Database Center for Life Science, Japan. Model-derived surface bindings under the same license. See /models/ATTRIBUTION.txt.",
+        "review": {
+          "status": "geometry-reviewed",
+          "method": "Manually identified in orthographic and oblique views of the original right mesh, projected to its indexed triangles and checked in annotated renders against anatomical reference views.",
+          "reviewedAt": "2026-11-07",
+          "medicalReview": "pending",
+          "limitation": "Representative gross surface points only. The polygon-reduced mesh shows surface discontinuities and does not establish exact landmark boundaries, cartilage, attachment footprints or patient-specific measurements."
+        },
+        "anchors": {
+          "head": {
+            "triangle": [
+              1891,
+              1885,
+              1884
+            ],
+            "weights": [
+              0.4859383331414174,
+              0.10556305297354655,
+              0.40849861388503605
+            ],
+            "position": [
+              -0.46316271517692087,
+              1.764068526165826,
+              -0.09758622122995028
+            ],
+            "normal": [
+              0.9038921965463744,
+              0.3854353940330515,
+              -0.1855221120221437
+            ],
+            "reviewNote": "Rounded articular head viewed from medial."
+          },
+          "greater-tubercle": {
+            "triangle": [
+              1066,
+              1083,
+              1082
+            ],
+            "weights": [
+              0.16496571610283095,
+              0.3838894793864821,
+              0.4511448045106869
+            ],
+            "position": [
+              -0.6090616007284733,
+              1.767211383308683,
+              -0.08501479265852165
+            ],
+            "normal": [
+              -0.9849530182767365,
+              0.17034364107176192,
+              -0.029164974437869483
+            ],
+            "reviewNote": "Gross prominence lateral to the head, above the shaft."
+          },
+          "medial-epicondyle": {
+            "triangle": [
+              931,
+              923,
+              886
+            ],
+            "weights": [
+              0.313367769262737,
+              0.5864117015041287,
+              0.10022052923313426
+            ],
+            "position": [
+              -0.5993466759409224,
+              0.8746399547372545,
+              -0.12550109418888278
+            ],
+            "normal": [
+              0.09628059538042946,
+              0.015768429799713147,
+              -0.9952293221036251
+            ],
+            "reviewNote": "Medial distal projection, beside the trochlea."
+          },
+          "lateral-epicondyle": {
+            "triangle": [
+              117,
+              82,
+              122
+            ],
+            "weights": [
+              0.337159002014816,
+              0.014431659580608687,
+              0.6484093384045753
+            ],
+            "position": [
+              -0.7612038187980652,
+              0.8809256690229688,
+              -0.14349640192312352
+            ],
+            "normal": [
+              -0.35515216617718526,
+              -0.22520957231839733,
+              -0.9072748136015997
+            ],
+            "reviewNote": "Lateral distal projection, outside the olecranon fossa."
+          },
+          "olecranon-fossa": {
+            "triangle": [
+              525,
+              422,
+              420
+            ],
+            "weights": [
+              0.3988083200022234,
+              0.30549443065619203,
+              0.29569724934158464
+            ],
+            "position": [
+              -0.6842038187980651,
+              0.9076399547372545,
+              -0.12076389422353806
+            ],
+            "normal": [
+              0.30372147228981383,
+              -0.6523420965439709,
+              -0.6944084218575726
+            ],
+            "reviewNote": "Central depression on the posterior distal humerus."
+          }
+        }
+      },
+      "surfaceAnchors": 5,
+      "unmappedFeatures": 23,
+      "features": [
+        {
+          "id": "feature:FMA23130:head",
+          "boneId": "FMA23130",
+          "name": "Head",
+          "category": "articular",
+          "side": "right",
+          "description": "The rounded proximal articular region faces the glenoid cavity. Its margin is delimited by the anatomical neck, separating the smooth head from the tubercles.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              1891,
+              1885,
+              1884
+            ],
+            "weights": [
+              0.4859383331414174,
+              0.10556305297354655,
+              0.40849861388503605
+            ],
+            "position": [
+              -0.46316271517692087,
+              1.764068526165826,
+              -0.09758622122995028
+            ],
+            "normal": [
+              0.9038921965463744,
+              0.3854353940330515,
+              -0.1855221120221437
+            ],
+            "reviewNote": "Rounded articular head viewed from medial."
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+        },
+        {
+          "id": "feature:FMA23130:anatomical-neck",
+          "boneId": "FMA23130",
+          "name": "Anatomical neck",
+          "category": "marking",
+          "side": "right",
+          "description": "A groove bordering the head and providing attachment to the shoulder joint capsule. It is proximal to the surgical neck and should not be used as a synonym for it.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:greater-tubercle",
+          "boneId": "FMA23130",
+          "name": "Greater tubercle",
+          "category": "tubercle",
+          "side": "right",
+          "description": "The lateral proximal prominence bears superior, middle and inferior tendon impressions for supraspinatus, infraspinatus and teres minor respectively.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              1066,
+              1083,
+              1082
+            ],
+            "weights": [
+              0.16496571610283095,
+              0.3838894793864821,
+              0.4511448045106869
+            ],
+            "position": [
+              -0.6090616007284733,
+              1.767211383308683,
+              -0.08501479265852165
+            ],
+            "normal": [
+              -0.9849530182767365,
+              0.17034364107176192,
+              -0.029164974437869483
+            ],
+            "reviewNote": "Gross prominence lateral to the head, above the shaft."
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+        },
+        {
+          "id": "feature:FMA23130:lesser-tubercle",
+          "boneId": "FMA23130",
+          "name": "Lesser tubercle",
+          "category": "marking",
+          "side": "right",
+          "description": "The anterior proximal prominence receives subscapularis. The intertubercular sulcus separates it from the greater tubercle.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:surgical-neck",
+          "boneId": "FMA23130",
+          "name": "Surgical neck",
+          "category": "marking",
+          "side": "right",
+          "description": "The narrowing immediately distal to the tubercles connects the proximal expansion with the shaft. It is anatomically distinct from the rim around the head.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:body",
+          "boneId": "FMA23130",
+          "name": "Body",
+          "category": "marking",
+          "side": "right",
+          "description": "The shaft has three surfaces and three borders. Its proximal and distal shape differ, and the deltoid tuberosity and radial groove interrupt an otherwise continuous cortical surface.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:condyle",
+          "boneId": "FMA23130",
+          "name": "Condyle",
+          "category": "marking",
+          "side": "right",
+          "description": "The distal articular complex includes the capitulum laterally and trochlea medially. Adjacent fossae and epicondyles are important neighbouring features, rather than interchangeable names for these joint surfaces.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:anterolateral",
+          "boneId": "FMA23130",
+          "name": "Anterolateral surface",
+          "category": "marking",
+          "side": "right",
+          "description": "The shaft surface between the anterior and lateral borders includes the deltoid tuberosity. Distal to this attachment it contributes to the origin of brachialis.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:anteromedial",
+          "boneId": "FMA23130",
+          "name": "Anteromedial surface",
+          "category": "marking",
+          "side": "right",
+          "description": "The shaft surface between anterior and medial borders includes the continuation of the intertubercular region, a coracobrachialis insertion area and a distal brachialis origin area.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:posterior",
+          "boneId": "FMA23130",
+          "name": "Posterior surface",
+          "category": "marking",
+          "side": "right",
+          "description": "The radial groove crosses this region. The lateral head of triceps originates superior to the groove and the medial head principally inferior to it.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:anterior-border",
+          "boneId": "FMA23130",
+          "name": "Anterior border",
+          "category": "marking",
+          "side": "right",
+          "description": "The boundary between the two anterior shaft surfaces descends from the greater-tubercle crest toward the coronoid fossa; it is related to pectoralis major insertion proximally and brachialis attachment distally.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:medial-border",
+          "boneId": "FMA23130",
+          "name": "Medial border",
+          "category": "marking",
+          "side": "right",
+          "description": "The boundary between anteromedial and posterior regions extends toward the medial epicondyle. Distally it contributes to the medial supracondylar ridge and attachment of the medial intermuscular septum.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:lateral-border",
+          "boneId": "FMA23130",
+          "name": "Lateral border",
+          "category": "marking",
+          "side": "right",
+          "description": "This boundary between anterolateral and posterior surfaces descends toward the lateral epicondyle, becoming the lateral supracondylar ridge distally. The radial groove crosses its middle region.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:capitulum",
+          "boneId": "FMA23130",
+          "name": "Capitulum",
+          "category": "marking",
+          "side": "right",
+          "description": "The rounded lateral distal articular prominence meets the fovea of the radial head. Its articular surface is mainly anterior and inferior.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:trochlea",
+          "boneId": "FMA23130",
+          "name": "Trochlea",
+          "category": "marking",
+          "side": "right",
+          "description": "The pulley-shaped medial distal articular surface fits the trochlear notch of the ulna and extends onto the anterior, inferior and posterior aspects of the distal bone.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:intertubercular-sulcus",
+          "boneId": "FMA23130",
+          "name": "Intertubercular sulcus",
+          "category": "marking",
+          "side": "right",
+          "description": "The groove between the proximal tubercles accommodates the tendon of the long head of biceps. Its floor and two lips have distinct muscle attachments.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:greater-crest",
+          "boneId": "FMA23130",
+          "name": "Crest of greater tubercle",
+          "category": "marking",
+          "side": "right",
+          "description": "The lateral lip of the intertubercular sulcus provides insertion for pectoralis major and continues toward the anterior shaft border.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:lesser-crest",
+          "boneId": "FMA23130",
+          "name": "Crest of lesser tubercle",
+          "category": "marking",
+          "side": "right",
+          "description": "The medial lip of the intertubercular sulcus receives teres major. Latissimus dorsi attaches in the floor of the groove rather than on this crest.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:deltoid-tuberosity",
+          "boneId": "FMA23130",
+          "name": "Deltoid tuberosity",
+          "category": "marking",
+          "side": "right",
+          "description": "A roughened lateral mid-shaft insertion area for deltoid. It provides an orientation landmark and a useful reference when describing shaft attachments.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:radial-groove",
+          "boneId": "FMA23130",
+          "name": "Radial groove",
+          "category": "marking",
+          "side": "right",
+          "description": "An oblique posterior shaft groove related to the radial nerve and profunda brachii vessels. Triceps origins lie on either side of this region.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:medial-epicondyle",
+          "boneId": "FMA23130",
+          "name": "Medial epicondyle",
+          "category": "process",
+          "side": "right",
+          "description": "The larger medial distal projection gives attachment to the common flexor origin and ulnar collateral ligament. The ulnar nerve passes behind it.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              931,
+              923,
+              886
+            ],
+            "weights": [
+              0.313367769262737,
+              0.5864117015041287,
+              0.10022052923313426
+            ],
+            "position": [
+              -0.5993466759409224,
+              0.8746399547372545,
+              -0.12550109418888278
+            ],
+            "normal": [
+              0.09628059538042946,
+              0.015768429799713147,
+              -0.9952293221036251
+            ],
+            "reviewNote": "Medial distal projection, beside the trochlea."
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+        },
+        {
+          "id": "feature:FMA23130:lateral-epicondyle",
+          "boneId": "FMA23130",
+          "name": "Lateral epicondyle",
+          "category": "process",
+          "side": "right",
+          "description": "The lateral distal prominence gives attachment to the common extensor region and radial collateral ligament of the elbow.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              117,
+              82,
+              122
+            ],
+            "weights": [
+              0.337159002014816,
+              0.014431659580608687,
+              0.6484093384045753
+            ],
+            "position": [
+              -0.7612038187980652,
+              0.8809256690229688,
+              -0.14349640192312352
+            ],
+            "normal": [
+              -0.35515216617718526,
+              -0.22520957231839733,
+              -0.9072748136015997
+            ],
+            "reviewNote": "Lateral distal projection, outside the olecranon fossa."
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+        },
+        {
+          "id": "feature:FMA23130:coronoid-fossa",
+          "boneId": "FMA23130",
+          "name": "Coronoid fossa",
+          "category": "marking",
+          "side": "right",
+          "description": "The anterior depression above the trochlea receives the coronoid process of the ulna as the elbow flexes.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:radial-fossa",
+          "boneId": "FMA23130",
+          "name": "Radial fossa",
+          "category": "marking",
+          "side": "right",
+          "description": "The small anterior depression above the capitulum accommodates the radial head during elbow flexion.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:olecranon-fossa",
+          "boneId": "FMA23130",
+          "name": "Olecranon fossa",
+          "category": "depression",
+          "side": "right",
+          "description": "The large posterior distal depression accommodates the olecranon during elbow extension. A thin septum separates it from the anterior coronoid fossa.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": {
+            "triangle": [
+              525,
+              422,
+              420
+            ],
+            "weights": [
+              0.3988083200022234,
+              0.30549443065619203,
+              0.29569724934158464
+            ],
+            "position": [
+              -0.6842038187980651,
+              0.9076399547372545,
+              -0.12076389422353806
+            ],
+            "normal": [
+              0.30372147228981383,
+              -0.6523420965439709,
+              -0.6944084218575726
+            ],
+            "reviewNote": "Central depression on the posterior distal humerus."
+          },
+          "mappingStatus": "geometry-reviewed",
+          "reason": "Representative point on the licensed reduced mesh. Independent anatomical review is pending."
+        },
+        {
+          "id": "feature:FMA23130:medial-supraridge",
+          "boneId": "FMA23130",
+          "name": "Medial supracondylar ridge",
+          "category": "marking",
+          "side": "right",
+          "description": "A distal continuation of the medial border associated with the medial intermuscular septum and neighbouring muscle origins.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:lateral-supraridge",
+          "boneId": "FMA23130",
+          "name": "Lateral supracondylar ridge",
+          "category": "marking",
+          "side": "right",
+          "description": "The distal lateral ridge gives attachment to brachioradialis superiorly, extensor carpi radialis longus inferiorly and the lateral intermuscular septum.",
+          "relations": "",
+          "sourceIds": [
+            "gray-humerus"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        },
+        {
+          "id": "feature:FMA23130:ulnar-groove",
+          "boneId": "FMA23130",
+          "name": "Groove for ulnar nerve",
+          "category": "depression",
+          "side": "right",
+          "description": "The distal humerus has a bony channel immediately behind the medial epicondyle.",
+          "relations": "",
+          "sourceIds": [
+            "rohen-7",
+            "chaves-medial-epicondyle"
+          ],
+          "attachmentKind": "region",
+          "anchor": null,
+          "mappingStatus": "unverified",
+          "reason": "Information exists. A reliable anchor on this particular mesh has not been established."
+        }
+      ],
+      "indexedTopology": {
+        "vertexCount": 2233,
+        "triangleCount": 3784,
+        "boundaryEdges": 564,
+        "nonManifoldEdges": 0,
+        "degenerateTriangles": 0
+      }
     }
   ],
   "sources": [
@@ -810,6 +2878,40 @@
       "locator": "Middle thoracic morphology, body facets, arch and processes",
       "license": "Underlying 1918 English text public domain; modern site/translation excluded. Historical morphology, not clinical guidance.",
       "accessedAt": "2026-10-31"
+    },
+    {
+      "id": "gray-humerus",
+      "title": "Gray H., revised Lewis W.H. Anatomy of the Human Body, 20th ed. (1918): The Humerus",
+      "url": "https://anatomie.cosminpopa.ro/en/6a-3-the-humerus/",
+      "locator": "Osteology 6a.3; morphology and ossification",
+      "license": "Underlying 1918 English text: public domain; modern website layout/translation excluded",
+      "accessedAt": "2026-10-31",
+      "historical": true,
+      "access": "full-text",
+      "permission": "public-domain",
+      "use": "Original factual synthesis only; no modern article prose, audio, screenshots or illustrations redistributed. Historical material is not current clinical guidance."
+    },
+    {
+      "id": "rohen-7",
+      "title": "Rohen, Yokochi and Lütjen-Drecoll. Color Atlas of Anatomy, 7th ed. (2011)",
+      "url": "https://iucat.iu.edu/catalog/8925617",
+      "locator": "Upper Limb, printed p. 373 (supplied PDF p. 387), right humerus",
+      "license": "Copyrighted textbook. Bibliographic citation and anatomical facts only.",
+      "use": "The supplied copy was examined privately. The link identifies the edition in an academic library catalog.",
+      "accessedAt": "2026-11-07",
+      "access": "full-text",
+      "permission": "factual-reference-only"
+    },
+    {
+      "id": "chaves-medial-epicondyle",
+      "title": "Chaves et al. Osseous morphology of the medial epicondyle (2021)",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/33420865/",
+      "locator": "Abstract, Purpose, Methods and Conclusion. doi:10.1007/s00276-020-02669-3",
+      "license": "Publisher copyright. Bibliographic citation and research findings only.",
+      "use": "Original factual synthesis from the consulted abstract.",
+      "accessedAt": "2026-11-07",
+      "access": "abstract",
+      "permission": "factual-reference-only"
     }
   ],
   "coverage": [
@@ -1744,8 +3846,8 @@
         "FMA23130"
       ],
       "mapping": "exact-name",
-      "region": "Trunk",
-      "anchors": 0
+      "region": "Upper limbs",
+      "anchors": 5
     },
     {
       "id": "adult-bone:087",

@@ -21,7 +21,7 @@ test('small screen, no-results and corrupt storage recovery',async({page})=>{
  await page.setViewportSize({width:390,height:844});await page.goto('/#workspace');await page.evaluate(()=>localStorage.setItem('anatomy-atlas.scenes.v2','bad json'));await page.reload();
  await page.getByRole('button',{name:'Search',exact:true}).click();await page.getByRole('textbox',{name:'Search anatomy'}).fill('nonexistent');await expect(page.getByText(/No structures found/)).toBeVisible();
  await page.getByRole('textbox',{name:'Search anatomy'}).fill('T11');await expect(page.locator('.search-result').filter({hasText:'Eleventh thoracic vertebra'})).toBeVisible();await page.getByRole('button',{name:'Close Search'}).click();
- await page.getByRole('button',{name:'Collapse information panel'}).click();await ready(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'test-results/dark-mobile.png',fullPage:true});
+ await page.getByRole('button',{name:'Information',exact:true}).click();await page.getByRole('button',{name:'Close information panel'}).click();await ready(page);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:'test-results/dark-mobile.png',fullPage:true});
 });
 test('skeletal and muscular layers load progressively; failed chunks can retry',async({page})=>{
  const requests:string[]=[];let fail=true;page.on('request',r=>{if(r.url().endsWith('.glb'))requests.push(r.url());});

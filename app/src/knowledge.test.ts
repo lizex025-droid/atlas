@@ -1,7 +1,6 @@
 import { describe,it,expect } from 'vitest';
 import { curatedRecords,getKnowledge,sources } from './knowledge';
-import { byId } from './anatomy';
-import { searchRegistry,systemMembers } from './registry';
+import { knownId,searchRegistry,systemMembers } from './registry';
 import { workspaceInitial,selectStructure,visibility,toggleMembers,frame } from './workspace';
 import { validateScene } from './scene';
 describe('source-backed selection and knowledge',()=>{
@@ -17,7 +16,7 @@ describe('source-backed selection and knowledge',()=>{
  it('selects parent groups and preserves camera direction during framing',()=>{const s=selectStructure(workspaceInitial(),'group:thoracic',false,true);expect(s.selectedIds.length).toBeGreaterThan(10);expect(s.groupId).toBe('group:thoracic');const f=frame(['FMA10059'],{position:[8,0,0],target:[0,0,0]});expect(f.position[0]).toBeGreaterThan(f.target[0]);expect(f.position[2]).toBe(f.target[2]);});
  it('clears selections when their visible system is hidden',()=>{const s=selectStructure(workspaceInitial(),'FMA10059');const next=toggleMembers(s,systemMembers.get('Skeletal')!);expect(next.selected).toBeNull();expect(next.hidden).toContain('FMA10059');});
  it('accepts semantic knowledge selection but rejects group IDs in the primary record slot',()=>{const base={...workspaceInitial(),id:'x',date:'2026-10-31',name:'x'};expect(validateScene({...base,selected:'TA2:2549'})).toBe(true);expect(validateScene({...base,selected:'group:thoracic'})).toBe(false);});
- it('maps every actual relationship mesh link to a registered canonical structure',()=>{for(const r of curatedRecords)for(const relation of r.anatomicalRelations)if(relation.targetId)expect(byId.has(relation.targetId)).toBe(true);});
+ it('maps every relationship to a registered mesh or semantic record',()=>{for(const r of curatedRecords)for(const relation of r.anatomicalRelations)if(relation.targetId)expect(knownId(relation.targetId)).toBe(true);});
  it('binds palmar concept selection to its installed left mesh and keeps its medical record',()=>{const state=selectStructure(workspaceInitial(),'TA2:2549');expect(state.selected).toBe('TA2:2549:L');expect(state.selectedIds).toEqual(['TA2:2549:L']);expect(getKnowledge(state.selected!).latinName).toBe('Aponeurosis palmaris');});
  it('does not label an intervertebral disk as bone',()=>{expect(getKnowledge('FMA13508').kind).toBe('other');});
 });

@@ -1,4 +1,4 @@
-export type SourceReference={id:string;title:string;url:string;license:string;use:string;locator?:string;accessedAt:string;access?:'full-text'|'search-index'|'terminology';historical?:boolean;permission?:'public-domain'|'factual-reference-only'|'licensed-reuse'};
+export type SourceReference={id:string;title:string;url:string;license:string;use:string;locator?:string;accessedAt:string;access?:'full-text'|'abstract'|'search-index'|'terminology';historical?:boolean;permission?:'public-domain'|'factual-reference-only'|'licensed-reuse'};
 export type EvidenceLink={sourceId:string;locator:string;status:'source-checked'|'needs-review'};
 export type Fact={text:string;sources:string[];evidence?:EvidenceLink[]};
 export type Feature=Fact&{id:string;name:string;latinName?:string;meshIds:string[];standardId?:string};

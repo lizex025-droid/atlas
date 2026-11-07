@@ -1,16 +1,28 @@
 {
   "schemaVersion": 1,
-  "lastValidatedAt": "2026-10-31T08:59:28.351Z",
-  "contentRevisionSha256": "5352d38a49908242276670d021d76a49c14a0e7fd0b254f0a903d1c4ce6fcf47",
-  "previousCheckpointSha256": "515a96423c54372a2a58f0252fef2006d28c29bc1566eb965eb64f3a2456c764",
+  "lastValidatedAt": "2026-11-07T00:30:04.803Z",
+  "contentRevisionSha256": "fb8867f6d1b6ced45fed6ae04cf785f61370051201ea066e7d78da55fb60b346",
+  "previousCheckpointSha256": "e8afd5a67d104bdcf15986c6a97a1ea76df18abae3c896d7697991be1d46a229",
   "complete": false,
   "modelInventorySha256": "cdb79f51e8807dfc4256d873fe513607946bdb2e4193f9e0120c2e76f554537b",
   "batches": [
     {
+      "id": "rohen-upper-limb-001",
+      "status": "source-checked-partial",
+      "modeledIds": [
+        "FMA23130"
+      ],
+      "semanticIds": [
+        "feature:FMA23130:medial-epicondyle",
+        "feature:FMA23130:ulnar-groove"
+      ],
+      "independentMedicalReview": "pending",
+      "acceptance": "not-complete"
+    },
+    {
       "id": "upper-limb-001",
       "status": "source-checked-partial",
       "modeledIds": [
-        "FMA23130",
         "FMA23131",
         "FMA23465",
         "FMA23468",
@@ -65,7 +77,6 @@
         "feature:FMA23130:lesser-crest",
         "feature:FMA23130:deltoid-tuberosity",
         "feature:FMA23130:radial-groove",
-        "feature:FMA23130:medial-epicondyle",
         "feature:FMA23130:lateral-epicondyle",
         "feature:FMA23130:coronoid-fossa",
         "feature:FMA23130:radial-fossa",
@@ -27621,7 +27632,8 @@
     "feature:FMA23467:trochlear-notch",
     "feature:FMA23467:radial-notch",
     "feature:FMA23467:tuberosity",
-    "feature:FMA23467:styloid"
+    "feature:FMA23467:styloid",
+    "feature:FMA23130:ulnar-groove"
   ],
   "summary": {
     "schemaVersion": 1,
@@ -27870,7 +27882,7 @@
         }
       ]
     },
-    "semanticOnly": 113,
+    "semanticOnly": 114,
     "validationErrors": []
   }
 }

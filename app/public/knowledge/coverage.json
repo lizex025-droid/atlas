@@ -2030,7 +2030,7 @@
       "mapping": "exact-name"
     }
   ],
-  "semanticOnly": 113,
+  "semanticOnly": 114,
   "validationErrors": [],
   "rows": [
     {
@@ -8815,7 +8815,7 @@
       "description": true,
       "expandedDescription": true,
       "relations": true,
-      "substructures": 27,
+      "substructures": 28,
       "clinical": true,
       "references": true,
       "medicalReferences": true,

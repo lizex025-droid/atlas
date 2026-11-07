@@ -1,13 +1,13 @@
 // Render only the app's already licensed, local GLBs. No reference-site imagery.
 import { chromium } from '@playwright/test';
-import { mkdir, writeFile } from 'node:fs/promises';
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE,args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 try{
  const page=await browser.newPage();await page.goto('http://127.0.0.1:5175/');
  await page.evaluate(async()=>{
-  const T=await import('/node_modules/.vite/deps/three.js');
-  const {GLTFLoader}=await import('/node_modules/.vite/deps/three_examples_jsm_loaders_GLTFLoader__js.js');
+  const T=await import('/node_modules/three/build/three.module.js');
+  const {GLTFLoader}=await import('/node_modules/three/examples/jsm/loaders/GLTFLoader.js');
   const {atlasCards,previewPresets}=await import('/src/atlasCatalog.ts');
   const {anatomy,byId}=await import('/src/anatomy.ts');
   const {default:base}=await import('/src/chunks.json');const {default:supplement}=await import('/src/supplementalChunks.json');
@@ -25,8 +25,19 @@ try{
    renderer.render(scene,camera);const result=renderer.domElement.toDataURL('image/webp',.88);materials.forEach(m=>m.dispose());return result;
   };
  });
- const cards=await page.evaluate(()=>window.atlasPreviewCards);const destination=new URL('../public/previews/',import.meta.url);await mkdir(destination,{recursive:true});const manifest=[];
- for(let i=0;i<cards.length;i++){const data=await page.evaluate(i=>window.renderAtlasCard(i),i);const bytes=Buffer.from(data.split(',')[1],'base64');const filename=cards[i].preview.split('/').pop();await writeFile(new URL(filename,destination),bytes);manifest.push({...cards[i],bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});process.stdout.write(`Rendered ${i+1}/${cards.length}: ${filename}\n`);}
- await writeFile(new URL('manifest.json',destination),JSON.stringify({generator:'Original AnatomyAtlas Three.js surface render',sourceManifests:['/models/bodyparts3d/manifest.json','/models/z-anatomy/manifest.json'],licenses:['CC BY-SA 2.1 Japan (BodyParts3D)','CC BY-SA 4.0 (Z-Anatomy palmar surfaces)'],previews:manifest},null,2));
+ const cards=await page.evaluate(()=>window.atlasPreviewCards);const destination=new URL('../public/previews/',import.meta.url);await mkdir(destination,{recursive:true});const ids=new Set(process.argv.slice(2));
+ const manifestUrl=new URL('manifest.json',destination);
+ const old=ids.size?JSON.parse(await readFile(manifestUrl,'utf8')).previews:[];
+ if([...ids].some(id=>!cards.some(card=>card.id===id)))throw new Error('Unknown preview ID');
+ const manifest=[];
+ for(let i=0;i<cards.length;i++){
+  const card=cards[i];
+  if(ids.size&&!ids.has(card.id)){
+   const existing=old.find(p=>p.id===card.id);
+   if(!existing||JSON.stringify(existing.members)!==JSON.stringify(card.members))throw new Error('Preview membership changed: '+card.id);
+   manifest.push(existing);continue;
+  }
+  const data=await page.evaluate(i=>window.renderAtlasCard(i),i);const bytes=Buffer.from(data.split(',')[1],'base64');const filename=cards[i].preview.split('/').pop();await writeFile(new URL(filename,destination),bytes);manifest.push({...cards[i],bytes:bytes.length,sha256:createHash('sha256').update(bytes).digest('hex')});process.stdout.write(`Rendered ${i+1}/${cards.length}: ${filename}\n`);}
+ await writeFile(manifestUrl,JSON.stringify({generator:'Original AnatomyAtlas Three.js surface render',sourceManifests:['/models/bodyparts3d/manifest.json','/models/z-anatomy/manifest.json'],licenses:['CC BY-SA 2.1 Japan (BodyParts3D)','CC BY-SA 4.0 (Z-Anatomy palmar surfaces)'],previews:manifest},null,2));
  await writeFile(new URL('ATTRIBUTION.txt',destination),'AnatomyAtlas original preview renders of licensed anatomical meshes.\nBodyParts3D, The Database Center for Life Science, Japan, CC BY-SA 2.1 Japan.\nZ-Anatomy / Olivier Loranger and contributors, palmar surfaces only, CC BY-SA 4.0.\nSee /models/ATTRIBUTION.txt and each model source manifest for complete credits, modifications, links and source hashes.\nNo reference website screenshots or proprietary meshes are used.\n');
 }finally{await browser.close();}

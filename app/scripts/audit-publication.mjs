@@ -7,7 +7,7 @@ if(path.resolve(actual)!==root)throw new Error('Refusing publication audit outsi
 const files=execFileSync('git',['ls-files','-z'],{cwd:root,encoding:'utf8'}).split('\0').filter(Boolean);const problems=[];let bytes=0,models=0;
 const patterns=[/github_pat_[A-Za-z0-9_]{20,}/,/gh[pousr]_[A-Za-z0-9]{20,}/,/AKIA[A-Z0-9]{16}/,/sk-[A-Za-z0-9_-]{30,}/,/-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/];
 for(const file of files){
- if(/^(reference-backup|research|model-sources|tools)\//.test(file)||/(^|\/)(\.env(?:\..*)?|\.dev\.vars.*|node_modules|dist|\.wrangler)(\/|$)/.test(file)&&!file.endsWith('.env.example')||/(^|\/)test-results[^/]*\//.test(file)){problems.push({file,reason:'private/generated path'});continue;}
+ if(/\.pdf$/i.test(file)||/^(reference-backup|research|model-sources|tools|references|upload)\//.test(file)||/(^|\/)(\.env(?:\..*)?|\.dev\.vars.*|node_modules|dist|\.wrangler)(\/|$)/.test(file)&&!file.endsWith('.env.example')||/(^|\/)test-results[^/]*\//.test(file)){problems.push({file,reason:'private/generated path'});continue;}
  const size=(await stat(path.join(root,file))).size;bytes+=size;if(size>100*1024*1024)problems.push({file,reason:'GitHub regular-file size limit'});
  if(file.endsWith('.glb'))models++;
  if(/\.(glb|webp|png|jpe?g|gif|ico|woff2?)$/i.test(file))continue;

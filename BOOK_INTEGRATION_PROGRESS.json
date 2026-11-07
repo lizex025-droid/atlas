@@ -1,0 +1,888 @@
+{
+  "schemaVersion": 1,
+  "complete": false,
+  "metrics": [
+    {
+      "label": "Physical pages inventoried",
+      "done": 548,
+      "total": 548,
+      "scope": "Edition-specific pagination ledger"
+    },
+    {
+      "label": "Anatomy pages visually audited",
+      "done": 2,
+      "total": 502,
+      "scope": "Inspected against the page image"
+    },
+    {
+      "label": "Anatomical concepts mapped",
+      "done": 31,
+      "total": 41,
+      "scope": "Concepts identified on reviewed pages"
+    },
+    {
+      "label": "Source-checked knowledge sections",
+      "done": 68,
+      "total": 283,
+      "scope": "Applicable sections on mapped records"
+    },
+    {
+      "label": "Records registered in the website",
+      "done": 31,
+      "total": 31,
+      "scope": "Registry, search and source-reference links"
+    },
+    {
+      "label": "Existing separate 3D meshes",
+      "done": 8,
+      "total": 31,
+      "scope": "Whole structures and individually segmented features"
+    },
+    {
+      "label": "Full geometry validation passes",
+      "done": 0,
+      "total": 1,
+      "scope": "Models compared to reference views"
+    },
+    {
+      "label": "Landmark knowledge records",
+      "done": 23,
+      "total": 30,
+      "scope": "Features on reviewed plates"
+    },
+    {
+      "label": "Landmarks with reviewed surface points",
+      "done": 5,
+      "total": 30,
+      "scope": "Representative points on the licensed asset"
+    },
+    {
+      "label": "Records with traceable evidence and rights notes",
+      "done": 24,
+      "total": 31,
+      "scope": "Claim locators and declared reuse basis"
+    },
+    {
+      "label": "Independent medical review",
+      "done": 0,
+      "total": 31,
+      "scope": "Mapped records"
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": "General Anatomy",
+      "anatomyPages": 18,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Head and Neck",
+      "anatomyPages": 168,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Trunk",
+      "anatomyPages": 56,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Thoracic Organs",
+      "anatomyPages": 48,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Abdominal Organs",
+      "anatomyPages": 32,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Retroperitoneal Organs",
+      "anatomyPages": 45,
+      "visuallyReviewed": 0
+    },
+    {
+      "chapter": "Upper Limb",
+      "anatomyPages": 64,
+      "visuallyReviewed": 2
+    },
+    {
+      "chapter": "Lower Limb",
+      "anatomyPages": 71,
+      "visuallyReviewed": 0
+    }
+  ],
+  "editionPdfSha256": "67c64d89a4ac039b52836f29c5a33d7ca603c439c0cadd4ea31a749a4952f1dc",
+  "reviewedPdfPages": [
+    386,
+    387
+  ],
+  "next": {
+    "pdfPage": 385,
+    "printedPage": 371,
+    "chapter": "Upper Limb",
+    "subsection": "Scapula",
+    "action": "Audit the three scapular views, add the right scapula knowledge and child features, and resolve the overlapping shoulder plate labels on PDF p. 386. Track joint concepts independently."
+  },
+  "concepts": [
+    {
+      "id": "FMA13395",
+      "name": "Right scapula",
+      "parentId": "FMA24163",
+      "standardIds": [],
+      "meshIds": [
+        "FMA13395"
+      ],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": false,
+      "contentGaps": [
+        "description",
+        "classification",
+        "location",
+        "orientation",
+        "parts",
+        "surfaces",
+        "borders",
+        "landmarks",
+        "relations",
+        "attachments",
+        "articulations",
+        "bloodSupply",
+        "venousDrainage",
+        "innervation",
+        "lymphaticDrainage",
+        "embryology",
+        "ossification",
+        "variations",
+        "surfaceAnatomy",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "FMA23130",
+      "name": "Right humerus",
+      "parentId": "group:arm",
+      "standardIds": [
+        "TA2:1180"
+      ],
+      "meshIds": [
+        "FMA23130"
+      ],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "venousDrainage",
+        "innervation",
+        "lymphaticDrainage",
+        "ossification"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "FMA7857",
+      "name": "Right first rib",
+      "parentId": "FMA7480",
+      "standardIds": [],
+      "meshIds": [
+        "FMA7857"
+      ],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": false,
+      "contentGaps": [
+        "description",
+        "classification",
+        "location",
+        "orientation",
+        "parts",
+        "surfaces",
+        "borders",
+        "landmarks",
+        "relations",
+        "attachments",
+        "articulations",
+        "bloodSupply",
+        "venousDrainage",
+        "innervation",
+        "lymphaticDrainage",
+        "embryology",
+        "ossification",
+        "variations",
+        "surfaceAnatomy",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "FMA7957",
+      "name": "Right fourth rib",
+      "parentId": "FMA7480",
+      "standardIds": [],
+      "meshIds": [
+        "FMA7957"
+      ],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": false,
+      "contentGaps": [
+        "description",
+        "classification",
+        "location",
+        "orientation",
+        "parts",
+        "surfaces",
+        "borders",
+        "landmarks",
+        "relations",
+        "attachments",
+        "articulations",
+        "bloodSupply",
+        "venousDrainage",
+        "innervation",
+        "lymphaticDrainage",
+        "embryology",
+        "ossification",
+        "variations",
+        "surfaceAnatomy",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "FMA8066",
+      "name": "Right fifth rib",
+      "parentId": "FMA7480",
+      "standardIds": [],
+      "meshIds": [
+        "FMA8066"
+      ],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": false,
+      "contentGaps": [
+        "description",
+        "classification",
+        "location",
+        "orientation",
+        "parts",
+        "surfaces",
+        "borders",
+        "landmarks",
+        "relations",
+        "attachments",
+        "articulations",
+        "bloodSupply",
+        "venousDrainage",
+        "innervation",
+        "lymphaticDrainage",
+        "embryology",
+        "ossification",
+        "variations",
+        "surfaceAnatomy",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "FMA8175",
+      "name": "Right sixth rib",
+      "parentId": "FMA7480",
+      "standardIds": [],
+      "meshIds": [
+        "FMA8175"
+      ],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": false,
+      "contentGaps": [
+        "description",
+        "classification",
+        "location",
+        "orientation",
+        "parts",
+        "surfaces",
+        "borders",
+        "landmarks",
+        "relations",
+        "attachments",
+        "articulations",
+        "bloodSupply",
+        "venousDrainage",
+        "innervation",
+        "lymphaticDrainage",
+        "embryology",
+        "ossification",
+        "variations",
+        "surfaceAnatomy",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "FMA8229",
+      "name": "Right seventh rib",
+      "parentId": "FMA7480",
+      "standardIds": [],
+      "meshIds": [
+        "FMA8229"
+      ],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": false,
+      "contentGaps": [
+        "description",
+        "classification",
+        "location",
+        "orientation",
+        "parts",
+        "surfaces",
+        "borders",
+        "landmarks",
+        "relations",
+        "attachments",
+        "articulations",
+        "bloodSupply",
+        "venousDrainage",
+        "innervation",
+        "lymphaticDrainage",
+        "embryology",
+        "ossification",
+        "variations",
+        "surfaceAnatomy",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "FMA13322",
+      "name": "Right clavicle",
+      "parentId": "FMA24163",
+      "standardIds": [],
+      "meshIds": [
+        "FMA13322"
+      ],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": false,
+      "contentGaps": [
+        "description",
+        "classification",
+        "location",
+        "orientation",
+        "parts",
+        "surfaces",
+        "borders",
+        "landmarks",
+        "relations",
+        "attachments",
+        "articulations",
+        "bloodSupply",
+        "venousDrainage",
+        "innervation",
+        "lymphaticDrainage",
+        "embryology",
+        "ossification",
+        "variations",
+        "surfaceAnatomy",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:head",
+      "name": "Head of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1181"
+      ],
+      "meshIds": [],
+      "hasAnchor": true,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:surgical-neck",
+      "name": "Surgical neck of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1183"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:greater-tubercle",
+      "name": "Greater tubercle of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1184"
+      ],
+      "meshIds": [],
+      "hasAnchor": true,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:anatomical-neck",
+      "name": "Anatomical neck of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1182"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:lesser-tubercle",
+      "name": "Lesser tubercle of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1185"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:lesser-crest",
+      "name": "Crest of lesser tubercle of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1188"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:greater-crest",
+      "name": "Crest of greater tubercle of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1187"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:intertubercular-sulcus",
+      "name": "Intertubercular sulcus of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1186"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:deltoid-tuberosity",
+      "name": "Deltoid tuberosity of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1193"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:anterolateral",
+      "name": "Anterolateral surface of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1192"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:lateral-supraridge",
+      "name": "Lateral supracondylar ridge of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1195"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:radial-fossa",
+      "name": "Radial fossa of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1206"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:lateral-epicondyle",
+      "name": "Lateral epicondyle of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1209"
+      ],
+      "meshIds": [],
+      "hasAnchor": true,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:capitulum",
+      "name": "Capitulum of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1202"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:anteromedial",
+      "name": "Anteromedial surface of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1190"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:medial-supraridge",
+      "name": "Medial supracondylar ridge of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1199"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:coronoid-fossa",
+      "name": "Coronoid fossa of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1205"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:medial-epicondyle",
+      "name": "Medial epicondyle of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1207"
+      ],
+      "meshIds": [],
+      "hasAnchor": true,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "function"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:trochlea",
+      "name": "Trochlea of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1203"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:posterior",
+      "name": "Posterior surface of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1196"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:ulnar-groove",
+      "name": "Groove for ulnar nerve of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1208"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:radial-groove",
+      "name": "Radial groove of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1197"
+      ],
+      "meshIds": [],
+      "hasAnchor": false,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    },
+    {
+      "id": "feature:FMA23130:olecranon-fossa",
+      "name": "Olecranon fossa of right humerus",
+      "parentId": "FMA23130",
+      "standardIds": [
+        "TA2:1204"
+      ],
+      "meshIds": [],
+      "hasAnchor": true,
+      "uiRegistered": true,
+      "sourceRightsChecked": true,
+      "contentGaps": [
+        "relations",
+        "function",
+        "clinical"
+      ],
+      "independentMedicalReview": "pending"
+    }
+  ],
+  "unmappedConcepts": [
+    {
+      "conceptId": "right-glenohumeral-joint",
+      "name": "Right glenohumeral joint",
+      "kind": "joint",
+      "reason": "Register a joint concept with independently sourced articular, capsular and stabilizing anatomy."
+    },
+    {
+      "conceptId": "right-costotransverse-joints",
+      "name": "Right costotransverse joints",
+      "reason": "Requires level-specific joint identities and verified costal and vertebral partners.",
+      "kind": "joint"
+    },
+    {
+      "conceptId": "right-acromioclavicular-joint",
+      "name": "Right acromioclavicular joint",
+      "reason": "A dedicated joint record is needed. The clavicle mesh cannot substitute for the joint.",
+      "kind": "joint"
+    },
+    {
+      "conceptId": "right-acromion",
+      "name": "Acromion of right scapula",
+      "reason": "Requires its own canonical feature record and scapular backlink.",
+      "kind": "landmark"
+    },
+    {
+      "conceptId": "right-scapular-notch",
+      "name": "Scapular notch of right scapula",
+      "reason": "Requires its own canonical feature record and scapular backlink.",
+      "kind": "landmark"
+    },
+    {
+      "conceptId": "right-scapular-spine",
+      "name": "Spine of right scapula",
+      "reason": "Requires its own canonical feature record and scapular backlink.",
+      "kind": "landmark"
+    },
+    {
+      "conceptId": "right-glenoid-cavity",
+      "name": "Glenoid cavity of right scapula",
+      "reason": "Requires its own canonical feature record and ipsilateral humeral-head relationship.",
+      "kind": "landmark"
+    },
+    {
+      "conceptId": "right-scapular-posterior-surface",
+      "name": "Posterior surface of right scapula",
+      "reason": "Requires its own canonical feature record and scapular backlink.",
+      "kind": "landmark"
+    },
+    {
+      "conceptId": "right-coracoid-process",
+      "name": "Coracoid process of right scapula",
+      "reason": "Requires its own canonical feature record and scapular backlink.",
+      "kind": "landmark"
+    },
+    {
+      "conceptId": "right-infraglenoid-tubercle",
+      "name": "Infraglenoid tubercle of right scapula",
+      "reason": "Requires its own canonical feature record and scapular backlink.",
+      "kind": "landmark"
+    }
+  ],
+  "modelReviews": [
+    {
+      "meshId": "FMA23130",
+      "status": "gross-features-only",
+      "checks": {
+        "structuralCompleteness": "Proximal end, shaft and distal end are identifiable. Joint cartilage and fine subdivisions are outside the installed asset.",
+        "shapeFidelity": "Five gross areas localize in multi-view comparison. The reduced surface shows visible discontinuities near the proximal contour and anterior distal fossa.",
+        "relativeDimensions": "Gross proportions observed visually. No registered measurement or population benchmark.",
+        "orientation": "Right-side mesh and medial-facing head are consistent with the source record and asset coordinates.",
+        "neighbors": "Registry links ipsilateral scapula, radius and ulna. Joint congruence and specimen registration remain unmeasured.",
+        "landmarks": "Five representative surface points on indexed triangles, with side and source digest checked.",
+        "topology": "2,233 indexed vertices and 3,784 triangles. 564 indexed boundary edges, zero nonmanifold edges and zero degenerate triangles at the audit threshold. The observed discontinuities preclude a full fidelity pass.",
+        "interactivity": "Only the existing whole bone is selectable geometry. Reviewed points and semantic records are tracked separately."
+      },
+      "blocker": "A higher-resolution, licensed right humerus or segmented imaging with suitable comparative landmarks is needed for quantitative geometry verification and precise fine landmarks."
+    }
+  ]
+}

@@ -12,7 +12,8 @@
     "test:e2e": "playwright test",
     "knowledge:audit": "vite-node scripts/audit-knowledge.ts",
     "landmarks:audit": "vite-node scripts/audit-landmarks.ts",
-    "knowledge:import": "vite-node scripts/import-knowledge.ts"
+    "knowledge:import": "vite-node scripts/import-knowledge.ts",
+    "book:audit": "vite-node scripts/audit-book.ts"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.0",

@@ -24,6 +24,6 @@ Content states: {"Not started":0,"Skeleton record only":1160,"Partially populate
 
 Standard adult audit: 199/206 reference bones represented (198 exact-name mappings, 1 component group); missing: Coccyx, Left malleus, Right malleus, Left incus, Right incus, Left stapes, Right stapes. Convention: 80 axial + 126 appendicular; sternum components count together, patellae included, accessory sesamoids excluded. Clinical/source identity review is separate from matching source labels.
 
-Semantic-only records: 113, including feature profiles without individual geometry. These do not increase the 3D-model coverage numerator.
+Semantic-only records: 114, including feature profiles without individual geometry. These do not increase the 3D-model coverage numerator.
 
-Detailed per-ID/section gaps and source references: app/public/knowledge/database.json and coverage.json. Resumption: CONTENT_PROGRESS.json. No Complete Anatomy text, images, databases or protected models were extracted. Medical review and the left-humerus final acceptance test remain incomplete.
+Detailed per-ID/section gaps and source references: app/public/knowledge/database.json and coverage.json. Resumption: CONTENT_PROGRESS.json. No Complete Anatomy text, images, databases or protected models were extracted. Independent medical review and full record completion remain pending.
