@@ -8,4 +8,5 @@ import './knowledge.css';
 import './landmarks.css';
 import './mobile.css';
 import './modelModes.css';
+import './atlasRedesign.css';
 ReactDOM.createRoot(document.getElementById('root')!).render(<React.StrictMode><App/></React.StrictMode>);

@@ -6,7 +6,7 @@ import type { EntryPage } from './EntryScreen';
 import type { AtlasCard } from './atlasCatalog';
 import { IdentificationQuiz } from './IdentificationQuiz';
 import { lazy, Suspense, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
-import { Home, Undo2, Search, PanelsTopLeft, SlidersHorizontal, Library, Boxes, Settings, BookmarkPlus, CircleHelp, Bone, Network, Activity, Wind, Heart, Layers, Eye, Focus, Menu, X, ChevronRight, Dna, Shield, RotateCcw } from 'lucide-react';
+import { Home, Undo2, Search, PanelsTopLeft, SlidersHorizontal, Library, Boxes, Settings, BookmarkPlus, CircleHelp, Bone, Network, Activity, Wind, Heart, Layers, Eye, Focus, Menu, X, ChevronRight, ChevronDown, Dna, Shield, RotateCcw, ZoomIn, ZoomOut, BookOpen, Grid2X2, MoreHorizontal } from 'lucide-react';
 import { anatomy, byId } from './anatomy';
 import { modelModes, applyModelMode, activeModelMode, toggleMuscleLayer } from './modelModes';
 import type { ModelModeId } from './modelModes';
@@ -15,7 +15,7 @@ import type { ViewerHandle } from './Viewer';
 import { InformationPanel } from './InformationPanel';
 import { WorkspaceDrawer, defaultSettings } from './WorkspaceDrawer';
 import type { DisplaySettings, DrawerName } from './WorkspaceDrawer';
-import { bodySystems, groups, systemMembers, titleFor } from './registry';
+import { bodySystems, groups, systemMembers, systemFor, titleFor } from './registry';
 import { getKnowledge } from './knowledge';
 import { workspaceInitial, selectStructure, toggleMembers, visibility, frame, cameraPresets } from './workspace';
 import type { WorkspaceState } from './workspace';
@@ -28,15 +28,28 @@ function reducer(s:History,a:Action):History {if(a.type==='undo')return s.past.l
 function readViews(){try{return decodeScenes(localStorage.getItem(STORAGE_KEY));}catch{return [];}}
 function readSettings():DisplaySettings {try{const s=JSON.parse(localStorage.getItem('anatomy-atlas.display.v1')??'{}');return {...defaultSettings,quality:['low','balanced','high'].includes(s.quality)?s.quality:(window.matchMedia('(max-width: 1100px) and (pointer: coarse), (max-height: 520px) and (pointer: coarse)').matches?'low':'balanced'),labels:typeof s.labels==='boolean'?s.labels:true,reducedMotion:typeof s.reducedMotion==='boolean'?s.reducedMotion:matchMedia('(prefers-reduced-motion: reduce)').matches,highContrast:s.highContrast===true,largeText:s.largeText===true,rotationSpeed:typeof s.rotationSpeed==='number'?Math.min(2,Math.max(.3,s.rotationSpeed)):1};}catch{return defaultSettings;}}
 const systemIcons=[Bone,Layers,Activity,Heart,Network,Dna,Network,Wind,Activity,Shield,Activity,Eye];
+/* Original local ATLAS preview renders. Their paths are verified in previews/manifest.json. */
+const systemPreviews=[
+ '/previews/skeletal-0.webp','/previews/connective-tissue-0.webp','/previews/muscular-0.webp',
+ '/previews/arterial-0.webp','/previews/venous-1.webp',null,'/previews/nervous-0.webp',
+ '/previews/respiratory-1.webp','/previews/digestive-1.webp','/previews/endocrine-0.webp',
+ '/previews/urogenital-1.webp','/previews/integumentary-1.webp'
+] as const;
+function initialVisualWorkspace():WorkspaceState {
+ const base=workspaceInitial();
+ const mobile=window.matchMedia('(max-width: 820px), (pointer: coarse) and (max-width: 1100px)').matches;
+ const shown=new Set(mobile?['Skeletal','Muscular']:['Skeletal','Muscular','Arterial','Nervous','Digestive']);
+ return {...base,hidden:anatomy.filter(item=>!shown.has(systemFor(item.id)??'')).map(item=>item.id)};
+}
 const rail=[['Hub',PanelsTopLeft],['Search',Search],['Tools',SlidersHorizontal],['Library',Library],['Store',Boxes],['Settings',Settings],['Save Scene',BookmarkPlus],['Help',CircleHelp]] as const;
-function entryRoute():EntryPage{return location.hash==='#coverage'?'coverage':location.hash==='#workspace'?'workspace':location.hash==='#welcome'?'home':'atlas';}
+function entryRoute():EntryPage{return location.hash==='#coverage'?'coverage':location.hash==='#atlas'?'atlas':location.hash==='#welcome'?'home':'workspace';}
 export default function App(){
  const [entryPage,setEntryPage]=useState<EntryPage>(entryRoute);const [hasEntered,setHasEntered]=useState(()=>entryRoute()==='workspace');const [quiz,setQuiz]=useState(false);
  const route=useCallback((next:EntryPage)=>{if(next==='workspace')setHasEntered(true);location.hash=next==='home'?'welcome':next;setEntryPage(next);},[]);
  useEffect(()=>{const onHash=()=>{const next=entryRoute();setEntryPage(next);if(next==='workspace')setHasEntered(true);};window.addEventListener('hashchange',onHash);return()=>window.removeEventListener('hashchange',onHash);},[]);
 
  useEffect(()=>{const mobile=window.matchMedia('(max-width: 820px), (max-height: 520px) and (pointer: coarse)');const handleChange=()=>setPanelOpen(!mobile.matches);mobile.addEventListener('change',handleChange);return()=>mobile.removeEventListener('change',handleChange);},[]);
- const [history,dispatch]=useReducer(reducer,undefined,()=>({past:[],present:workspaceInitial()}));const state=history.present;
+ const [history,dispatch]=useReducer(reducer,undefined,()=>({past:[],present:initialVisualWorkspace()}));const state=history.present;
  const [drawer,setDrawer]=useState<DrawerName|null>(null);const [query,setQuery]=useState('');const [filter,setFilter]=useState('All systems');const [multi,setMulti]=useState(false);const [panelOpen,setPanelOpen]=useState(()=>!window.matchMedia('(max-width: 820px), (max-height: 520px) and (pointer: coarse)').matches);
  const [progress,setProgress]=useState<LoadProgress>({loaded:0,total:0,bytes:0,errors:[]});const [retry,setRetry]=useState(0);const [status,setStatus]=useState('Select a structure to begin');
  const [saved,setSaved]=useState<SavedScene[]>(readViews);const [sceneName,setSceneName]=useState('My study view');const [note,setNote]=useState('');const [settings,setSettingsState]=useState(readSettings);const [section,setSection]=useState<number|null>(null);const [explode,setExplode]=useState(0);
@@ -49,7 +62,7 @@ export default function App(){
  const action=useCallback((name:string)=>{
   if(name==='coverage'){route('coverage');return;}
   if(name==='multi'){setMulti(v=>!v);return;}
-  if(name==='home'){apply(()=>workspaceInitial());setLandmarkMode(false);setPanelOpen(true);setSection(null);setExplode(0);setStatus('Workspace reset; saved scenes retained');return;}
+  if(name==='home'){apply(()=>initialVisualWorkspace());setLandmarkMode(false);setPanelOpen(true);setSection(null);setExplode(0);setStatus('Workspace reset; saved scenes retained');return;}
   if(name==='camera'){apply(s=>({...s,camera:defaultCamera}));return;}
   if(name==='focus'){const camera=viewer.current?.capture();apply(s=>({...s,camera:frame(s.selectedIds,camera??s.camera)}));return;}
   if(name.startsWith('opacity:')){const value=Number(name.split(':')[1]);apply(s=>s.selected&&byId.has(s.selected)?{...s,opacity:{...s.opacity,[s.selected]:value}}:s);return;}
@@ -73,25 +86,50 @@ export default function App(){
  function focusBone(){if(!landmarkBone)return;const camera=viewer.current?.capture()??state.camera;apply(s=>({...s,camera:boneStudyCamera(landmarkBone,camera,explode)}));}
  const renderState=useMemo(()=>boneStudyState(state,landmarkBone,boneContext),[state,landmarkBone,boneContext]);
  const activeMode=activeModelMode(renderState);
+ const zoomCamera=(factor:number)=>{const camera=viewer.current?.capture()??state.camera;const delta=camera.position.map((value,i)=>value-camera.target[i]);const distance=Math.hypot(...delta);const ratio=Math.min(24,Math.max(.24,distance*factor))/(distance||1);const position=camera.position.map((value,i)=>camera.target[i]+(value-camera.target[i])*ratio) as [number,number,number];apply(s=>({...s,camera:{...camera,position}}));};
  const hierarchy=state.groupId?[{id:state.groupId,name:groups.get(state.groupId)?.name??state.groupId}]:selectedRecord?.hierarchyPath??[];
  const visible=anatomy.length-renderState.hidden.length;
  const hiddenSet=new Set(renderState.hidden);const expectedChunks=new Set(anatomy.filter(s=>!hiddenSet.has(s.id)&&(renderState.opacity[s.id]??1)>0).map(s=>s.chunk)).size;
  return <>{entryScreen}{hasEntered?<div aria-hidden={entryPage!=='workspace'} inert={entryPage!=='workspace'} className={'anatomy-workspace '+(panelOpen||quiz?'':'panel-collapsed')+(landmarkBone?' landmark-mode':'')} data-contrast={settings.highContrast} data-large-text={settings.largeText} data-reduced-motion={settings.reducedMotion}>
- <header className="app-header"><a className="wordmark" href="#" onClick={e=>{e.preventDefault();setDrawer('Hub');}}><span className="brand-symbol"><Layers size={17}/></span>ANATOMY<span>ATLAS</span></a><button className="workspace-entry-button" onClick={()=>route('atlas')}>ATLAS COLLECTION</button><span className="header-edition">EXPLORER / BODYPARTS3D</span><div className="header-status"><i/> Local study workspace <span>v0.4</span></div></header>
+ <header className="app-header atlas-redesign-header">
+   <a className="wordmark" href="#workspace" onClick={e=>{e.preventDefault();route('workspace');setDrawer(null);setQuiz(false);}}><span className="brand-symbol"><Layers size={25}/></span><span>ATLAS</span></a>
+   <nav className="atlas-primary-nav" aria-label="Main navigation">
+    <button className="is-active" onClick={()=>{route('workspace');setQuiz(false);setDrawer(null);}}>Explore</button>
+    <button onClick={()=>route('atlas')}>Learn</button>
+    <button onClick={()=>openMode('quiz')}>Cases</button>
+    <button onClick={()=>setDrawer('Library')}>Library</button>
+   </nav>
+   <button className="atlas-search-trigger" onClick={()=>setDrawer('Search')} aria-label="Search anatomy structures"><Search size={18}/><span>Search anatomy, structures, or concepts...</span><kbd>⌘ K</kbd></button>
+   <button className="atlas-header-icon" onClick={()=>setDrawer('Settings')} title="Display settings" aria-label="Settings"><Settings size={19}/></button>
+  </header>
  <div className="top-navigation"><div className="history-controls"><button title="Home" aria-label="Reset workspace" onClick={()=>action('home')}><Home size={20}/><small>Home</small></button><button title="Undo" aria-label="Undo" disabled={!history.past.length} onClick={()=>dispatch({type:'undo'})}><Undo2 size={23}/><small>Undo</small></button><button className="panel-toggle" aria-label={panelOpen?'Collapse information panel':'Show information panel'} onClick={()=>{if(landmarkBone){setLandmarkMode(false);setPanelOpen(true);}else setPanelOpen(v=>!v);}}>{panelOpen?<X size={18}/>:<Menu size={18}/>}</button></div><nav className="anatomical-breadcrumbs" aria-label="Anatomical hierarchy">{!quiz&&hierarchy.length?hierarchy.map((p,i)=><span key={p.id}><button aria-current={i===hierarchy.length-1?'page':undefined} disabled={!groups.has(p.id)&&!byId.has(p.id)&&p.id!==state.selected} onClick={()=>select(p.id,false)}>{p.name}</button>{i<hierarchy.length-1?<ChevronRight size={12}/>:null}</span>):<span className="breadcrumb-placeholder">Full body <ChevronRight size={12}/> Anatomical exploration</span>}</nav></div>
- {quiz?<IdentificationQuiz onQuestion={showQuestion} onExit={()=>setQuiz(false)}/>:<InformationPanel collapsed={!panelOpen} onClose={()=>setPanelOpen(false)} selected={state.selected} groupId={state.groupId} selectedCount={state.selectedIds.length} multi={multi} onSelect={select} onAction={action} onSearch={()=>setDrawer('Search')}/>}
+ <nav className="atlas-left-navigation" aria-label="Explore ATLAS">
+    <button className="atlas-nav-selected" aria-label="Browser" onClick={()=>setDrawer(drawer==='Hub'?null:'Hub')}><Grid2X2 size={25}/><span>Browser</span></button>
+    <button aria-label="Systems" onClick={()=>route('atlas')}><Layers size={24}/><span>Systems</span></button>
+    <button aria-label="Bookmarks" onClick={()=>setDrawer('Library')}><BookmarkPlus size={23}/><span>Bookmarks</span></button>
+    <button aria-label="Study" onClick={()=>openMode('quiz')}><BookOpen size={23}/><span>Study</span></button>
+    <button aria-label="Tools" onClick={()=>setDrawer('Tools')}><Boxes size={23}/><span>Tools</span></button>
+    <button aria-label="More settings" onClick={()=>setDrawer('Settings')}><MoreHorizontal size={24}/><span>More</span></button>
+   </nav>
+  {quiz?<IdentificationQuiz onQuestion={showQuestion} onExit={()=>setQuiz(false)}/>:<InformationPanel collapsed={!panelOpen} onClose={()=>setPanelOpen(false)} selected={state.selected} groupId={state.groupId} selectedCount={state.selectedIds.length} multi={multi} onSelect={select} onAction={action} onSearch={()=>setDrawer('Search')}/>}
  <main className="anatomy-viewport"><Suspense fallback={<div className="webgl-error" role="status">Preparing 3D workspace</div>}><Viewer ref={viewer} state={quiz?{...renderState,annotations:[]}:renderState} cameraRequest={0} labels={settings.labels&&!quiz&&!landmarkBone} onSelect={id=>{if(!quiz){if(isBone(id)&&!multi)enterLandmarks(id);else select(id);}}} onFocus={id=>{if(!quiz){if(isBone(id)&&!multi)enterLandmarks(id);else select(id,true);}}} onProgress={setProgress} retry={retry} selectedIds={state.selectedIds} settings={settings} section={section} explode={explode} landmarkBone={landmarkBone} landmarks={markersVisible&&section===null?landmarkItems.filter(l=>landmarkCategory==='all'||l.category===landmarkCategory):[]} selectedLandmark={activeLandmark?.id} onLandmark={selectLandmark}/></Suspense>
- {!quiz&&!landmarkBone?<div className={"model-mode-switch"+(isBone(state.selected)?" with-markings":"")} role="group" aria-label="Anatomy view presets">{modelModes.map(preset=><button key={preset.id} type="button" title={preset.detail} aria-label={'Show '+preset.label} aria-pressed={activeMode===preset.id} onClick={()=>chooseModelMode(preset.id)}>{preset.label}</button>)}</div>:null}
+ {!quiz&&!landmarkBone?<details className="model-mode-switch" aria-label="Anatomy view presets"><summary><Boxes size={17}/> 3D <ChevronDown size={14}/></summary><div className="model-preset-menu">{modelModes.map(preset=><button key={preset.id} type="button" title={preset.detail} aria-label={'Show '+preset.label} aria-pressed={activeMode===preset.id} onClick={()=>chooseModelMode(preset.id)}>{preset.label}</button>)}</div></details>:null}
  {!quiz&&!landmarkBone?<button className="mobile-info-trigger" aria-controls="anatomical-information" aria-expanded={panelOpen} onClick={()=>setPanelOpen(v=>!v)}><PanelsTopLeft size={17}/>{panelOpen?'Hide info':'Information'}</button>:null}
  {!quiz&&isBone(state.selected)?<button className="markings-button" onClick={()=>landmarkBone?(setLandmarkMode(false),setPanelOpen(true)):enterLandmarks(state.selected!)}>{landmarkBone?'Standard workspace':'Bony Markings'}</button>:null}
  {landmarkBone?<BoneLandmarkExplorer key={landmarkBone} boneId={landmarkBone} items={landmarkItems} selected={activeLandmark} markersVisible={markersVisible} setMarkersVisible={setMarkersVisible} select={selectLandmark} focusBone={()=>{selectLandmark(null);focusBone();}} close={()=>{setLandmarkMode(false);setPanelOpen(true);}} context={boneContext} setContext={setBoneContext} category={landmarkCategory} setCategory={setLandmarkCategory} sectionActive={section!==null}/>:null}
  <div className="viewport-caption"><span>{quiz?'IDENTIFICATION PRACTICE':state.groupId?groups.get(state.groupId)?.name:state.selected?selectedRecord?.officialName:'HUMAN ANATOMY'}</span><small>{state.selectedIds.length?state.selectedIds.length+' selected':visible+' visible structures'}</small></div>
- <div className="camera-controls" aria-label="Camera views">{Object.entries(cameraPresets).map(([name,view])=><button key={name} onClick={()=>apply(s=>({...s,camera:view}))}>{name}</button>)}<button aria-label="Reset camera" title="Reset camera" onClick={()=>action('camera')}><RotateCcw size={14}/></button><button aria-label="Focus selection" title="Focus selection" disabled={!state.selectedIds.length} onClick={()=>action('focus')}><Focus size={15}/></button></div>
+ <div className="camera-controls" aria-label="Camera and history controls">
+    <button title="Reset 3D view" aria-label="Reset 3D view" onClick={()=>action('camera')}><Boxes size={18}/><span>3D</span></button>
+    <button title="Zoom in" aria-label="Zoom in" onClick={()=>zoomCamera(.82)}><ZoomIn size={20}/></button>
+    <button title="Zoom out" aria-label="Zoom out" onClick={()=>zoomCamera(1.22)}><ZoomOut size={20}/></button>
+    <button title="Front view" aria-label="Front view" onClick={()=>apply(s=>({...s,camera:cameraPresets.Front}))}><Focus size={19}/></button>
+    <button title="Undo" aria-label="Undo last action" disabled={!history.past.length} onClick={()=>dispatch({type:'undo'})}><Undo2 size={20}/></button>
+   </div>
  <div className="model-load-status" data-testid="model-loading" data-errors={JSON.stringify(progress.errors)} data-loaded={progress.loaded} data-total={progress.total} data-expected={expectedChunks}>{progress.errors.length?<><span role="alert" title={progress.errors.join("; ")}>Model loading failed.</span><button onClick={()=>setRetry(n=>n+1)}>Retry models</button></>:<span>{progress.total===0?'No visible meshes':progress.loaded===progress.total&&progress.total===expectedChunks?'Models ready':'Loading surfaces'} · {progress.loaded}/{progress.total} · {(progress.bytes/1048576).toFixed(1)} MiB</span>}</div>
  <div className="viewport-foot"><span>Drag rotate · Right-drag pan · Scroll zoom</span><span>{visible} / {anatomy.length} visible</span></div>
  </main>
  <nav className="right-toolbar" aria-label="Workspace tools">{rail.map(([name,Icon],i)=><button key={name} className={(drawer===name?'active ':'')+(i===6?'save-rail':'')} aria-label={name} aria-pressed={drawer===name} onClick={()=>setDrawer(name==='Save Scene'?'Library':drawer===name?null:name)}><Icon size={25} strokeWidth={1.2}/><span>{name}</span></button>)}</nav>
- <nav className="anatomy-system-bar" aria-label="Anatomical systems">{bodySystems.map((system,i)=>{const ids=systemMembers.get(system)??[];const count=ids.filter(id=>!state.hidden.includes(id)).length;const Icon=systemIcons[i];return <button key={system} aria-label={'Layer '+system} aria-pressed={count>0} disabled={!ids.length} title={ids.length?`${count}/${ids.length} visible`:'No registered meshes for this system'} onClick={()=>{apply(s=>system==='Muscular'?toggleMuscleLayer(s,ids):toggleMembers(s,ids));setStatus(system+(count?' hidden':' shown'));}}><Icon size={29} strokeWidth={1.1}/><small>{ids.length?(count?'Visible':'Off'):'Unavailable'}</small><span>{system}</span></button>;})}</nav>
+ <nav className="anatomy-system-bar" aria-label="Anatomical systems"><div className="atlas-systems-title">Body Systems <span>Toggle layers independently</span></div><div className="atlas-systems-track">{bodySystems.map((system,i)=>{const ids=systemMembers.get(system)??[];const count=ids.filter(id=>!state.hidden.includes(id)).length;const Icon=systemIcons[i];const preview=systemPreviews[i];return <button className="atlas-system-card" key={system} aria-label={'Toggle '+system+' layer'} aria-pressed={count>0} disabled={!ids.length} title={ids.length?`${count}/${ids.length} visible · Toggle ${system}`:'No registered geometry for this system'} onClick={()=>{apply(s=>system==='Muscular'?toggleMuscleLayer(s,ids):toggleMembers(s,ids));setStatus(system+(count?' hidden':' shown'));}}><span className="atlas-system-visual">{preview?<img src={preview} alt="" loading="lazy" draggable={false}/>:<Icon size={38} strokeWidth={1.1}/>}</span><span className="atlas-system-label">{system}</span><span className="atlas-system-status">{ids.length?(count?<><Eye size={13}/>Visible</>:<><Eye size={13}/>Off</>):'Unavailable'}</span></button>;})}</div></nav>
  <footer className="workspace-status"><span role="status">{status}</span><a href="/models/ATTRIBUTION.txt" target="_blank" rel="noreferrer">Model credits & licenses</a></footer>
  {drawer?<WorkspaceDrawer name={drawer} close={()=>setDrawer(null)} query={query} setQuery={setQuery} filter={filter} setFilter={setFilter} select={select} state={state} action={action} saved={saved} sceneName={sceneName} setSceneName={setSceneName} save={save} restore={restore} remove={id=>{if(persist(saved.filter(s=>s.id!==id)))setStatus('Scene deleted');}} settings={settings} setSettings={setSettings} note={note} setNote={setNote} addNote={addNote} removeNote={id=>apply(s=>({...s,annotations:s.annotations.filter(a=>a.id!==id)}))} section={section} setSection={setSection} explode={explode} setExplode={setExplode}/>:null}
  </div>:null}</>;
