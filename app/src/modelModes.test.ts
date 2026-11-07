@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { anatomy } from './anatomy';
-import { modelModeMembers, modelModes, applyModelMode, activeModelMode } from './modelModes';
+import { modelModeMembers, modelModes, applyModelMode, activeModelMode, toggleMuscleLayer } from './modelModes';
 import { workspaceInitial } from './workspace';
 
 describe('human anatomy browser presets', () => {
@@ -36,4 +36,18 @@ describe('human anatomy browser presets', () => {
   const extra = modelModeMembers('muscles')[0];
   expect(activeModelMode({ ...initial, hidden: initial.hidden.filter(id => id !== extra) })).toBeNull();
  });
+});
+
+it('reveals registered muscle attachments without hiding the skeleton or notes', () => {
+ const start = workspaceInitial();
+ const ids = anatomy.filter(m => m.system === 'Muscular').map(m => m.id);
+ const next = toggleMuscleLayer(start, ids);
+ const scalp = anatomy.find(m => /epicranial aponeurosis/i.test(m.name))!;
+ expect(scalp).toBeDefined();
+ expect(next.hidden).not.toContain(scalp.id);
+ for (const m of anatomy.filter(m => m.system === 'Skeletal')) expect(next.hidden).not.toContain(m.id);
+ expect(next.camera).toEqual(start.camera);
+ const off = toggleMuscleLayer(next, ids);
+ expect(ids.every(id => off.hidden.includes(id))).toBe(true);
+ expect(off.hidden).not.toContain(scalp.id);
 });

@@ -8,7 +8,7 @@ import { IdentificationQuiz } from './IdentificationQuiz';
 import { lazy, Suspense, useCallback, useEffect, useMemo, useReducer, useRef, useState } from 'react';
 import { Home, Undo2, Search, PanelsTopLeft, SlidersHorizontal, Library, Boxes, Settings, BookmarkPlus, CircleHelp, Bone, Network, Activity, Wind, Heart, Layers, Eye, Focus, Menu, X, ChevronRight, Dna, Shield, RotateCcw } from 'lucide-react';
 import { anatomy, byId } from './anatomy';
-import { modelModes, applyModelMode, activeModelMode } from './modelModes';
+import { modelModes, applyModelMode, activeModelMode, toggleMuscleLayer } from './modelModes';
 import type { ModelModeId } from './modelModes';
 const Viewer=lazy(()=>import('./Viewer').then(module=>({default:module.Viewer})));
 import type { ViewerHandle } from './Viewer';
@@ -91,7 +91,7 @@ export default function App(){
  <div className="viewport-foot"><span>Drag rotate · Right-drag pan · Scroll zoom</span><span>{visible} / {anatomy.length} visible</span></div>
  </main>
  <nav className="right-toolbar" aria-label="Workspace tools">{rail.map(([name,Icon],i)=><button key={name} className={(drawer===name?'active ':'')+(i===6?'save-rail':'')} aria-label={name} aria-pressed={drawer===name} onClick={()=>setDrawer(name==='Save Scene'?'Library':drawer===name?null:name)}><Icon size={25} strokeWidth={1.2}/><span>{name}</span></button>)}</nav>
- <nav className="anatomy-system-bar" aria-label="Anatomical systems">{bodySystems.map((system,i)=>{const ids=systemMembers.get(system)??[];const count=ids.filter(id=>!state.hidden.includes(id)).length;const Icon=systemIcons[i];return <button key={system} aria-label={'Layer '+system} aria-pressed={count>0} disabled={!ids.length} title={ids.length?`${count}/${ids.length} visible`:'No registered meshes for this system'} onClick={()=>{apply(s=>toggleMembers(s,ids));setStatus(system+(count?' hidden':' shown'));}}><Icon size={29} strokeWidth={1.1}/><small>{ids.length?(count?'Visible':'Off'):'Unavailable'}</small><span>{system}</span></button>;})}</nav>
+ <nav className="anatomy-system-bar" aria-label="Anatomical systems">{bodySystems.map((system,i)=>{const ids=systemMembers.get(system)??[];const count=ids.filter(id=>!state.hidden.includes(id)).length;const Icon=systemIcons[i];return <button key={system} aria-label={'Layer '+system} aria-pressed={count>0} disabled={!ids.length} title={ids.length?`${count}/${ids.length} visible`:'No registered meshes for this system'} onClick={()=>{apply(s=>system==='Muscular'?toggleMuscleLayer(s,ids):toggleMembers(s,ids));setStatus(system+(count?' hidden':' shown'));}}><Icon size={29} strokeWidth={1.1}/><small>{ids.length?(count?'Visible':'Off'):'Unavailable'}</small><span>{system}</span></button>;})}</nav>
  <footer className="workspace-status"><span role="status">{status}</span><a href="/models/ATTRIBUTION.txt" target="_blank" rel="noreferrer">Model credits & licenses</a></footer>
  {drawer?<WorkspaceDrawer name={drawer} close={()=>setDrawer(null)} query={query} setQuery={setQuery} filter={filter} setFilter={setFilter} select={select} state={state} action={action} saved={saved} sceneName={sceneName} setSceneName={setSceneName} save={save} restore={restore} remove={id=>{if(persist(saved.filter(s=>s.id!==id)))setStatus('Scene deleted');}} settings={settings} setSettings={setSettings} note={note} setNote={setNote} addNote={addNote} removeNote={id=>apply(s=>({...s,annotations:s.annotations.filter(a=>a.id!==id)}))} section={section} setSection={setSection} explode={explode} setExplode={setExplode}/>:null}
  </div>:null}</>;

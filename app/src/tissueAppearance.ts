@@ -62,24 +62,24 @@ const striation = /* glsl */`
  float striations(vec3 p, vec3 n) {
   if (tissuePattern > 1.5) {
    vec2 xy = p.xy * vec2(1.0, 1.25);
-   return .58 * fiberBand(355.0 * length(xy)) + .24 * fiberBand(719.0 * length(xy));
+   return .58 * fiberBand(1650.0 * length(xy)) + .24 * fiberBand(3190.0 * length(xy));
   }
   if (tissuePattern > .5) {
    float angle = atan(p.y, abs(p.x) + .003);
-   return .64 * fiberBand(angle * 74.0 + p.z * 53.0) + .21 * fiberBand(angle * 139.0);
+   return .64 * fiberBand(angle * 330.0 + p.z * 17.0) + .21 * fiberBand(angle * 671.0);
   }
   float a = dot(p, tissueAcross), b = dot(p, tissueDepth), l = dot(p, tissueAxis);
-  float bend = 3.2 * sin(10.7 * l + tissueSeed + 15.0 * a);
+  float bend = 0.65 * sin(9.7 * l + tissueSeed + 8.0 * a);
   float flank = smoothstep(.15, .86, abs(dot(n, tissueAcross)));
-  float planeA = .64 * fiberBand(300.0 * a + bend) + .24 * fiberBand(617.0 * a + .63 * bend);
-  float planeB = .64 * fiberBand(300.0 * b + bend) + .24 * fiberBand(617.0 * b + .63 * bend);
+  float planeA = .64 * fiberBand(1550.0 * a + bend) + .24 * fiberBand(3127.0 * a + .63 * bend);
+  float planeB = .64 * fiberBand(1550.0 * b + bend) + .24 * fiberBand(3127.0 * b + .63 * bend);
   return mix(planeA, planeB, flank);
  }
 `;
 
 const tendonColor = new Color('#e3d7b9');
 const nerveColor = new Color('#d5a14d');
-const muscleColor = new Color('#9f3f2e');
+const muscleColor = new Color('#a94f39');
 const selectionColor = new Color('#74dc92');
 
 type Appearance = MeshStandardMaterialParameters & Partial<Pick<MeshStandardMaterial, 'onBeforeCompile' | 'customProgramCacheKey'>>;
@@ -92,9 +92,9 @@ export function tissueAppearance(model: Structure, geometry: BufferGeometry, sel
  const fiber = muscle ? profile(model, geometry) : null;
  return {
   color: selected ? selectionColor : muscle ? muscleColor : nerveColor,
-  roughness: muscle ? .55 : .48,
+  roughness: muscle ? .42 : .48,
   vertexColors: hasTendon,
-  customProgramCacheKey: () => muscle ? 'atlas-muscle-v1' : 'atlas-nerve-v1',
+  customProgramCacheKey: () => muscle ? 'atlas-muscle-v2' : 'atlas-nerve-v1',
   onBeforeCompile(shader) {
    shader.vertexShader = shader.vertexShader
     .replace('#include <common>', '#include <common>\nvarying vec3 tissuePosition;\nvarying vec3 tissueNormal;')
@@ -130,20 +130,20 @@ export function tissueAppearance(model: Structure, geometry: BufferGeometry, sel
      #endif
      float grain = sin(dot(p, vec3(39.5, 63.3, 55.7)) + tissueSeed)
         * sin(dot(p, vec3(72.9, 19.1, -66.9)));
-     float belly = .97 + .11 * grain + .20 * fiber;
+     float belly = 1.0 + .025 * grain + .10 * fiber;
      vec3 attachmentColor = mix(tissueTendon, diffuseColor.rgb, step(diffuseColor.r, diffuseColor.g));
-     diffuseColor.rgb = mix(diffuseColor.rgb * belly, attachmentColor * (.96 + .10 * fiber), tendon);
+     diffuseColor.rgb = mix(diffuseColor.rgb * belly, attachmentColor * (.98 + .04 * fiber), tendon);
     `)
     .replace('#include <roughnessmap_fragment>', `
      #include <roughnessmap_fragment>
-     roughnessFactor = clamp(roughnessFactor + .05 * fiber - .11 * tendon, .32, .78);
+     roughnessFactor = clamp(roughnessFactor + .025 * fiber - .06 * tendon, .30, .65);
     `)
     .replace('#include <normal_fragment_maps>', `
      #include <normal_fragment_maps>
      vec3 sx = dFdx(-vViewPosition), sy = dFdy(-vViewPosition);
      vec3 r1 = cross(sy, normal), r2 = cross(normal, sx);
      float determinant = dot(sx, r1);
-     float height = fiber * mix(.00027, .00014, tendon);
+     float height = fiber * mix(.000035, .000018, tendon);
      vec3 slope = sign(determinant) * (dFdx(height) * r1 + dFdy(height) * r2);
      normal = normalize(max(abs(determinant), 1e-12) * normal - slope);
     `);

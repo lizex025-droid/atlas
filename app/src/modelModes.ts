@@ -1,6 +1,7 @@
 import { anatomy, isRegisteredTissue } from './anatomy';
 import type { CameraView } from './scene';
 import { systemFor } from './classification';
+import { toggleMembers } from './workspace';
 import type { WorkspaceState } from './workspace';
 
 /** Licensed Atlas meshes only; no Body Browser assets are imported. */
@@ -46,4 +47,15 @@ export function activeModelMode(state: WorkspaceState): ModelModeId | null {
   if (anatomy.every(model => hidden.has(model.id) !== visible.has(model.id))) return mode.id;
  }
  return null;
+}
+
+/** Include the actual scalp, Achilles and plantar aponeuroses when muscles are
+ * enabled from the layer bar, just as in the muscle preset. Respect subsequent
+ * independent connective-tissue toggles and never hide existing layers. */
+export function toggleMuscleLayer(state: WorkspaceState, muscleIds: string[]): WorkspaceState {
+ const turningOn = muscleIds.every(id => state.hidden.includes(id));
+ const next = toggleMembers(state, muscleIds);
+ if (!turningOn) return next;
+ const attachments = new Set(anatomy.filter(model => model.system === 'Connective Tissue' && isRegisteredTissue(model.id)).map(model => model.id));
+ return {...next, hidden: next.hidden.filter(id => !attachments.has(id))};
 }
