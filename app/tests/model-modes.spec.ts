@@ -9,6 +9,9 @@ test('touch-sized body-browser presets switch existing licensed anatomical layer
  await modes.getByRole('button',{name:'Show Nerves'}).click();
  await expect(modes.getByRole('button',{name:'Show Nerves'})).toHaveAttribute('aria-pressed','true');
  await expect(modes.getByRole('button',{name:'Show Skeleton'})).toHaveAttribute('aria-pressed','false');
+ await expect(page.getByTestId('model-loading')).toContainText('Models ready',{timeout:30000});
+ await expect(page.getByTestId('model-loading')).toHaveAttribute('data-errors','[]');
+ await expect(page.locator('canvas')).toBeVisible();
  await page.getByRole('button',{name:'Undo',exact:true}).click();
  await expect(modes.getByRole('button',{name:'Show Skeleton'})).toHaveAttribute('aria-pressed','true');
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);

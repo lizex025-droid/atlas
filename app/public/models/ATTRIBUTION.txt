@@ -9,3 +9,11 @@ Gauthier Kervyn (design, 3D, anatomy); BodyParts3D - The Database Center for Lif
 https://github.com/Z-Anatomy/Models-of-human-anatomy
 https://creativecommons.org/licenses/by-sa/4.0/
 Only Palmar aponeurosis.l/.r surfaces converted. No kidney, inner-ear, definitions, templates, materials or scripts redistributed. Changes: rigid similarity registration, normals, indexed GLB. Alignment and clinical review pending. Converted meshes and contributions remain CC BY-SA 4.0.
+
+--- REGISTERED MUSCLES, NERVES AND CONNECTIVE TISSUE ---
+Z-Anatomy / Gauthier Kervyn, CC BY-SA 4.0. BodyParts3D / DBCLS credited upstream.
+Cranial Nerves and Foramina: University of Dundee, CAHID, CC BY 4.0 (upstream credit).
+https://github.com/Z-Anatomy/Models-of-human-anatomy
+https://creativecommons.org/licenses/by-sa/4.0/
+Changes: registration to Atlas, smooth normals, tendon weights, bounded simplification and meshopt encoding. See z-anatomy/tissues-manifest.json.
+Repacked BodyParts3D surfaces retain CC BY-SA 2.1 Japan.

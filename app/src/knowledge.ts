@@ -1,4 +1,4 @@
-import { byId } from './anatomy';
+import { byId, isRegisteredTissue } from './anatomy';
 import type { AnatomyRecord, Fact, Feature, SourceReference } from './knowledgeSchema';
 export type { AnatomyRecord, Fact, Feature, SourceReference } from './knowledgeSchema';
 import batch from './content/reviewed-batch.json';
@@ -11,6 +11,7 @@ export const sources:SourceReference[]=[
  {id:'stecco',title:'Stecco et al. (2009): The palmaris longus muscle and its relations with the antebrachial fascia and the palmar aponeurosis',url:'https://pubmed.ncbi.nlm.nih.gov/19208432/',license:'Publisher copyright; no reuse permission assumed',use:'Bibliographic citation and anatomical facts only; no abstract or article text reproduced.',locator:'Clinical Anatomy 22(2):221–229; doi:10.1002/ca.20747',accessedAt:date},
  {id:'dupuytren',title:'StatPearls: Dupuytren Contracture',url:'https://www.ncbi.nlm.nih.gov/books/NBK526074/',license:'CC BY-NC-ND 4.0',use:'Brief original educational fact statement only; no copied article content or treatment guidance.',locator:'Introduction',accessedAt:date},
  {id:'bp3d',title:'BodyParts3D 4.0 / DBCLS',url:'https://dbarchive.biosciencedbc.jp/en/bodyparts3d/download.html',license:'Imported OBJ notices: CC BY-SA 2.1 Japan; current archive page CC BY 4.0',use:'Licensed meshes and source FMA terminology. Per-model provenance is shipped in the asset manifest.',accessedAt:date},
+ {id:'zanatomy-tissues',title:'Z-Anatomy: registered muscular and nervous system surfaces',url:'https://github.com/Z-Anatomy/Models-of-human-anatomy',license:'CC BY-SA 4.0',use:'Indexed 3D surfaces with bony landmark registration and preserved source tendon assignments. Model alignment and coverage are educational and await independent review.',accessedAt:'2026-11-07'},
  {id:'zanatomy',title:'Z-Anatomy: selected palmar-aponeurosis surfaces',url:'https://github.com/Z-Anatomy/Models-of-human-anatomy',license:'Selected palmar surfaces: CC BY-SA 4.0; BodyParts3D / DBCLS credited upstream',use:'Only identified palmar fascia geometry converted. No noncommercial kidney/inner-ear assets, definitions, scripts or materials distributed. Similarity alignment review pending.',accessedAt:date},
 ];
 const f=(text:string,...refs:string[]):Fact=>({text,sources:refs});
@@ -44,7 +45,9 @@ for(const record of curatedRecords)records.set(record.id,record);
 const cache=new Map<string,AnatomyRecord>();
 export function getKnowledge(id:string):AnatomyRecord {
  const cached=cache.get(id);if(cached)return cached;
- const r=readKnowledge(id);const side=/\bleft\b/i.test(r.officialName)?'left':/\bright\b/i.test(r.officialName)?'right':'unspecified';
+ const original=readKnowledge(id);
+ const r=isRegisteredTissue(id)?{...original,modelIds:['z-anatomy-tissues'],sourceReferences:[...new Set([...original.sourceReferences.filter(source=>source!=='bp3d'||original.verificationStatus!=='metadata-only'),'zanatomy-tissues'])]}:original;
+ const side=/\bleft\b/i.test(r.officialName)?'left':/\bright\b/i.test(r.officialName)?'right':'unspecified';
  const normalized:AnatomyRecord={...r,version:r.version??1,laterality:r.laterality??side,clinicalReview:r.clinicalReview??{status:'pending'},pronunciation:r.pronunciation??{englishText:r.officialName,latinText:r.latinName,sourceIds:[],verificationStatus:'tts-approximation',audioAvailable:false,method:'browser-speech-synthesis'}};cache.set(id,normalized);return normalized;
 }
 
@@ -53,7 +56,7 @@ function readKnowledge(id:string):AnatomyRecord {
  const record=records.get(id);if(record)return record;
  const model=byId.get(id);if(!model)throw new Error('Unknown anatomy ID: '+id);
  const connective=/cartilage|disk|disc|ligament|fascia|retinaculum|tendon|aponeurosis/i.test(model.name);
- const kind=connective?'other':model.system==='Skeletal'?'bone':model.system==='Muscular'?'muscle':/nerve/i.test(model.name)?'nerve':/artery|vein|aorta|vena/i.test(model.name)?'vessel':'organ';
+ const kind=connective?'other':model.system==='Skeletal'?'bone':model.system==='Muscular'?'muscle':model.system==='Nervous'&&(/nerve|plexus|spinal (?:ganglion|root)|sympathetic trunk|cauda equina/i.test(model.name))?'nerve':/artery|vein|aorta|vena/i.test(model.name)?'vessel':'organ';
  return {...empty,id,officialName:model.name,latinName:null,synonyms:[],anatomicalSystem:model.system,region:model.region,kind,parentId:model.parents[0]?.id??null,hierarchyPath:[...model.parents].reverse().concat({id:model.id,name:model.name}),modelIds:['bodyparts3d-4.0'],meshIds:[model.id],sourceReferences:['bp3d'],verificationStatus:'metadata-only',lastReviewedAt:null};
 }
 export function findKnowledge(query:string){const q=query.trim().toLowerCase();return curatedRecords.filter(r=>[r.id,r.officialName,r.latinName??'',...r.synonyms].some(s=>s.toLowerCase().includes(q)));}

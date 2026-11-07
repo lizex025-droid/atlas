@@ -3,7 +3,9 @@ export const bodySystems=['Skeletal','Connective Tissue','Muscular','Arterial','
 export type BodySystem=typeof bodySystems[number];
 export function systemFor(id:string):BodySystem|null {
  if(id==='TA2:2549')return 'Connective Tissue';
- const s=byId.get(id);if(!s)return null;const name=s.name.toLowerCase();
+ const s=byId.get(id);if(!s)return null;
+ if(s.system==='Nervous'||s.system==='Connective Tissue')return s.system;
+ const name=s.name.toLowerCase();
  if(/cartilage|disk|ligament|fascia|retinaculum|tendon|iliotibial/.test(name))return 'Connective Tissue';
  if(/skin|hair/.test(name))return 'Integumentary';
  if(/thyroid|adrenal|pituitary|thymus/.test(name)&&s.system!=='Muscular'&&s.system!=='Cardiovascular')return 'Endocrine';

@@ -13,5 +13,8 @@ for(const file of files){
  if(/\.(glb|webp|png|jpe?g|gif|ico|woff2?)$/i.test(file))continue;
  const text=await readFile(path.join(root,file),'utf8');if(patterns.some(p=>p.test(text)))problems.push({file,reason:'credential/private-key pattern; value suppressed'});
 }
-if(models!==42)problems.push({reason:'Expected all 42 model containers'});
+for(const name of ['chunks.json','supplementalChunks.json','tissueChunks.json']){
+ const chunks=JSON.parse(await readFile(path.join(root,'app/src',name),'utf8'));
+ for(const chunk of chunks)if(!files.includes('app/public'+chunk.url))problems.push({file:chunk.url,reason:'Registered model is not tracked'});
+}
 console.log(JSON.stringify({root,files:files.length,bytes,models,problems},null,2));if(problems.length)process.exitCode=1;

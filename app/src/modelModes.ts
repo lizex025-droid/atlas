@@ -1,4 +1,4 @@
-import { anatomy } from './anatomy';
+import { anatomy, isRegisteredTissue } from './anatomy';
 import type { CameraView } from './scene';
 import { systemFor } from './classification';
 import type { WorkspaceState } from './workspace';
@@ -18,7 +18,7 @@ export function modelModeMembers(mode: ModelModeId): string[] {
   // Match the established initial scene for a seamless default preset.
   if (mode === 'skeleton') return model.system === 'Skeletal';
   const system = systemFor(model.id);
-  if (mode === 'muscles') return system === 'Muscular';
+  if (mode === 'muscles') return system === 'Muscular' || (system === 'Connective Tissue' && isRegisteredTissue(model.id));
   if (mode === 'nerves') return system === 'Nervous';
   return system !== null && organSystems.has(system);
  }).map(model => model.id);

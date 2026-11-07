@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { BufferGeometry, Mesh, Material } from 'three';
+import { MeshoptDecoder } from 'three/examples/jsm/libs/meshopt_decoder.module.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 import chunks from './chunks.json';
 import supplementalChunks from './supplementalChunks.json';
+import tissueChunks from './tissueChunks.json';
 export type LoadProgress = { loaded:number; total:number; bytes:number; errors:string[] };
-export const chunkById = new Map([...chunks,...supplementalChunks].map(c=>[c.id,c]));
-const loader = new GLTFLoader();
+export const chunkById = new Map([...chunks,...supplementalChunks,...tissueChunks].map(c=>[c.id,c]));
+const loader = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
 export function useProgressiveGeometry(ids:string[],retry:number) {
  const cache=useRef(new Map<string,Map<string,BufferGeometry>>());
  const [,render]=useState(0);
@@ -25,7 +27,7 @@ export function useProgressiveGeometry(ids:string[],retry:number) {
      const digest=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes))).map(b=>b.toString(16).padStart(2,'0')).join('');
      if(digest!==chunk.sha256)throw new Error('Model checksum mismatch');if(cancelled)return;
      const gltf=await loader.parseAsync(bytes,'');const geometries=new Map<string,BufferGeometry>();
-     gltf.scene.traverse(object=>{if(object instanceof Mesh){geometries.set(object.userData.canonicalId??object.name,object.geometry);const materials=Array.isArray(object.material)?object.material:[object.material];materials.forEach((m:Material)=>m.dispose());}});
+     gltf.scene.traverse(object=>{if(object instanceof Mesh){geometries.set(object.userData.canonicalId??object.userData.name??object.name,object.geometry);const materials=Array.isArray(object.material)?object.material:[object.material];materials.forEach((m:Material)=>m.dispose());}});
      if(cancelled){geometries.forEach(g=>g.dispose());return;}
      if(!chunk.structures.every(id=>geometries.has(id))){geometries.forEach(g=>g.dispose());throw new Error('Missing mesh IDs');}
      cache.current.set(id,geometries);render(n=>n+1);update();
